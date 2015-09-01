@@ -10,6 +10,8 @@
 
 @interface Networking : NSObject
 
++ (Networking *)networking;
+
 - (NSArray *)activeProvinces;
 - (NSArray *)citiesInProvince:(NSString *)province;
 - (NSArray *)propertiesInProvince:(NSString *)province city1:(NSString *)city1 city2:(NSString *)city2 city3:(NSString *)city3 minPrice:(NSString *)min maxPrice:(NSString *)max;

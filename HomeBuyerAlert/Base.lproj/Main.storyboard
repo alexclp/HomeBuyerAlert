@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbQ-vm-sKR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Welcome" id="vXZ-lx-hvc" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Canadian Properties Here." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-aR-QwL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Canadian Properties Here." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-aR-QwL">
                                 <rect key="frame" x="16" y="258" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VR4-Z2-whZ"/>
@@ -31,8 +31,11 @@
                                 <state key="normal" title="CONTINUE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="HRg-XJ-aKq" kind="show" id="Fxd-mV-GaS"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L3G-KZ-Qsf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L3G-KZ-Qsf">
                                 <rect key="frame" x="16" y="114" width="343" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="79" id="4yl-ej-sQq"/>
@@ -65,19 +68,17 @@ Enjoy …</string>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="L0M-zV-rgF" secondAttribute="bottom" constant="68" id="qZq-dX-giW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="S8m-3p-mVr"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="HRg-XJ-aKq" kind="show" id="KDc-By-9l8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-617.5" y="338.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Setup-->
         <scene sceneID="saG-fS-x2k">
             <objects>
-                <viewController id="HRg-XJ-aKq" sceneMemberID="viewController">
+                <viewController title="Setup" id="HRg-XJ-aKq" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uwe-sd-ABo"/>
                         <viewControllerLayoutGuide type="bottom" id="KLK-Jx-jka"/>
@@ -90,6 +91,13 @@ Enjoy …</string>
                     <navigationItem key="navigationItem" id="faO-zT-hiy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNT-kC-A56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" id="O8V-Xo-JxF">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="Title" id="qqt-ZW-sni"/>
+                    </items>
+                </navigationBar>
             </objects>
             <point key="canvasLocation" x="19" y="328"/>
         </scene>
@@ -102,18 +110,15 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="HRg-XJ-aKq" kind="relationship" relationship="rootViewController" id="UgW-Px-Ih4"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Gwr-ax-vIv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEu-M2-R4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="339"/>
+            <point key="canvasLocation" x="-1346" y="355"/>
         </scene>
     </scenes>
     <resources>
         <image name="home-buyer-alert-logo.png" width="1500" height="286"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="KDc-By-9l8"/>
-    </inferredMetricsTieBreakers>
 </document>
