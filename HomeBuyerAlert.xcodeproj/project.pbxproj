@@ -16,6 +16,8 @@
 		0F2E28B21B9506E30018573B /* HomeBuyerAlertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28B11B9506E30018573B /* HomeBuyerAlertTests.m */; };
 		0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */; };
 		0F2E28C21B95F7CA0018573B /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C11B95F7CA0018573B /* Networking.m */; };
+		0F2E28C51B95FD3A0018573B /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C41B95FD3A0018573B /* Property.m */; };
+		0FAD7A3A1B95FE3F00C4463C /* PropertyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */; };
 		148246663A33D32219F3A0A0 /* libPods-HomeBuyerAlert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A029918ABB0EA4E08DB23692 /* libPods-HomeBuyerAlert.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,10 @@
 		0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-buyer-alert-logo.png"; sourceTree = "<group>"; };
 		0F2E28C01B95F7CA0018573B /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		0F2E28C11B95F7CA0018573B /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		0F2E28C31B95FD3A0018573B /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
+		0F2E28C41B95FD3A0018573B /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		0FAD7A381B95FE3F00C4463C /* PropertyDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetail.h; sourceTree = "<group>"; };
+		0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetail.m; sourceTree = "<group>"; };
 		44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.release.xcconfig"; sourceTree = "<group>"; };
 		76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.debug.xcconfig"; sourceTree = "<group>"; };
 		A029918ABB0EA4E08DB23692 /* libPods-HomeBuyerAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HomeBuyerAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +160,10 @@
 			children = (
 				0F2E28C01B95F7CA0018573B /* Networking.h */,
 				0F2E28C11B95F7CA0018573B /* Networking.m */,
+				0F2E28C31B95FD3A0018573B /* Property.h */,
+				0F2E28C41B95FD3A0018573B /* Property.m */,
+				0FAD7A381B95FE3F00C4463C /* PropertyDetail.h */,
+				0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,10 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2E28C51B95FD3A0018573B /* Property.m in Sources */,
 				0F2E289E1B9506E30018573B /* WelcomeViewController.m in Sources */,
 				0F2E289B1B9506E30018573B /* AppDelegate.m in Sources */,
 				0F2E28981B9506E30018573B /* main.m in Sources */,
 				0F2E28C21B95F7CA0018573B /* Networking.m in Sources */,
+				0FAD7A3A1B95FE3F00C4463C /* PropertyDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
