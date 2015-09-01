@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Canadian Properties Here." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-aR-QwL">
+                                <rect key="frame" x="16" y="258" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VR4-Z2-whZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0M-zV-rgF">
+                                <rect key="frame" x="148" y="569" width="78" height="30"/>
+                                <state key="normal" title="CONTINUE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L3G-KZ-Qsf">
+                                <rect key="frame" x="16" y="114" width="343" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="4yl-ej-sQq"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obd-gc-8Z7">
+                                <rect key="frame" x="16" y="324" width="343" height="107"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="VGM-h0-vGx"/>
+                                </constraints>
+                                <string key="text">Welcome to HomeBuyerAlert - Property by owners and agents. To get started, just select where you're looking for real estate. Alerts will come to your phone when new properties are added.                                                                  
+Enjoy …</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.57000000000000006" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="obd-gc-8Z7" secondAttribute="leading" id="4Hq-aD-AUv"/>
+                            <constraint firstItem="L0M-zV-rgF" firstAttribute="centerX" secondItem="obd-gc-8Z7" secondAttribute="centerX" id="4cP-3Q-tYS"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Mmm-S0-84T"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="top" secondItem="L3G-KZ-Qsf" secondAttribute="bottom" constant="65" id="dAT-qy-pTs"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="trailing" secondItem="obd-gc-8Z7" secondAttribute="trailing" id="gg5-83-2Td"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="trailing" secondItem="L3G-KZ-Qsf" secondAttribute="trailing" id="gzX-Qp-rb8"/>
+                            <constraint firstItem="L3G-KZ-Qsf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="94" id="kFT-hL-U2N"/>
+                            <constraint firstItem="obd-gc-8Z7" firstAttribute="top" secondItem="Mj3-aR-QwL" secondAttribute="bottom" constant="45" id="nhd-Jn-2Y6"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="L3G-KZ-Qsf" secondAttribute="leading" id="ofN-6V-N7u"/>
+                            <constraint firstItem="L3G-KZ-Qsf" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="p6R-AO-9QE"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="L0M-zV-rgF" secondAttribute="bottom" constant="68" id="qZq-dX-giW"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303.5" y="358.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home-buyer-alert-logo.png" width="1500" height="286"/>
+    </resources>
+</document>
