@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - SMXMLDocument (1.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - SMXMLDocument
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  SMXMLDocument: e0d9fbf726a2a0921871b492966458acb3ad9689
 
 COCOAPODS: 0.37.2

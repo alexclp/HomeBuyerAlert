@@ -18,6 +18,7 @@
 		0F2E28C21B95F7CA0018573B /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C11B95F7CA0018573B /* Networking.m */; };
 		0F2E28C51B95FD3A0018573B /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C41B95FD3A0018573B /* Property.m */; };
 		0FAD7A3A1B95FE3F00C4463C /* PropertyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */; };
+		0FAD7A3D1B9601B400C4463C /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD7A3C1B9601B400C4463C /* SetupViewController.m */; };
 		148246663A33D32219F3A0A0 /* libPods-HomeBuyerAlert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A029918ABB0EA4E08DB23692 /* libPods-HomeBuyerAlert.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		0F2E28C41B95FD3A0018573B /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
 		0FAD7A381B95FE3F00C4463C /* PropertyDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetail.h; sourceTree = "<group>"; };
 		0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetail.m; sourceTree = "<group>"; };
+		0FAD7A3B1B9601B400C4463C /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		0FAD7A3C1B9601B400C4463C /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.release.xcconfig"; sourceTree = "<group>"; };
 		76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.debug.xcconfig"; sourceTree = "<group>"; };
 		A029918ABB0EA4E08DB23692 /* libPods-HomeBuyerAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HomeBuyerAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +154,8 @@
 			children = (
 				0F2E289C1B9506E30018573B /* WelcomeViewController.h */,
 				0F2E289D1B9506E30018573B /* WelcomeViewController.m */,
+				0FAD7A3B1B9601B400C4463C /* SetupViewController.h */,
+				0FAD7A3C1B9601B400C4463C /* SetupViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			files = (
 				0F2E28C51B95FD3A0018573B /* Property.m in Sources */,
 				0F2E289E1B9506E30018573B /* WelcomeViewController.m in Sources */,
+				0FAD7A3D1B9601B400C4463C /* SetupViewController.m in Sources */,
 				0F2E289B1B9506E30018573B /* AppDelegate.m in Sources */,
 				0F2E28981B9506E30018573B /* main.m in Sources */,
 				0F2E28C21B95F7CA0018573B /* Networking.m in Sources */,

@@ -4,6 +4,7 @@
 target 'HomeBuyerAlert' do
 
 pod 'AFNetworking'
+pod 'SMXMLDocument'
 
 end
 

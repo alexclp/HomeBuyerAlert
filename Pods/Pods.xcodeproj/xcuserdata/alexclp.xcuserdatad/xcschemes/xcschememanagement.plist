@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HomeBuyerAlert-SMXMLDocument.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HomeBuyerAlert.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8C4C656AECBB2863023D8112</key>
+		<key>CEC987E433B0D6DB8F977D05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D12F442EF324D76A625FF86</key>
+		<key>D4B6C27BA551165E31E0985E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F157077B1504C8277E12F628</key>
 		<dict>
 			<key>primary</key>
 			<true/>
