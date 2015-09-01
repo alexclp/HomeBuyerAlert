@@ -15,6 +15,7 @@
 		0F2E28A61B9506E30018573B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2E28A41B9506E30018573B /* LaunchScreen.xib */; };
 		0F2E28B21B9506E30018573B /* HomeBuyerAlertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28B11B9506E30018573B /* HomeBuyerAlertTests.m */; };
 		0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */; };
+		0F2E28C21B95F7CA0018573B /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C11B95F7CA0018573B /* Networking.m */; };
 		148246663A33D32219F3A0A0 /* libPods-HomeBuyerAlert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A029918ABB0EA4E08DB23692 /* libPods-HomeBuyerAlert.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		0F2E28B01B9506E30018573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F2E28B11B9506E30018573B /* HomeBuyerAlertTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBuyerAlertTests.m; sourceTree = "<group>"; };
 		0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-buyer-alert-logo.png"; sourceTree = "<group>"; };
+		0F2E28C01B95F7CA0018573B /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		0F2E28C11B95F7CA0018573B /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.release.xcconfig"; sourceTree = "<group>"; };
 		76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.debug.xcconfig"; sourceTree = "<group>"; };
 		A029918ABB0EA4E08DB23692 /* libPods-HomeBuyerAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HomeBuyerAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,8 +96,8 @@
 				0F2E28BB1B9509200018573B /* Assets */,
 				0F2E28991B9506E30018573B /* AppDelegate.h */,
 				0F2E289A1B9506E30018573B /* AppDelegate.m */,
-				0F2E289C1B9506E30018573B /* WelcomeViewController.h */,
-				0F2E289D1B9506E30018573B /* WelcomeViewController.m */,
+				0F2E28BF1B95F7B50018573B /* Model */,
+				0F2E28BE1B95F7AD0018573B /* Controllers */,
 				0F2E289F1B9506E30018573B /* Main.storyboard */,
 				0F2E28A21B9506E30018573B /* Images.xcassets */,
 				0F2E28A41B9506E30018573B /* LaunchScreen.xib */,
@@ -135,6 +138,24 @@
 				0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		0F2E28BE1B95F7AD0018573B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F2E289C1B9506E30018573B /* WelcomeViewController.h */,
+				0F2E289D1B9506E30018573B /* WelcomeViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0F2E28BF1B95F7B50018573B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F2E28C01B95F7CA0018573B /* Networking.h */,
+				0F2E28C11B95F7CA0018573B /* Networking.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D8804546CEB06443656779B1 /* Frameworks */ = {
@@ -293,6 +314,7 @@
 				0F2E289E1B9506E30018573B /* WelcomeViewController.m in Sources */,
 				0F2E289B1B9506E30018573B /* AppDelegate.m in Sources */,
 				0F2E28981B9506E30018573B /* main.m in Sources */,
+				0F2E28C21B95F7CA0018573B /* Networking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
