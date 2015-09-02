@@ -6,6 +6,11 @@ target 'HomeBuyerAlert' do
 pod 'AFNetworking'
 pod 'SMXMLDocument'
 
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+pod 'ActionSheetPicker-3.0'
+
 end
 
 target 'HomeBuyerAlertTests' do

@@ -1,0 +1,6 @@
+framework module Pods_HomeBuyerAlert {
+  umbrella header "Pods-HomeBuyerAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}
