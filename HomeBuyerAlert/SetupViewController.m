@@ -20,7 +20,7 @@
 		if (error) {
 			
 		} else {
-			NSLog(@"Provinces = %@", array);
+			
 		}
 	}];
 }

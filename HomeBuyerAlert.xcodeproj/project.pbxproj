@@ -31,6 +31,7 @@
 		0F88A5BA1B9750290014AF20 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88A5B91B9750290014AF20 /* MobileCoreServices.framework */; };
 		0F88A5BC1B97502F0014AF20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88A5BB1B97502F0014AF20 /* CoreGraphics.framework */; };
 		0F88A5BE1B97503F0014AF20 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88A5BD1B97503F0014AF20 /* libz.dylib */; };
+		0F88A5C11B97A1B20014AF20 /* very-basic-settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F88A5C01B97A1B20014AF20 /* very-basic-settings-icon.png */; };
 		0FAD7A3A1B95FE3F00C4463C /* PropertyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */; };
 		0FAD7A3D1B9601B400C4463C /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD7A3C1B9601B400C4463C /* SetupViewController.m */; };
 		ED47ECFF89E264F966B40DCF /* Pods_HomeBuyerAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -92,6 +93,7 @@
 		0F88A5B91B9750290014AF20 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0F88A5BB1B97502F0014AF20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0F88A5BD1B97503F0014AF20 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0F88A5C01B97A1B20014AF20 /* very-basic-settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "very-basic-settings-icon.png"; sourceTree = "<group>"; };
 		0FAD7A381B95FE3F00C4463C /* PropertyDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetail.h; sourceTree = "<group>"; };
 		0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetail.m; sourceTree = "<group>"; };
 		0FAD7A3B1B9601B400C4463C /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		0F2E28BB1B9509200018573B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F88A5C01B97A1B20014AF20 /* very-basic-settings-icon.png */,
 				0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */,
 			);
 			name = Assets;
@@ -364,6 +367,7 @@
 			files = (
 				0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */,
 				0F2E28A11B9506E30018573B /* Main.storyboard in Resources */,
+				0F88A5C11B97A1B20014AF20 /* very-basic-settings-icon.png in Resources */,
 				0F2E28A61B9506E30018573B /* LaunchScreen.xib in Resources */,
 				0F2E28A31B9506E30018573B /* Images.xcassets in Resources */,
 			);

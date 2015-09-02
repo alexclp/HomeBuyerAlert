@@ -28,8 +28,6 @@ static Networking *networking;
 	
 	NSArray *provinces = [document childrenNamed:@"province"];
 	
-	NSLog(@"Element = %@", [provinces[0] class]);
-	
 	for (SMXMLElement *province in provinces) {
 		NSString *value = [province value];
 		
