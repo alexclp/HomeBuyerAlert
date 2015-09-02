@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Networking : NSObject
+@interface Networking : NSObject <NSXMLParserDelegate>
 
 + (Networking *)networking;
 
-- (NSArray *)activeProvinces;
+- (void)activeProvincesWithCompletion:(void(^)(NSArray *array, NSError *error))completion
+;
 - (NSArray *)citiesInProvince:(NSString *)province;
 - (NSArray *)propertiesInProvince:(NSString *)province city1:(NSString *)city1 city2:(NSString *)city2 city3:(NSString *)city3 minPrice:(NSString *)min maxPrice:(NSString *)max;
 

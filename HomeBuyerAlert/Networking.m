@@ -8,6 +8,8 @@
 
 #import "Networking.h"
 #import "AFNetworking.h"
+#import "SMXMLDocument.h"
+#import "ASIHTTPRequest.h"
 
 @implementation Networking
 
@@ -21,15 +23,27 @@ static Networking *networking;
 	return networking;
 }
 
-- (NSArray *)activeProvinces {
-	AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-	[manager GET:@"http://homebuyeralert.ca/province.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		NSLog(@"JSON: %@", responseObject);
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		NSLog(@"Error: %@", error);
-	}];
+- (void)activeProvincesWithCompletion:(void(^)(NSArray *array, NSError *error))completion
+ {
+	NSLog(@"Active provinces");
 	
-	return nil;
+	 NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/province.php"];
+	 __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	 [request setCompletionBlock:^{
+		 // Use when fetching text data
+		 NSString *responseString = [request responseString];
+		 
+		 NSLog(@"Response string: %@", responseString);
+		 
+		 // Use when fetching binary data
+		 NSData *responseData = [request responseData];
+	
+		 NSLog(@"Reponse data = %@", responseData);
+	 }];
+	 [request setFailedBlock:^{
+		 NSError *error = [request error];
+	 }];
+	 [request startAsynchronous];
 }
 
 - (NSArray *)citiesInProvince:(NSString *)province {
@@ -42,6 +56,29 @@ static Networking *networking;
 	
 	
 	return nil;
+}
+
+#pragma mark NSXMLParser Delegate Methods
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+	
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+	
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+	
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+	
+
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+	
 }
 
 @end

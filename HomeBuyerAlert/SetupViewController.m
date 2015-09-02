@@ -7,7 +7,22 @@
 //
 
 #import "SetupViewController.h"
+#import "Networking.h"
 
 @implementation SetupViewController
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	NSLog(@"Setup Controller");
+	
+	[[Networking networking] activeProvincesWithCompletion:^(NSArray *array, NSError *error) {
+		if (error) {
+			
+		} else {
+			NSLog(@"Provinces = %@", array);
+		}
+	}];
+}
 
 @end

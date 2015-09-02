@@ -78,7 +78,7 @@ Enjoy …</string>
         <!--Setup-->
         <scene sceneID="saG-fS-x2k">
             <objects>
-                <viewController title="Setup" id="HRg-XJ-aKq" sceneMemberID="viewController">
+                <viewController title="Setup" id="HRg-XJ-aKq" customClass="SetupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uwe-sd-ABo"/>
                         <viewControllerLayoutGuide type="bottom" id="KLK-Jx-jka"/>
