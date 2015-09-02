@@ -23,6 +23,22 @@ static Networking *networking;
 	return networking;
 }
 
+- (NSArray *)parseProvinces:(SMXMLDocument *)document {
+	NSMutableArray *toReturn = [NSMutableArray array];
+	
+	NSArray *provinces = [document childrenNamed:@"province"];
+	
+	NSLog(@"Element = %@", [provinces[0] class]);
+	
+	for (SMXMLElement *province in provinces) {
+		NSString *value = [province value];
+		
+		[toReturn addObject:value];
+	}
+	
+	return toReturn.copy;
+}
+
 - (void)activeProvincesWithCompletion:(void(^)(NSArray *array, NSError *error))completion
  {
 	NSLog(@"Active provinces");
@@ -30,18 +46,17 @@ static Networking *networking;
 	 NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/province.php"];
 	 __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	 [request setCompletionBlock:^{
-		 // Use when fetching text data
-		 NSString *responseString = [request responseString];
-		 
-		 NSLog(@"Response string: %@", responseString);
-		 
 		 // Use when fetching binary data
 		 NSData *responseData = [request responseData];
-	
-		 NSLog(@"Reponse data = %@", responseData);
+		 
+		 NSArray *parsed = [self parseProvinces:[SMXMLDocument documentWithData:responseData error:nil]];
+		 
+		 completion(parsed, nil);
 	 }];
 	 [request setFailedBlock:^{
 		 NSError *error = [request error];
+		 
+		 completion(nil, error);
 	 }];
 	 [request startAsynchronous];
 }
