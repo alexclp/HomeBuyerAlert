@@ -13,6 +13,9 @@
 @interface SetupViewController ()
 
 @property (nonatomic, strong) NSArray *provinces;
+@property (nonatomic, strong) NSArray *cities;
+
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
 @end
 
@@ -23,18 +26,23 @@
 	
 	NSLog(@"Setup Controller");
 	
-	UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	[activityView startAnimating];
+	self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	[self.view addSubview:self.activityView];
+	[self.activityView startAnimating];
 	
 	[[Networking networking] activeProvincesWithCompletion:^(NSArray *array, NSError *error) {
 		if (error) {
 			
 		} else {
 			self.provinces = [NSArray arrayWithArray:array];
-			[activityView stopAnimating];
+			[self.activityView stopAnimating];
 		}
 	}];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadCities) name:@"Province selected" object:nil];
 }
+
+#pragma mark UI Interaction
 
 - (IBAction)provinceTouchDown:(UITextField *)textField {
 	[ActionSheetStringPicker showPickerWithTitle:@"Select a province"
@@ -42,6 +50,8 @@
 								initialSelection:0
 									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
 										   self.provinceTextField.text = [self.provinces objectAtIndex:selectedIndex];
+										   [self loadCities];
+										   
 									   }
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
 										 NSLog(@"Block Picker Canceled");
@@ -50,7 +60,18 @@
 }
 
 - (IBAction)city1TouchDown:(UITextField *)textField {
-	
+	[ActionSheetStringPicker showPickerWithTitle:@"Select a city"
+											rows:self.cities
+								initialSelection:0
+									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+										   self.city1TextField.text = [self.cities objectAtIndex:selectedIndex];
+										   
+									   }
+									 cancelBlock:^(ActionSheetStringPicker *picker) {
+										 NSLog(@"Block Picker Canceled");
+									 }
+										  origin:self.view];
+
 }
 
 - (IBAction)city2TouchDown:(UITextField *)textField; {
@@ -65,6 +86,25 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
 	return NO;
+}
+
+#pragma mark Data
+
+- (void)loadCities {
+	NSString *province = self.provinceTextField.text;
+	
+	[self.activityView startAnimating];
+	
+	[[Networking networking] citiesInProvince:province withCompletion:^(NSArray *array, NSError *error) {
+		if (error) {
+			
+		} else {
+			self.cities = [NSArray arrayWithArray:array];
+			NSLog(@"cities = %@", self.cities);
+			
+			[self.activityView stopAnimating];
+		}
+	}];
 }
 
 @end

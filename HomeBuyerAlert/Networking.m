@@ -55,15 +55,16 @@ static Networking *networking;
 - (void)citiesInProvince:(NSString *)province withCompletion:(void(^)(NSArray *array, NSError *error))completion {
 	NSLog(@"Cities in province");
 	
-	NSURL *url = [NSURL URLWithString:CitiesURL];
+	NSString *urlString = [CitiesURL stringByAppendingString:[NSString stringWithFormat:@"?province=%@", province]];
+	NSURL *url = [NSURL URLWithString:urlString];
 
-	__block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-	[request setPostValue:province forKey:@"province"];
+	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	
 	[request setCompletionBlock:^{
 		NSData *responseData = [request responseData];
+		NSString *responseString = [request responseString];
+		NSLog(@"Response string = %@", responseString);
 		SMXMLDocument *document = [SMXMLDocument documentWithData:responseData error:nil];
-		
 		NSArray *parsed = [[Parser parser] parseCities:document];
 		completion(parsed, nil);
 	}];

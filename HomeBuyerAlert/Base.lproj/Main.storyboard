@@ -125,7 +125,7 @@ Enjoy …</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="city1TouchDown:" destination="HRg-XJ-aKq" eventType="editingDidEnd" id="Zgo-Vr-A0U"/>
+                                    <action selector="city1TouchDown:" destination="HRg-XJ-aKq" eventType="touchDown" id="4xj-Be-Fql"/>
                                     <outlet property="delegate" destination="HRg-XJ-aKq" id="J5C-uG-cjh"/>
                                 </connections>
                             </textField>
@@ -137,7 +137,7 @@ Enjoy …</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="city2TouchDown:" destination="HRg-XJ-aKq" eventType="editingDidEnd" id="M92-KW-CJE"/>
+                                    <action selector="city2TouchDown:" destination="HRg-XJ-aKq" eventType="touchDown" id="oDZ-zJ-s4o"/>
                                     <outlet property="delegate" destination="HRg-XJ-aKq" id="6QL-fD-9ze"/>
                                 </connections>
                             </textField>
@@ -149,7 +149,7 @@ Enjoy …</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="city3TouchDown:" destination="HRg-XJ-aKq" eventType="editingDidEnd" id="2J3-f4-uQw"/>
+                                    <action selector="city3TouchDown:" destination="HRg-XJ-aKq" eventType="touchDown" id="ARC-Nu-X3z"/>
                                     <outlet property="delegate" destination="HRg-XJ-aKq" id="GIC-8n-JZP"/>
                                 </connections>
                             </textField>
