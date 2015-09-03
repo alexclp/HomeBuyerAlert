@@ -109,7 +109,7 @@
 											rows:data
 								initialSelection:0
 									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-										   self.priceRangeTextField.text = [self.cities objectAtIndex:selectedIndex];
+										   self.priceRangeTextField.text = [data objectAtIndex:selectedIndex];
 										   
 									   }
 									 cancelBlock:^(ActionSheetStringPicker *picker) {

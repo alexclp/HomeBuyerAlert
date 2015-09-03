@@ -88,10 +88,10 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="very-basic-settings-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-m1-7xz">
-                                <rect key="frame" x="0.0" y="64" width="134" height="122"/>
+                                <rect key="frame" x="0.0" y="64" width="160" height="122"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings &amp; Options" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3C-dD-YVg">
-                                <rect key="frame" x="156" y="72" width="203" height="42"/>
+                                <rect key="frame" x="182" y="72" width="177" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="8AR-Fo-lAc"/>
                                 </constraints>
@@ -162,8 +162,8 @@ Enjoy …</string>
                                     <action selector="sliderValueChanged:" destination="HRg-XJ-aKq" eventType="valueChanged" id="2cV-Wc-FdR"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha3-xF-EM6">
-                                <rect key="frame" x="156" y="413" width="62" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha3-xF-EM6">
+                                <rect key="frame" x="182" y="413" width="10" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="h76-la-pXd"/>
                                 </constraints>
