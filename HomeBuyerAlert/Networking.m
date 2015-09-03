@@ -11,6 +11,7 @@
 #import "SMXMLDocument.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "Parser.h"
 
 #define ProvinceURL @"http://homebuyeralert.ca/province.php"
 #define CitiesURL @"http://homebuyeralert.ca/cities.php"
@@ -29,20 +30,6 @@ static Networking *networking;
 	return networking;
 }
 
-- (NSArray *)parseProvinces:(SMXMLDocument *)document {
-	NSMutableArray *toReturn = [NSMutableArray array];
-	
-	NSArray *provinces = [document childrenNamed:@"province"];
-	
-	for (SMXMLElement *province in provinces) {
-		NSString *value = [province value];
-		
-		[toReturn addObject:value];
-	}
-	
-	return toReturn.copy;
-}
-
 - (void)activeProvincesWithCompletion:(void(^)(NSArray *array, NSError *error))completion
  {
 	NSLog(@"Active provinces");
@@ -53,7 +40,7 @@ static Networking *networking;
 		// Use when fetching binary data
 		NSData *responseData = [request responseData];
 		
-		NSArray *parsed = [self parseProvinces:[SMXMLDocument documentWithData:responseData error:nil]];
+		NSArray *parsed = [[Parser parser] parseProvinces:[SMXMLDocument documentWithData:responseData error:nil]];
 		
 		completion(parsed, nil);
 	}];
@@ -65,7 +52,7 @@ static Networking *networking;
 	[request startAsynchronous];
 }
 
-- (NSArray *)citiesInProvince:(NSString *)province withCompletion:(void(^)(NSArray *array, NSError *error))completion {
+- (void)citiesInProvince:(NSString *)province withCompletion:(void(^)(NSArray *array, NSError *error))completion {
 	NSLog(@"Cities in province");
 	
 	NSURL *url = [NSURL URLWithString:CitiesURL];
@@ -75,8 +62,10 @@ static Networking *networking;
 	
 	[request setCompletionBlock:^{
 		NSData *responseData = [request responseData];
+		SMXMLDocument *document = [SMXMLDocument documentWithData:responseData error:nil];
 		
-		
+		NSArray *parsed = [[Parser parser] parseCities:document];
+		completion(parsed, nil);
 	}];
 	
 	[request setFailedBlock:^{
@@ -84,7 +73,7 @@ static Networking *networking;
 		completion(nil, error);
 	}];
 	
-	return nil;
+	[request startAsynchronous];
 }
 
 - (NSArray *)propertiesInProvince:(NSString *)province city1:(NSString *)city1 city2:(NSString *)city2 city3:(NSString *)city3 minPrice:(NSString *)min maxPrice:(NSString *)max {
