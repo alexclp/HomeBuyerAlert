@@ -34,6 +34,7 @@
 		0F88A5C11B97A1B20014AF20 /* very-basic-settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F88A5C01B97A1B20014AF20 /* very-basic-settings-icon.png */; };
 		0FAD7A3A1B95FE3F00C4463C /* PropertyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */; };
 		0FAD7A3D1B9601B400C4463C /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD7A3C1B9601B400C4463C /* SetupViewController.m */; };
+		0FBB09D71B98B23600505844 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB09D61B98B23600505844 /* Parser.m */; };
 		ED47ECFF89E264F966B40DCF /* Pods_HomeBuyerAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,8 @@
 		0FAD7A391B95FE3F00C4463C /* PropertyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetail.m; sourceTree = "<group>"; };
 		0FAD7A3B1B9601B400C4463C /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		0FAD7A3C1B9601B400C4463C /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		0FBB09D51B98B23600505844 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		0FBB09D61B98B23600505844 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeBuyerAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.release.xcconfig"; sourceTree = "<group>"; };
 		76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.debug.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 			children = (
 				0F2E28C01B95F7CA0018573B /* Networking.h */,
 				0F2E28C11B95F7CA0018573B /* Networking.m */,
+				0FBB09D51B98B23600505844 /* Parser.h */,
+				0FBB09D61B98B23600505844 /* Parser.m */,
 				0F2E28C31B95FD3A0018573B /* Property.h */,
 				0F2E28C41B95FD3A0018573B /* Property.m */,
 				0FAD7A381B95FE3F00C4463C /* PropertyDetail.h */,
@@ -443,6 +448,7 @@
 				0F2E289B1B9506E30018573B /* AppDelegate.m in Sources */,
 				0F88A5B01B974EEF0014AF20 /* ASIInputStream.m in Sources */,
 				0F88A5AF1B974EEF0014AF20 /* ASIHTTPRequest.m in Sources */,
+				0FBB09D71B98B23600505844 /* Parser.m in Sources */,
 				0F2E28981B9506E30018573B /* main.m in Sources */,
 				0F88A5AE1B974EEF0014AF20 /* ASIFormDataRequest.m in Sources */,
 				0F88A5B41B974F050014AF20 /* Reachability.m in Sources */,
