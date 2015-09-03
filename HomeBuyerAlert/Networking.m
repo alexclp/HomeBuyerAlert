@@ -10,6 +10,12 @@
 #import "AFNetworking.h"
 #import "SMXMLDocument.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+
+#define ProvinceURL @"http://homebuyeralert.ca/province.php"
+#define CitiesURL @"http://homebuyeralert.ca/cities.php"
+#define ResultsURL @"http://homebuyeralert.ca/property-custom-new.php"
+#define DetailsURL @"http://homebuyeralert.ca/listing-xml.php"
 
 @implementation Networking
 
@@ -41,26 +47,42 @@ static Networking *networking;
  {
 	NSLog(@"Active provinces");
 	
-	 NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/province.php"];
-	 __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-	 [request setCompletionBlock:^{
-		 // Use when fetching binary data
-		 NSData *responseData = [request responseData];
-		 
-		 NSArray *parsed = [self parseProvinces:[SMXMLDocument documentWithData:responseData error:nil]];
-		 
-		 completion(parsed, nil);
-	 }];
-	 [request setFailedBlock:^{
-		 NSError *error = [request error];
-		 
-		 completion(nil, error);
-	 }];
-	 [request startAsynchronous];
+	NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/province.php"];
+	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	[request setCompletionBlock:^{
+		// Use when fetching binary data
+		NSData *responseData = [request responseData];
+		
+		NSArray *parsed = [self parseProvinces:[SMXMLDocument documentWithData:responseData error:nil]];
+		
+		completion(parsed, nil);
+	}];
+	[request setFailedBlock:^{
+		NSError *error = [request error];
+		
+		completion(nil, error);
+	}];
+	[request startAsynchronous];
 }
 
-- (NSArray *)citiesInProvince:(NSString *)province {
+- (NSArray *)citiesInProvince:(NSString *)province withCompletion:(void(^)(NSArray *array, NSError *error))completion {
+	NSLog(@"Cities in province");
 	
+	NSURL *url = [NSURL URLWithString:CitiesURL];
+
+	__block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+	[request setPostValue:province forKey:@"province"];
+	
+	[request setCompletionBlock:^{
+		NSData *responseData = [request responseData];
+		
+		
+	}];
+	
+	[request setFailedBlock:^{
+		NSError *error = [request error];
+		completion(nil, error);
+	}];
 	
 	return nil;
 }
