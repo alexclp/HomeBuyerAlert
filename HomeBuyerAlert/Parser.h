@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class SMXMLDocument;
+
 @interface Parser : NSObject
 
 + (Parser *)parser;
+
+- (NSArray *)parseProvinces:(SMXMLDocument *)document;
+- (NSArray *)parseCities:(SMXMLDocument *)document;
 
 @end
