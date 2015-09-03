@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HomeBuyerAlert-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HomeBuyerAlert-SMXMLDocument.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2470158CEE9432BCA27DD399</key>
+		<key>02780232EB6F29C990ABFA66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2ADB34E76E123876BB6BE131</key>
+		<key>0E8BB785D550B2A6DBFBF602</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9181CBA293E6A8E674A05C41</key>
+		<key>833CB5B130F4E9444925BFE1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96EF4DA97EFFCA6D4903D307</key>
+		<key>85A48B6640A41A43D050B380</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EE8EE5F7312A579141BBE8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

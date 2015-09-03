@@ -50,10 +50,12 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'ActionSheetPicker_3_0.framework'
+  install_framework 'MBProgressHUD.framework'
   install_framework 'SMXMLDocument.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'ActionSheetPicker_3_0.framework'
+  install_framework 'MBProgressHUD.framework'
   install_framework 'SMXMLDocument.framework'
 fi
