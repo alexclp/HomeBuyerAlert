@@ -75,11 +75,58 @@
 }
 
 - (IBAction)city2TouchDown:(UITextField *)textField; {
-	
+	[ActionSheetStringPicker showPickerWithTitle:@"Select a city"
+											rows:self.cities
+								initialSelection:0
+									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+										   self.city2TextField.text = [self.cities objectAtIndex:selectedIndex];
+										   
+									   }
+									 cancelBlock:^(ActionSheetStringPicker *picker) {
+										 NSLog(@"Block Picker Canceled");
+									 }
+										  origin:self.view];
 }
 
 - (IBAction)city3TouchDown:(UITextField *)textField {
+	[ActionSheetStringPicker showPickerWithTitle:@"Select a city"
+											rows:self.cities
+								initialSelection:0
+									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+										   self.city3TextField.text = [self.cities objectAtIndex:selectedIndex];
+										   
+									   }
+									 cancelBlock:^(ActionSheetStringPicker *picker) {
+										 NSLog(@"Block Picker Canceled");
+									 }
+										  origin:self.view];
+}
+
+- (IBAction)priceRangeTouchDown:(UITextField *)textField {
+	NSArray *data = @[@"Plus or minus 25,000",
+					  @"Plus or minus 50,000",
+					  @"Plus or minus 100,000",
+					  @"Plus or minus 250,000"];
 	
+	[ActionSheetStringPicker showPickerWithTitle:@"Select the price range"
+											rows:data
+								initialSelection:0
+									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+										   self.priceRangeTextField.text = [self.cities objectAtIndex:selectedIndex];
+										   
+									   }
+									 cancelBlock:^(ActionSheetStringPicker *picker) {
+										 NSLog(@"Block Picker Canceled");
+									 }
+										  origin:self.view];
+}
+
+- (IBAction)sliderValueChanged:(UISlider *)slider {
+	
+	NSNumber *value = [NSNumber numberWithFloat:self.slider.value];
+	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
+	
+	self.priceLabel.text = modelNumberString;
 }
 
 #pragma mark UITextField Delegate
@@ -100,7 +147,6 @@
 			
 		} else {
 			self.cities = [NSArray arrayWithArray:array];
-			NSLog(@"cities = %@", self.cities);
 			
 			[self.activityView stopAnimating];
 		}

@@ -15,9 +15,16 @@
 @property (nonatomic, weak) IBOutlet UITextField *city2TextField;
 @property (nonatomic, weak) IBOutlet UITextField *city3TextField;
 
+@property (nonatomic, weak) IBOutlet UITextField *priceRangeTextField;
+
+@property (nonatomic, weak) IBOutlet UISlider *slider;
+@property (nonatomic, weak) IBOutlet UILabel *priceLabel;
+
 - (IBAction)provinceTouchDown:(UITextField *)textField;
 - (IBAction)city1TouchDown:(UITextField *)textField;
 - (IBAction)city2TouchDown:(UITextField *)textField;
 - (IBAction)city3TouchDown:(UITextField *)textField;
+- (IBAction)priceRangeTouchDown:(UITextField *)textField;
+- (IBAction)sliderValueChanged:(UISlider *)slider;
 
 @end
