@@ -62,8 +62,6 @@ static Networking *networking;
 	
 	[request setCompletionBlock:^{
 		NSData *responseData = [request responseData];
-		NSString *responseString = [request responseString];
-		NSLog(@"Response string = %@", responseString);
 		SMXMLDocument *document = [SMXMLDocument documentWithData:responseData error:nil];
 		NSArray *parsed = [[Parser parser] parseCities:document];
 		completion(parsed, nil);

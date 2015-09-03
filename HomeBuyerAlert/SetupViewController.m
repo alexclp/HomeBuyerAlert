@@ -9,13 +9,12 @@
 #import "SetupViewController.h"
 #import "Networking.h"
 #import "ActionSheetStringPicker.h"
+#import "MBProgressHUD.h"
 
 @interface SetupViewController ()
 
 @property (nonatomic, strong) NSArray *provinces;
 @property (nonatomic, strong) NSArray *cities;
-
-@property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
 @end
 
@@ -26,16 +25,14 @@
 	
 	NSLog(@"Setup Controller");
 	
-	self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	[self.view addSubview:self.activityView];
-	[self.activityView startAnimating];
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] activeProvincesWithCompletion:^(NSArray *array, NSError *error) {
 		if (error) {
 			
 		} else {
 			self.provinces = [NSArray arrayWithArray:array];
-			[self.activityView stopAnimating];
+			[MBProgressHUD hideHUDForView:self.view animated:YES];
 		}
 	}];
 	
@@ -140,15 +137,14 @@
 - (void)loadCities {
 	NSString *province = self.provinceTextField.text;
 	
-	[self.activityView startAnimating];
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] citiesInProvince:province withCompletion:^(NSArray *array, NSError *error) {
 		if (error) {
 			
 		} else {
 			self.cities = [NSArray arrayWithArray:array];
-			
-			[self.activityView stopAnimating];
+			[MBProgressHUD hideHUDForView:self.view animated:YES];
 		}
 	}];
 }
