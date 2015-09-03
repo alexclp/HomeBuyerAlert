@@ -286,10 +286,10 @@ Enjoy …</string>
             </objects>
             <point key="canvasLocation" x="18.5" y="327.5"/>
         </scene>
-        <!--List View-->
+        <!--Add House-->
         <scene sceneID="jeY-do-4pf">
             <objects>
-                <viewController title="List View" id="Tzq-nC-LVK" sceneMemberID="viewController">
+                <viewController title="Add House" id="Tzq-nC-LVK" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZB-Gc-pTi"/>
                         <viewControllerLayoutGuide type="bottom" id="8vs-90-Jd0"/>
@@ -299,7 +299,7 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ear-XA-UEk"/>
+                    <tabBarItem key="tabBarItem" title="Add House" id="ear-XA-UEk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jv-lv-yVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,16 +318,16 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Xij-JE-iDx"/>
+                    <tabBarItem key="tabBarItem" title="Map View" id="Xij-JE-iDx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdS-db-Wwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1404.5" y="54.5"/>
         </scene>
-        <!--Add House-->
+        <!--List View-->
         <scene sceneID="20F-tI-lOU">
             <objects>
-                <viewController title="Add House" id="sOF-VR-thm" sceneMemberID="viewController">
+                <viewController title="List View" id="sOF-VR-thm" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ks-jX-kwX"/>
                         <viewControllerLayoutGuide type="bottom" id="Ssh-HI-kFZ"/>
@@ -337,7 +337,7 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ccm-fx-l9w"/>
+                    <tabBarItem key="tabBarItem" title="List View" id="ccm-fx-l9w"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bX-g1-qAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
