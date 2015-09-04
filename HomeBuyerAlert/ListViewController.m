@@ -7,11 +7,16 @@
 //
 
 #import "ListViewController.h"
+#import "Networking.h"
 
 @implementation ListViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {
+		
+	}];
 }
 
 @end

@@ -234,8 +234,8 @@
 				   @"city1":	city1,
 				   @"city2":	city2,
 				   @"city3":	city3,
-				   @"maxprice": [NSNumber numberWithInt:maxPrice],
-				   @"minprice": [NSNumber numberWithInt:minPrice]};
+				   @"maxprice": [NSString stringWithFormat:@"%d", maxPrice],
+				   @"minprice": [NSString stringWithFormat:@"%d", minPrice]};
 	}
 	
 	return params;

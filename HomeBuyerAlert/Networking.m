@@ -80,9 +80,36 @@ static Networking *networking;
 }
 
 - (void)properties:(NSDictionary *)params withCompletion:(void(^)(NSArray *array, NSError *))completion {
+	NSLog(@"Properties");
 	
+	NSString *province = [params objectForKey:@"province"];
+	NSString *city1 = [params objectForKey:@"city1"];
+	NSString *city2 = [params objectForKey:@"city2"];
+	NSString *city3 = [params objectForKey:@"city3"];
+	NSString *minPrice = [params objectForKey:@"minprice"];
+	NSString *maxPrice = [params objectForKey:@"maxprice"];
 	
-
+	NSString *urlString = [ResultsURL stringByAppendingString:[NSString stringWithFormat:@"?prov=%@&city1=%@&city2=%@&city3=%@&minPrice=%@&maxPrice=%@", province, city1, city2, city3, minPrice, maxPrice]];
+	urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	
+	NSLog(@"URL String: %@", urlString);
+	
+	NSURL *url = [NSURL URLWithString:urlString];
+	
+	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	
+	[request setCompletionBlock:^{
+		NSString *responseString = [request responseString];
+		NSLog(@"Response string: %@", responseString);
+		
+	}];
+	
+	[request setFailedBlock:^{
+		NSError *error = [request error];
+		NSLog(@"Error: %@", error.description);
+	}];
+	
+	[request startAsynchronous];
 }
 
 @end
