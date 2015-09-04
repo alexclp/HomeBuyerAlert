@@ -170,10 +170,9 @@
 				0F2E28991B9506E30018573B /* AppDelegate.h */,
 				0F2E289A1B9506E30018573B /* AppDelegate.m */,
 				0F2E28BF1B95F7B50018573B /* Model */,
-				0F2E28BE1B95F7AD0018573B /* Controllers */,
-				0F2E289F1B9506E30018573B /* Main.storyboard */,
+				0F2E28BE1B95F7AD0018573B /* Controller */,
+				0FBB09E41B98F76A00505844 /* View */,
 				0F2E28A21B9506E30018573B /* Images.xcassets */,
-				0F2E28A41B9506E30018573B /* LaunchScreen.xib */,
 				0F2E28951B9506E30018573B /* Supporting Files */,
 			);
 			path = HomeBuyerAlert;
@@ -214,7 +213,7 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		0F2E28BE1B95F7AD0018573B /* Controllers */ = {
+		0F2E28BE1B95F7AD0018573B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				0F2E289C1B9506E30018573B /* WelcomeViewController.h */,
@@ -230,7 +229,7 @@
 				0FBB09E11B98F74400505844 /* AddHomeViewController.h */,
 				0FBB09E21B98F74400505844 /* AddHomeViewController.m */,
 			);
-			name = Controllers;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		0F2E28BF1B95F7B50018573B /* Model */ = {
@@ -283,6 +282,15 @@
 				0F88A5B31B974F050014AF20 /* Reachability.m */,
 			);
 			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		0FBB09E41B98F76A00505844 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0F2E289F1B9506E30018573B /* Main.storyboard */,
+				0F2E28A41B9506E30018573B /* LaunchScreen.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		D8804546CEB06443656779B1 /* Frameworks */ = {

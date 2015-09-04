@@ -27,4 +27,6 @@
 - (IBAction)priceRangeTouchDown:(UITextField *)textField;
 - (IBAction)sliderValueChanged:(UISlider *)slider;
 
+- (IBAction)saveButtonPressed:(UIButton *)button;
+
 @end

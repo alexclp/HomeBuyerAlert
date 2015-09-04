@@ -191,7 +191,7 @@ Enjoy …</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TlF-Vm-stK" kind="show" id="aBm-rU-FIp"/>
+                                    <action selector="saveButtonPressed:" destination="HRg-XJ-aKq" eventType="touchUpInside" id="ngn-yS-HLx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3M" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZ2-EQ-8CJ">
@@ -273,6 +273,7 @@ Enjoy …</string>
                         <outlet property="priceRangeTextField" destination="FeG-sh-eIf" id="PnG-Gr-NX6"/>
                         <outlet property="provinceTextField" destination="FNn-rX-YZC" id="eJp-79-2Mv"/>
                         <outlet property="slider" destination="C4x-zY-ZQt" id="0ju-bm-zqM"/>
+                        <segue destination="TlF-Vm-stK" kind="show" identifier="listSegue" id="34i-Wz-WrE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNT-kC-A56" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,7 +285,7 @@ Enjoy …</string>
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="18.5" y="327.5"/>
+            <point key="canvasLocation" x="-45.5" y="354.5"/>
         </scene>
         <!--Add House-->
         <scene sceneID="jeY-do-4pf">

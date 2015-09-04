@@ -10,11 +10,14 @@
 #import "Networking.h"
 #import "ActionSheetStringPicker.h"
 #import "MBProgressHUD.h"
+#import "ListViewController.h"
 
 @interface SetupViewController ()
 
 @property (nonatomic, strong) NSArray *provinces;
 @property (nonatomic, strong) NSArray *cities;
+
+@property (nonatomic, assign) NSNumber *priceAboveIndex;
 
 @end
 
@@ -110,6 +113,7 @@
 								initialSelection:0
 									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
 										   self.priceRangeTextField.text = [data objectAtIndex:selectedIndex];
+										   self.priceAboveIndex = [NSNumber numberWithInteger:selectedIndex];
 										   
 									   }
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
@@ -126,6 +130,17 @@
 	self.priceLabel.text = modelNumberString;
 }
 
+- (IBAction)saveButtonPressed:(UIButton *)button {
+	ListViewController *vc = [[ListViewController alloc] init];
+	
+	NSDictionary *params = [self buildParams];
+	
+	if (params) {
+		vc.requestParams = [NSDictionary dictionaryWithDictionary:params];
+		[self performSegueWithIdentifier:@"listSegue" sender:self];
+	}
+}
+
 #pragma mark UITextField Delegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
@@ -133,6 +148,84 @@
 }
 
 #pragma mark Data
+
+- (NSDictionary *)buildParams {
+	NSDictionary *params = [NSDictionary dictionary];
+	
+	if ([self.provinceTextField.text isEqualToString:@""] ||
+		[self.city1TextField.text isEqualToString:@""] ||
+		[self.priceLabel.text isEqualToString:@""] ||
+		[self.priceRangeTextField.text isEqualToString:@""]) {
+		
+		UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please complete all mandatory fields!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[error show];
+		
+		return nil;
+	} else {
+		NSString *province = self.provinceTextField.text;
+		NSString *city1 = self.city1TextField.text;
+		
+		NSString *city2 = nil;
+		NSString *city3 = nil;
+		
+		if (![self.city2TextField.text isEqualToString:@""]) {
+			city2 = self.city2TextField.text;
+		}
+		
+		if (![self.city3TextField.text isEqualToString:@""]) {
+			city3 = self.city3TextField.text;
+		}
+		
+		NSString *basePrice = self.priceLabel.text;
+		
+		int maxPrice;
+		int minPrice;
+		int base = basePrice.intValue;
+		
+		switch (self.priceAboveIndex.intValue) {
+			case 0: {
+				maxPrice = base + 25000;
+				minPrice = base - 25000;
+				
+				break;
+			}
+				
+			case 1: {
+				maxPrice = base + 50000;
+				minPrice = base - 50000;
+
+				break;
+			}
+				
+			case 2: {
+				maxPrice = base + 100000;
+				minPrice = base - 100000;
+				
+				break;
+			}
+				
+			case 3: {
+				maxPrice = base + 250000;
+				minPrice = base - 250000;
+				
+				break;
+			}
+				
+			default: {
+				break;
+			}
+		}
+		
+		params = @{@"province": province,
+				   @"city1":	city1,
+				   @"city2":	city2,
+				   @"city3":	city3,
+				   @"maxprice": [NSNumber numberWithInt:maxPrice],
+				   @"minprice": [NSNumber numberWithInt:minPrice]};
+	}
+	
+	return params;
+}
 
 - (void)loadCities {
 	NSString *province = self.provinceTextField.text;
