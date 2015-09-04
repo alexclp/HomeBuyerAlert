@@ -12,8 +12,6 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	NSLog(@"Params = %@", self.requestParams);
 }
 
 @end

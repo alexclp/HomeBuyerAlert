@@ -79,33 +79,10 @@ static Networking *networking;
 	[request startAsynchronous];
 }
 
-- (NSArray *)propertiesInProvince:(NSString *)province city1:(NSString *)city1 city2:(NSString *)city2 city3:(NSString *)city3 minPrice:(NSString *)min maxPrice:(NSString *)max {
+- (void)properties:(NSDictionary *)params withCompletion:(void(^)(NSArray *array, NSError *))completion {
 	
 	
-	return nil;
-}
 
-#pragma mark NSXMLParser Delegate Methods
-
-- (void)parserDidStartDocument:(NSXMLParser *)parser {
-	
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-	
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-	
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	
-
-}
-
-- (void)parserDidEndDocument:(NSXMLParser *)parser {
-	
 }
 
 @end
