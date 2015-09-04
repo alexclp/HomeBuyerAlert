@@ -273,7 +273,7 @@ Enjoy …</string>
                         <outlet property="priceRangeTextField" destination="FeG-sh-eIf" id="PnG-Gr-NX6"/>
                         <outlet property="provinceTextField" destination="FNn-rX-YZC" id="eJp-79-2Mv"/>
                         <outlet property="slider" destination="C4x-zY-ZQt" id="0ju-bm-zqM"/>
-                        <segue destination="TlF-Vm-stK" kind="show" identifier="listSegue" id="34i-Wz-WrE"/>
+                        <segue destination="TlF-Vm-stK" kind="show" identifier="listSegue" id="05G-Q9-H8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNT-kC-A56" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,7 +285,7 @@ Enjoy …</string>
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="-45.5" y="354.5"/>
+            <point key="canvasLocation" x="-53.5" y="348.5"/>
         </scene>
         <!--Add House-->
         <scene sceneID="jeY-do-4pf">
@@ -304,7 +304,7 @@ Enjoy …</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jv-lv-yVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404.5" y="830.5"/>
+            <point key="canvasLocation" x="1338" y="824"/>
         </scene>
         <!--Map View-->
         <scene sceneID="X3w-Mp-reh">

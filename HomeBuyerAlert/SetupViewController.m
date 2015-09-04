@@ -131,13 +131,19 @@
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)button {
-	ListViewController *vc = [[ListViewController alloc] init];
 	
-	NSDictionary *params = [self buildParams];
-	
-	if (params) {
-		vc.requestParams = [NSDictionary dictionaryWithDictionary:params];
+	if ([self completedData]) {
+		NSLog(@"Hello");
 		[self performSegueWithIdentifier:@"listSegue" sender:self];
+	}
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"listSegue"]) {
+		UITabBarController *tabbar = segue.destinationViewController;
+		ListViewController *listVC = [tabbar.viewControllers objectAtIndex:0];
+		
+		listVC.requestParams = [NSDictionary dictionaryWithDictionary:[self buildParams]];
 	}
 }
 
@@ -149,13 +155,21 @@
 
 #pragma mark Data
 
-- (NSDictionary *)buildParams {
-	NSDictionary *params = [NSDictionary dictionary];
-	
+- (BOOL)completedData {
 	if ([self.provinceTextField.text isEqualToString:@""] ||
 		[self.city1TextField.text isEqualToString:@""] ||
 		[self.priceLabel.text isEqualToString:@""] ||
 		[self.priceRangeTextField.text isEqualToString:@""]) {
+		return NO;
+	}
+	
+	return YES;
+}
+
+- (NSDictionary *)buildParams {
+	NSDictionary *params = [NSDictionary dictionary];
+	
+	if (![self completedData]) {
 		
 		UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please complete all mandatory fields!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[error show];
