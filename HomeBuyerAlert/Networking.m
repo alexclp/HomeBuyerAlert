@@ -56,9 +56,13 @@ static Networking *networking;
 	NSLog(@"Cities in province");
 	
 	NSString *urlString = [CitiesURL stringByAppendingString:[NSString stringWithFormat:@"?province=%@", province]];
+	urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	
 	NSURL *url = [NSURL URLWithString:urlString];
+	
 
 	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	
 	
 	[request setCompletionBlock:^{
 		NSData *responseData = [request responseData];

@@ -165,8 +165,8 @@
 		NSString *province = self.provinceTextField.text;
 		NSString *city1 = self.city1TextField.text;
 		
-		NSString *city2 = nil;
-		NSString *city3 = nil;
+		NSString *city2 = @"";
+		NSString *city3 = @"";
 		
 		if (![self.city2TextField.text isEqualToString:@""]) {
 			city2 = self.city2TextField.text;
