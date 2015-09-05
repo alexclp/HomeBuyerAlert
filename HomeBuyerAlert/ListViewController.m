@@ -10,6 +10,7 @@
 #import "Networking.h"
 #import "Property.h"
 #import "ListViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ListViewController ()
 
@@ -48,6 +49,8 @@
 	cell.title.text = current.title;
 	cell.details.text = current.details;
 	cell.price.text = current.price;
+	
+	[cell.image sd_setImageWithURL:[NSURL URLWithString:current.imageURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
 	
 	return cell;
 
