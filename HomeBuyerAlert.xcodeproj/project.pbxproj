@@ -39,6 +39,7 @@
 		0FBB09DD1B98F72B00505844 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB09DC1B98F72B00505844 /* DetailsViewController.m */; };
 		0FBB09E01B98F73700505844 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB09DF1B98F73700505844 /* MapViewController.m */; };
 		0FBB09E31B98F74400505844 /* AddHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB09E21B98F74400505844 /* AddHomeViewController.m */; };
+		0FBB09E61B9B35E900505844 /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09E51B9B35E900505844 /* ListViewCell.xib */; };
 		ED47ECFF89E264F966B40DCF /* Pods_HomeBuyerAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		0FBB09DF1B98F73700505844 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		0FBB09E11B98F74400505844 /* AddHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHomeViewController.h; sourceTree = "<group>"; };
 		0FBB09E21B98F74400505844 /* AddHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHomeViewController.m; sourceTree = "<group>"; };
+		0FBB09E51B9B35E900505844 /* ListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
 		17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeBuyerAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.release.xcconfig"; sourceTree = "<group>"; };
 		76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.debug.xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		0FBB09E41B98F76A00505844 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0FBB09E51B9B35E900505844 /* ListViewCell.xib */,
 				0F2E289F1B9506E30018573B /* Main.storyboard */,
 				0F2E28A41B9506E30018573B /* LaunchScreen.xib */,
 			);
@@ -400,6 +403,7 @@
 			files = (
 				0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */,
 				0F2E28A11B9506E30018573B /* Main.storyboard in Resources */,
+				0FBB09E61B9B35E900505844 /* ListViewCell.xib in Resources */,
 				0F88A5C11B97A1B20014AF20 /* very-basic-settings-icon.png in Resources */,
 				0F2E28A61B9506E30018573B /* LaunchScreen.xib in Resources */,
 				0F2E28A31B9506E30018573B /* Images.xcassets in Resources */,

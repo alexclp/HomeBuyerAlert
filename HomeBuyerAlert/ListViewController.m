@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 #import "Networking.h"
+#import "Property.h"
 
 @interface ListViewController ()
 
@@ -21,8 +22,7 @@
 	[super viewDidLoad];
 	
 	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {
-		
-		
+		self.properties = [NSArray arrayWithArray:array];
 		
 	}];
 }
