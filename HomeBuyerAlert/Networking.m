@@ -101,13 +101,14 @@ static Networking *networking;
 	[request setCompletionBlock:^{
 		NSData *responseData = [request responseData];
 		
-		NSArray *temp = [[Parser parser] parseProperties:[SMXMLDocument documentWithData:responseData error:nil]];
-		
+		NSArray *props = [[Parser parser] parseProperties:[SMXMLDocument documentWithData:responseData error:nil]];
+		completion(props, nil);
 	}];
 	
 	[request setFailedBlock:^{
 		NSError *error = [request error];
 		NSLog(@"Error: %@", error.description);
+		completion(nil, error);
 	}];
 	
 	[request startAsynchronous];

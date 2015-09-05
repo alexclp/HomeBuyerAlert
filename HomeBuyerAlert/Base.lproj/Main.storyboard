@@ -336,13 +336,22 @@ Enjoy …</string>
                     <view key="view" contentMode="scaleToFill" id="Jwh-XV-prr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-Gy-mVs">
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" id="ccm-fx-l9w"/>
+                    <connections>
+                        <outlet property="tableView" destination="Y3x-Gy-mVs" id="D9w-p9-txc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bX-g1-qAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="-725"/>
+            <point key="canvasLocation" x="1396.5" y="-725.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rME-v3-FcK">

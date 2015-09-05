@@ -9,12 +9,20 @@
 #import "ListViewController.h"
 #import "Networking.h"
 
+@interface ListViewController ()
+
+@property (nonatomic, strong) NSArray *properties;
+
+@end
+
 @implementation ListViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {
+		
+		
 		
 	}];
 }

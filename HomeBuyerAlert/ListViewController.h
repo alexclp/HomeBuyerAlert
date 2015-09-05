@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSDictionary *requestParams;
 
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
 @end
