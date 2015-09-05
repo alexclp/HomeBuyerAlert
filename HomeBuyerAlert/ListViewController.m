@@ -44,6 +44,12 @@
 	
 	// Set properties here
 	
+	Property *current = [self.properties objectAtIndex:indexPath.row];
+	
+	cell.title.text = current.title;
+	cell.details.text = current.details;
+	cell.price.text = current.price;
+	
 	return cell;
 }
 
