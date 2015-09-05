@@ -25,8 +25,6 @@
 	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {
 		self.properties = [NSArray arrayWithArray:array];
 		
-		NSLog(@"Properties: %@", self.properties);
-		
 		[self.tableView reloadData];
 		
 	}];
