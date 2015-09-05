@@ -190,7 +190,7 @@
 			city3 = self.city3TextField.text;
 		}
 		
-		NSString *basePrice = self.priceLabel.text;
+		NSNumber *basePrice = [NSNumber numberWithFloat:self.slider.value];
 		
 		int maxPrice;
 		int minPrice;
