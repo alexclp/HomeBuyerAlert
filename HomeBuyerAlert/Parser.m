@@ -59,11 +59,19 @@ static Parser *parser;
 	for (SMXMLElement *item in items) {
 		Property *current = [[Property alloc] init];
 		
+		NSLog(@"Description: %@", [[item childNamed:@"description"] value]);
+		
+		NSString *photoURLRaw = [[item childNamed:@"description"] value];
+		photoURLRaw = [[photoURLRaw componentsSeparatedByString:@"src='"] lastObject];
+		photoURLRaw = [[photoURLRaw componentsSeparatedByString:@".JPG"] firstObject];
+		NSString *photoURL = [photoURLRaw stringByAppendingString:@".JPG"];
+		
 		current.title = [[item childNamed:@"title"] value];
 		current.details = [[item childNamed:@"details"] value];
 		current.price = [[item childNamed:@"price"] value];
 		current.code = [[item childNamed:@"ref"] value];
 		current.date = [[item childNamed:@"date"] value];
+		current.imageURL = photoURL;
 		
 		[toReturn addObject:current];
 	}
