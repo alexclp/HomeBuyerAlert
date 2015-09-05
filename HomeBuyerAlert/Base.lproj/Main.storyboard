@@ -300,7 +300,7 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add House" id="ear-XA-UEk"/>
+                    <tabBarItem key="tabBarItem" title="Add House" image="home_automation-25.png" id="ear-XA-UEk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jv-lv-yVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -319,7 +319,7 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map View" id="Xij-JE-iDx"/>
+                    <tabBarItem key="tabBarItem" title="Map View" image="map-25.png" id="Xij-JE-iDx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdS-db-Wwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,7 +348,7 @@ Enjoy …</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List View" id="ccm-fx-l9w"/>
+                    <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="ccm-fx-l9w"/>
                     <connections>
                         <outlet property="tableView" destination="Y3x-Gy-mVs" id="D9w-p9-txc"/>
                     </connections>
@@ -396,6 +396,9 @@ Enjoy …</string>
     </scenes>
     <resources>
         <image name="home-buyer-alert-logo.png" width="1500" height="286"/>
+        <image name="home_automation-25.png" width="25" height="25"/>
+        <image name="list_filled-25.png" width="25" height="25"/>
+        <image name="map-25.png" width="25" height="25"/>
         <image name="very-basic-settings-icon.png" width="512" height="512"/>
     </resources>
 </document>

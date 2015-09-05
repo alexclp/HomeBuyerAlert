@@ -42,6 +42,9 @@
 		0FBB09E61B9B35E900505844 /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09E51B9B35E900505844 /* ListViewCell.xib */; };
 		0FBB09E91B9B388E00505844 /* ListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB09E81B9B388E00505844 /* ListViewCell.m */; };
 		0FBB09EB1B9B677200505844 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09EA1B9B677200505844 /* placeholder.png */; };
+		0FBB09ED1B9B7FB500505844 /* list_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09EC1B9B7FB500505844 /* list_filled-25.png */; };
+		0FBB09EF1B9B7FED00505844 /* map-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09EE1B9B7FED00505844 /* map-25.png */; };
+		0FBB09F11B9B800E00505844 /* home_automation-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09F01B9B800E00505844 /* home_automation-25.png */; };
 		ED47ECFF89E264F966B40DCF /* Pods_HomeBuyerAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -120,6 +123,9 @@
 		0FBB09E71B9B388E00505844 /* ListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewCell.h; sourceTree = "<group>"; };
 		0FBB09E81B9B388E00505844 /* ListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewCell.m; sourceTree = "<group>"; };
 		0FBB09EA1B9B677200505844 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		0FBB09EC1B9B7FB500505844 /* list_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_filled-25.png"; sourceTree = "<group>"; };
+		0FBB09EE1B9B7FED00505844 /* map-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-25.png"; sourceTree = "<group>"; };
+		0FBB09F01B9B800E00505844 /* home_automation-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_automation-25.png"; sourceTree = "<group>"; };
 		17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeBuyerAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.release.xcconfig"; sourceTree = "<group>"; };
 		76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +223,9 @@
 				0FBB09EA1B9B677200505844 /* placeholder.png */,
 				0F88A5C01B97A1B20014AF20 /* very-basic-settings-icon.png */,
 				0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */,
+				0FBB09EC1B9B7FB500505844 /* list_filled-25.png */,
+				0FBB09EE1B9B7FED00505844 /* map-25.png */,
+				0FBB09F01B9B800E00505844 /* home_automation-25.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -412,7 +421,10 @@
 				0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */,
 				0F2E28A11B9506E30018573B /* Main.storyboard in Resources */,
 				0FBB09E61B9B35E900505844 /* ListViewCell.xib in Resources */,
+				0FBB09EF1B9B7FED00505844 /* map-25.png in Resources */,
 				0F88A5C11B97A1B20014AF20 /* very-basic-settings-icon.png in Resources */,
+				0FBB09ED1B9B7FB500505844 /* list_filled-25.png in Resources */,
+				0FBB09F11B9B800E00505844 /* home_automation-25.png in Resources */,
 				0FBB09EB1B9B677200505844 /* placeholder.png in Resources */,
 				0F2E28A61B9506E30018573B /* LaunchScreen.xib in Resources */,
 				0F2E28A31B9506E30018573B /* Images.xcassets in Resources */,
