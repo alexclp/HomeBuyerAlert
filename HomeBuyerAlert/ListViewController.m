@@ -25,6 +25,8 @@
 	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {
 		self.properties = [NSArray arrayWithArray:array];
 		
+		NSLog(@"Properties: %@", self.properties);
+		
 		[self.tableView reloadData];
 		
 	}];
@@ -36,8 +38,7 @@
 	static NSString *simpleTableIdentifier = @"ListViewCell";
 	
 	ListViewCell *cell = (ListViewCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-	if (cell == nil)
-	{
+	if (cell == nil) {
 		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ListViewCell" owner:self options:nil];
 		cell = [nib objectAtIndex:0];
 	}
