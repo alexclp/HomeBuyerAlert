@@ -10,4 +10,11 @@
 
 @interface Property : NSObject
 
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *code;
+@property (nonatomic, strong) NSString *price;
+@property (nonatomic, strong) NSString *details;
+@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSString *date;
+
 @end

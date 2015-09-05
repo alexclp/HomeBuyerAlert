@@ -92,15 +92,16 @@ static Networking *networking;
 	NSString *urlString = [ResultsURL stringByAppendingString:[NSString stringWithFormat:@"?prov=%@&city1=%@&city2=%@&city3=%@&minPrice=%@&maxPrice=%@", province, city1, city2, city3, minPrice, maxPrice]];
 	urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
-	NSLog(@"URL String: %@", urlString);
+//	NSLog(@"URL String: %@", urlString);
 	
-	NSURL *url = [NSURL URLWithString:urlString];
+	NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/property-custom-new.php?prov=Alberta&city1=Bentley&city2=&city3=&minPrice=116115&maxPrice=166115"];
 	
 	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	
 	[request setCompletionBlock:^{
-		NSString *responseString = [request responseString];
-		NSLog(@"Response string: %@", responseString);
+		NSData *responseData = [request responseData];
+		
+		NSArray *temp = [[Parser parser] parseProperties:[SMXMLDocument documentWithData:responseData error:nil]];
 		
 	}];
 	

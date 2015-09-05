@@ -16,5 +16,6 @@
 
 - (NSArray *)parseProvinces:(SMXMLDocument *)document;
 - (NSArray *)parseCities:(SMXMLDocument *)document;
+- (NSArray *)parseProperties:(SMXMLDocument *)document;
 
 @end

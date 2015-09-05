@@ -8,6 +8,7 @@
 
 #import "Parser.h"
 #import "SMXMLDocument.h"
+#import "Property.h"
 
 @implementation Parser
 
@@ -44,6 +45,27 @@ static Parser *parser;
 		NSString *value = [city value];
 		
 		[toReturn addObject:value];
+	}
+	
+	return toReturn.copy;
+}
+
+- (NSArray *)parseProperties:(SMXMLDocument *)document {
+	NSMutableArray *toReturn = [NSMutableArray array];
+	
+	SMXMLElement *root = [document childNamed:@"channel"];
+	NSArray *items = [root childrenNamed:@"item"];
+	
+	for (SMXMLElement *item in items) {
+		Property *current = [[Property alloc] init];
+		
+		current.title = [[item childNamed:@"title"] value];
+		current.details = [[item childNamed:@"details"] value];
+		current.price = [[item childNamed:@"price"] value];
+		current.code = [[item childNamed:@"ref"] value];
+		current.date = [[item childNamed:@"date"] value];
+		
+		[toReturn addObject:current];
 	}
 	
 	return toReturn.copy;
