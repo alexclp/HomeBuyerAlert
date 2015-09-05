@@ -32,8 +32,8 @@
 
 #pragma mark UITableView Data Source
 
-- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *simpleTableIdentifier = @"SimpleTableCell";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *simpleTableIdentifier = @"ListViewCell";
 	
 	ListViewCell *cell = (ListViewCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
 	if (cell == nil)
@@ -51,6 +51,7 @@
 	cell.price.text = current.price;
 	
 	return cell;
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
