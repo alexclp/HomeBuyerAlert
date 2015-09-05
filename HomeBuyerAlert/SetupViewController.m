@@ -133,7 +133,6 @@
 - (IBAction)saveButtonPressed:(UIButton *)button {
 	
 	if ([self completedData]) {
-		NSLog(@"Hello");
 		[self performSegueWithIdentifier:@"listSegue" sender:self];
 	}
 }

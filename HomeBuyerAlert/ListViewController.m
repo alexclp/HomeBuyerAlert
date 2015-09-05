@@ -48,9 +48,17 @@
 	
 	cell.title.text = current.title;
 	cell.details.text = current.details;
-	cell.price.text = current.price;
+	
+	float priceFloat = current.price.floatValue;
+	NSNumber *value = [NSNumber numberWithFloat:priceFloat];
+	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
+	
+	cell.price.text = modelNumberString;
+	cell.price.text = [cell.price.text stringByAppendingString:@"$"];
 	
 	[cell.image sd_setImageWithURL:[NSURL URLWithString:current.imageURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+	
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	return cell;
 
