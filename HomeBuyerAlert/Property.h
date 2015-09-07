@@ -16,5 +16,7 @@
 @property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *latitude;
+@property (nonatomic, strong) NSString *longitude;
 
 @end

@@ -317,9 +317,17 @@ Enjoy …</string>
                     <view key="view" contentMode="scaleToFill" id="63F-5r-h3u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="g08-Vo-oh2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map View" image="map-25.png" id="Xij-JE-iDx"/>
+                    <connections>
+                        <outlet property="mapView" destination="g08-Vo-oh2" id="4IU-Zt-Rio"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdS-db-Wwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

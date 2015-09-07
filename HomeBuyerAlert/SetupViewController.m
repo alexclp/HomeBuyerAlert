@@ -142,7 +142,11 @@
 		UITabBarController *tabbar = segue.destinationViewController;
 		ListViewController *listVC = [tabbar.viewControllers objectAtIndex:0];
 		
-		listVC.requestParams = [NSDictionary dictionaryWithDictionary:[self buildParams]];
+		NSDictionary *params = [self buildParams];
+		[[NSUserDefaults standardUserDefaults] setObject:params forKey:@"prefs"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+		
+		listVC.requestParams = [NSDictionary dictionaryWithDictionary:params];
 	}
 }
 
