@@ -57,9 +57,12 @@
 		coord.latitude = [[location objectForKey:@"latitude"] doubleValue];
 		coord.longitude = [[location objectForKey:@"longitude"] doubleValue];
 		
-		
+		s
 	}
 	
 }
 */
+
+
+
 @end
