@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSArray *provinces;
 @property (nonatomic, strong) NSArray *cities;
+@property (nonatomic, strong) NSArray *priceOver;
 
 @property (nonatomic, assign) NSNumber *priceAboveIndex;
 
@@ -26,9 +27,41 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	NSLog(@"Setup Controller");
 	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	
+	self.priceOver = @[@"Plus or minus 25,000",
+					   @"Plus or minus 50,000",
+					   @"Plus or minus 100,000",
+					   @"Plus or minus 250,000"];
+	
+	// Check if settings already exist
+	
+	NSDictionary *settings = [[NSUserDefaults standardUserDefaults] objectForKey:@"prefs"];
+	
+	if (settings) {
+		self.provinceTextField.text = [settings objectForKey:@"province"];
+		self.city1TextField.text = [settings objectForKey:@"city1"];
+		
+		if (![[settings objectForKey:@"city2"] isEqualToString:@""]) {
+			self.city2TextField.text = [settings objectForKey:@"city2"];
+		}
+		
+		if (![[settings objectForKey:@"city3"] isEqualToString:@""]) {
+			self.city3TextField.text = [settings objectForKey:@"city3"];
+		}
+		
+		self.slider.value = [[settings objectForKey:@"base"] doubleValue];
+		
+		NSNumber *value = [NSNumber numberWithFloat:self.slider.value];
+		NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
+		self.priceLabel.text = [@"$" stringByAppendingString:modelNumberString];
+		
+		self.priceRangeTextField.text = [self.priceOver objectAtIndex:[[settings objectForKey:@"priceabove"] intValue]];
+		
+	}
+	
+	// Load provinces
 	
 	[[Networking networking] activeProvincesWithCompletion:^(NSArray *array, NSError *error) {
 		if (error) {
@@ -103,16 +136,11 @@
 }
 
 - (IBAction)priceRangeTouchDown:(UITextField *)textField {
-	NSArray *data = @[@"Plus or minus 25,000",
-					  @"Plus or minus 50,000",
-					  @"Plus or minus 100,000",
-					  @"Plus or minus 250,000"];
-	
 	[ActionSheetStringPicker showPickerWithTitle:@"Select the price range"
-											rows:data
+											rows:self.priceOver
 								initialSelection:0
 									   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-										   self.priceRangeTextField.text = [data objectAtIndex:selectedIndex];
+										   self.priceRangeTextField.text = [self.priceOver objectAtIndex:selectedIndex];
 										   self.priceAboveIndex = [NSNumber numberWithInteger:selectedIndex];
 										   
 									   }
@@ -199,10 +227,14 @@
 		int minPrice;
 		int base = basePrice.intValue;
 		
+		int priceAboveIndex = 0;
+		
 		switch (self.priceAboveIndex.intValue) {
 			case 0: {
 				maxPrice = base + 25000;
 				minPrice = base - 25000;
+				
+				priceAboveIndex = 0;
 				
 				break;
 			}
@@ -210,6 +242,8 @@
 			case 1: {
 				maxPrice = base + 50000;
 				minPrice = base - 50000;
+				
+				priceAboveIndex = 1;
 
 				break;
 			}
@@ -218,12 +252,16 @@
 				maxPrice = base + 100000;
 				minPrice = base - 100000;
 				
+				priceAboveIndex = 2;
+				
 				break;
 			}
 				
 			case 3: {
 				maxPrice = base + 250000;
 				minPrice = base - 250000;
+				
+				priceAboveIndex = 3;
 				
 				break;
 			}
@@ -238,7 +276,9 @@
 				   @"city2":	city2,
 				   @"city3":	city3,
 				   @"maxprice": [NSString stringWithFormat:@"%d", maxPrice],
-				   @"minprice": [NSString stringWithFormat:@"%d", minPrice]};
+				   @"minprice": [NSString stringWithFormat:@"%d", minPrice],
+				   @"base": [NSString stringWithFormat:@"%@", basePrice],
+				   @"priceabove": [NSString stringWithFormat:@"%d", priceAboveIndex]};
 	}
 	
 	return params;
