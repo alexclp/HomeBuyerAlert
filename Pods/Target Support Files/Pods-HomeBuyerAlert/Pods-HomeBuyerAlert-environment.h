@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_ActionSheetPicker_3_0 7
 #define COCOAPODS_VERSION_PATCH_ActionSheetPicker_3_0 2
 
+// DXCustomCallout-ObjC
+#define COCOAPODS_POD_AVAILABLE_DXCustomCallout_ObjC
+#define COCOAPODS_VERSION_MAJOR_DXCustomCallout_ObjC 0
+#define COCOAPODS_VERSION_MINOR_DXCustomCallout_ObjC 2
+#define COCOAPODS_VERSION_PATCH_DXCustomCallout_ObjC 0
+
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0

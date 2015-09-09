@@ -12,6 +12,7 @@ use_frameworks!
 pod 'ActionSheetPicker-3.0'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'SDWebImage'
+pod 'DXCustomCallout-ObjC'
 
 end
 

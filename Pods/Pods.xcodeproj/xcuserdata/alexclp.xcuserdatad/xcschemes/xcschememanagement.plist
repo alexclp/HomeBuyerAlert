@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HomeBuyerAlert-DXCustomCallout-ObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HomeBuyerAlert-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2A490331718C1805363D85A4</key>
+		<key>78AA8595D5A0CF4827F16046</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E9D66350C7B1B7E2713B98E</key>
+		<key>ADF2D2ECA5E7DBD7B4E2200E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D2BCE3457EF7F389106776F</key>
+		<key>BD92F376D56BCF1712DCE52F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F9C80F139390B403F46786D</key>
+		<key>C44207354B4FF54E1751885E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F09BEC16BA9ADE76B0772FFD</key>
+		<key>EFAD87EFDAFB354F7C0ACFC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA2D7458AF5C79B089D72BB6</key>
+		<key>F050F740CE12AB4BA0D80330</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F599C65BAF462CB4DDCFC14A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
