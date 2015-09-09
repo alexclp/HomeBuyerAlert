@@ -298,13 +298,32 @@ Enjoy …</string>
                     <view key="view" contentMode="scaleToFill" id="ypV-Rg-JTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUG-5C-elE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Advertising here is free!
+Our listing ad system is based online and you need  browser to use it until our app is ready.
+HOMEOWNERS CLICK HERE -&gt; http://free2list.ca
+AGENTS CLICK HERE -&gt; http://iListit.ca</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="leading" secondItem="ypV-Rg-JTM" secondAttribute="leading" id="FzD-D0-eZO"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="bottom" secondItem="8vs-90-Jd0" secondAttribute="top" id="Q3E-ZD-SOd"/>
+                            <constraint firstAttribute="trailing" secondItem="qUG-5C-elE" secondAttribute="trailing" id="ZhA-Jz-AwW"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="top" secondItem="tZB-Gc-pTi" secondAttribute="bottom" id="yyr-lA-uP3"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add House" image="home_automation-25.png" id="ear-XA-UEk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jv-lv-yVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338" y="824"/>
+            <point key="canvasLocation" x="1337.5" y="823.5"/>
         </scene>
         <!--Map View-->
         <scene sceneID="X3w-Mp-reh">

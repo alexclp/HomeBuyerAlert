@@ -317,13 +317,13 @@
 		0FBB09E41B98F76A00505844 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F2E289F1B9506E30018573B /* Main.storyboard */,
 				0FBB09E71B9B388E00505844 /* ListViewCell.h */,
 				0FBB09E81B9B388E00505844 /* ListViewCell.m */,
 				0FBB09F91BA061E400505844 /* AnnotationView.h */,
 				0FBB09FA1BA061E400505844 /* AnnotationView.m */,
 				0FBB09F51B9F3A3D00505844 /* AnnotationView.xib */,
 				0FBB09E51B9B35E900505844 /* ListViewCell.xib */,
-				0F2E289F1B9506E30018573B /* Main.storyboard */,
 				0F2E28A41B9506E30018573B /* LaunchScreen.xib */,
 			);
 			name = View;
