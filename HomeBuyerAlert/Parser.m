@@ -70,6 +70,8 @@ static Parser *parser;
 		current.code = [[item childNamed:@"ref"] value];
 		current.date = [[item childNamed:@"date"] value];
 		current.imageURL = photoURL;
+		current.latitude = [[item childNamed:@"latitude"] value];
+		current.longitude = [[item childNamed:@"longitude"] value];
 		
 		[toReturn addObject:current];
 	}

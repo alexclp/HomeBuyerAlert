@@ -10,6 +10,9 @@
 #import "Networking.h"
 #import "Property.h"
 #import "PropertyAnnotation.h"
+#import "AnnotationView.h"
+#import "DXAnnotationView.h"
+#import "DXAnnotationSettings.h"
 
 @interface MapViewController ()
 
@@ -22,15 +25,15 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	[self placeTestPin];
-	/*
-	NSDictionary *params = [[NSUserDefaults standardUserDefaults] objectForKey:@"prefs"];
 	
+	NSDictionary *params = [[NSUserDefaults standardUserDefaults] objectForKey:@"prefs"];
+
 	[[Networking networking] properties:params withCompletion:^(NSArray *array, NSError *error) {
 		
 		if (error) {
 			
 		} else {
+			NSLog(@"No error");
 			
 			NSMutableArray *temp = [NSMutableArray array];
 			
@@ -38,6 +41,10 @@
 				NSString *latitude = property.latitude;
 				NSString *longitude = property.longitude;
 				NSString *title = property.title;
+				
+				NSLog(@"Latitude = %@", latitude);
+				NSLog(@"Longitude = %@", longitude);
+				NSLog(@"Title = %@", title);
 				
 				[temp addObject:@{@"latitude": latitude, @"longitude": longitude, @"title": title}];
 			}
@@ -47,7 +54,7 @@
 			[self.mapView addAnnotations:[self configureAnnotations]];
 			
 		}
-	}];*/
+	}];
 }
 
 - (NSArray *)configureAnnotations {
@@ -69,60 +76,20 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:(id )annotation
 {
-	/*
-	MKPinAnnotationView *pinView = nil;
-	static NSString *defaultPinID = @"ReusedPin";
-	pinView = (MKPinAnnotationView*)[mVdequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-	if ( pinView == nil )
-		pinView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultPinID] autorelease];
-	if (((PinAnnotationView*)annotation).tag == 0 )
-	{
-		pinView.pinColor = MKPinAnnotationColorPurple;
+	UIView *pinView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pin.png"]];
+	AnnotationView *calloutView = [[[NSBundle mainBundle] loadNibNamed:@"AnnotationView" owner:self options:nil] firstObject];
+	calloutView.title.text = @"Title";
+	calloutView.image.image = [UIImage imageNamed:@"placeholder.png"];
+	
+	DXAnnotationView *annotationView = (DXAnnotationView *)[mV dequeueReusableAnnotationViewWithIdentifier:NSStringFromClass([DXAnnotationView class])];
+	if (!annotationView) {
+		annotationView = [[DXAnnotationView alloc] initWithAnnotation:annotation
+													  reuseIdentifier:NSStringFromClass([DXAnnotationView class])
+															  pinView:pinView
+														  calloutView:calloutView
+															 settings:[DXAnnotationSettings defaultSettings]];
 	}
-	else {
-		pinView.pinColor = MKPinAnnotationColorRed;
-	}
-	pinView.canShowCallout = YES;
-	pinView.animatesDrop = YES;
-	UIImageView *pinImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-5, 0, 34, 34)];
-	UIImage *pinImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"]];
-	pinImageView.image = pinImage;
-	[pinImage release];
-	[pinView addSubview:pinImageView];
-	[pinImageView release];
-	UIButton *btn = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-	btn.tag = ((PinAnnotationView*)annotation).tag;
-	pinView.rightCalloutAccessoryView = btn;
-	return pinView;
-	*/
-	
-	static NSString *defaultPinID = @"ReusedPin";
-	MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mV dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-	
-	if (!pinView) {
-		pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultPinID];
-	}
-	
-	pinView.pinColor = MKPinAnnotationColorRed;
-	
-	pinView.animatesDrop = YES;
-	
-	UIImageView *pinImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-5, 0, 34, 34)];
-	UIImage *pinImage = [UIImage imageNamed:@"placeholder.png"];
-	pinImageView.image = pinImage;
-	[pinView addSubview:pinImageView];
-	UIButton *btn = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-	pinView.rightCalloutAccessoryView = btn;
-	return pinView;
-
-}
-
-- (void)placeTestPin {
-	CLLocationCoordinate2D coord;
-	coord.latitude = 53.58448;
-	coord.longitude = -8.93772;
-	PropertyAnnotation *annot = [[PropertyAnnotation alloc] initwithCoordinate:coord andTitle:@"Title"];
-	[self.mapView addAnnotation:annot];
+	return annotationView;
 }
 
 @end

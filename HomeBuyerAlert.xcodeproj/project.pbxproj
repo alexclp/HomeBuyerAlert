@@ -47,6 +47,8 @@
 		0FBB09F11B9B800E00505844 /* home_automation-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09F01B9B800E00505844 /* home_automation-25.png */; };
 		0FBB09F41B9F309000505844 /* PropertyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB09F31B9F309000505844 /* PropertyAnnotation.m */; };
 		0FBB09F61B9F3A3D00505844 /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09F51B9F3A3D00505844 /* AnnotationView.xib */; };
+		0FBB09F81BA05F9200505844 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB09F71BA05F9200505844 /* pin.png */; };
+		0FBB09FB1BA061E400505844 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB09FA1BA061E400505844 /* AnnotationView.m */; };
 		ED47ECFF89E264F966B40DCF /* Pods_HomeBuyerAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -131,6 +133,9 @@
 		0FBB09F21B9F309000505844 /* PropertyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyAnnotation.h; sourceTree = "<group>"; };
 		0FBB09F31B9F309000505844 /* PropertyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyAnnotation.m; sourceTree = "<group>"; };
 		0FBB09F51B9F3A3D00505844 /* AnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
+		0FBB09F71BA05F9200505844 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		0FBB09F91BA061E400505844 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
+		0FBB09FA1BA061E400505844 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		17637B6B330BD8A31319FD1A /* Pods_HomeBuyerAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeBuyerAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.release.xcconfig"; sourceTree = "<group>"; };
 		76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeBuyerAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeBuyerAlert/Pods-HomeBuyerAlert.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +236,7 @@
 				0FBB09EC1B9B7FB500505844 /* list_filled-25.png */,
 				0FBB09EE1B9B7FED00505844 /* map-25.png */,
 				0FBB09F01B9B800E00505844 /* home_automation-25.png */,
+				0FBB09F71BA05F9200505844 /* pin.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -313,6 +319,8 @@
 			children = (
 				0FBB09E71B9B388E00505844 /* ListViewCell.h */,
 				0FBB09E81B9B388E00505844 /* ListViewCell.m */,
+				0FBB09F91BA061E400505844 /* AnnotationView.h */,
+				0FBB09FA1BA061E400505844 /* AnnotationView.m */,
 				0FBB09F51B9F3A3D00505844 /* AnnotationView.xib */,
 				0FBB09E51B9B35E900505844 /* ListViewCell.xib */,
 				0F2E289F1B9506E30018573B /* Main.storyboard */,
@@ -435,6 +443,7 @@
 				0FBB09F11B9B800E00505844 /* home_automation-25.png in Resources */,
 				0FBB09EB1B9B677200505844 /* placeholder.png in Resources */,
 				0F2E28A61B9506E30018573B /* LaunchScreen.xib in Resources */,
+				0FBB09F81BA05F9200505844 /* pin.png in Resources */,
 				0FBB09F61B9F3A3D00505844 /* AnnotationView.xib in Resources */,
 				0F2E28A31B9506E30018573B /* Images.xcassets in Resources */,
 			);
@@ -503,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F2E28C51B95FD3A0018573B /* Property.m in Sources */,
+				0FBB09FB1BA061E400505844 /* AnnotationView.m in Sources */,
 				0F88A5AA1B974EEF0014AF20 /* ASIAuthenticationDialog.m in Sources */,
 				0FBB09DD1B98F72B00505844 /* DetailsViewController.m in Sources */,
 				0FBB09DA1B98F71F00505844 /* ListViewController.m in Sources */,
