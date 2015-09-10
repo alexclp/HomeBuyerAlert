@@ -155,7 +155,7 @@
 	NSNumber *value = [NSNumber numberWithFloat:self.slider.value];
 	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
 	
-	self.priceLabel.text = modelNumberString;
+	self.priceLabel.text = [@"$" stringByAppendingString:modelNumberString];
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)button {

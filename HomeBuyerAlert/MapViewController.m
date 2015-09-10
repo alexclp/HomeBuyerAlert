@@ -81,8 +81,16 @@
 	UIView *pinView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pin.png"]];
 	pinView.frame = CGRectMake(-5, 0, 34, 34);
 	AnnotationView *calloutView = [[[NSBundle mainBundle] loadNibNamed:@"AnnotationView" owner:self options:nil] firstObject];
+	
+	
 	calloutView.title.text = current.title;
 	calloutView.image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:current.imageURL]]];
+	
+	// Setting the price here
+	
+	NSNumber *value = [NSNumber numberWithFloat:current.price.doubleValue];
+	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
+	calloutView.price.text = [@"$" stringByAppendingString:modelNumberString];
 	
 	DXAnnotationView *annotationView = (DXAnnotationView *)[mV dequeueReusableAnnotationViewWithIdentifier:NSStringFromClass([DXAnnotationView class])];
 	if (!annotationView) {
