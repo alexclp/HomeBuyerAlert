@@ -399,7 +399,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                     <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="ccm-fx-l9w"/>
                     <connections>
                         <outlet property="tableView" destination="Y3x-Gy-mVs" id="D9w-p9-txc"/>
-                        <segue destination="Bmz-k0-TOJ" kind="show" id="gl8-AI-Sxr"/>
+                        <segue destination="Bmz-k0-TOJ" kind="show" identifier="showDetails" id="gl8-AI-Sxr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bX-g1-qAU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,10 +11,12 @@
 #import "Property.h"
 #import "ListViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DetailsViewController.h"
 
 @interface ListViewController ()
 
 @property (nonatomic, strong) NSArray *properties;
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 @end
 
@@ -72,6 +74,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	self.selectedIndex = indexPath.row;
+
+	[self performSegueWithIdentifier:@"showDetails" sender:self];
+}
+
+#pragma mark User Interaction
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"showDetails"]) {
+		
+		Property *current = [self.properties objectAtIndex:self.selectedIndex];
+		
+		DetailsViewController *vc = [segue destinationViewController];
+		vc.selectedProperty = current.code;
+	}
 }
 
 @end

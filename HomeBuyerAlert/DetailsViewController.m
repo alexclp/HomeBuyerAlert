@@ -10,4 +10,9 @@
 
 @implementation DetailsViewController
 
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+}
+
 @end
