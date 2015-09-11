@@ -12,6 +12,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Parser.h"
+#import "PropertyDetail.h"
 
 #define ProvinceURL @"http://homebuyeralert.ca/province.php"
 #define CitiesURL @"http://homebuyeralert.ca/cities.php"
@@ -79,7 +80,7 @@ static Networking *networking;
 	[request startAsynchronous];
 }
 
-- (void)properties:(NSDictionary *)params withCompletion:(void(^)(NSArray *array, NSError *))completion {
+- (void)properties:(NSDictionary *)params withCompletion:(void(^)(NSArray *array, NSError *error))completion {
 	NSLog(@"Properties");
 	
 	NSString *province = [params objectForKey:@"province"];
@@ -109,6 +110,28 @@ static Networking *networking;
 		NSError *error = [request error];
 		NSLog(@"Error: %@", error.description);
 		completion(nil, error);
+	}];
+	
+	[request startAsynchronous];
+}
+
+- (void)detailsOfProperty:(NSString *)code withCompletion:(void(^)(PropertyDetail *details, NSError *error))completion {
+	NSString *urlString = [DetailsURL stringByAppendingString:[NSString stringWithFormat:@"?list=%@", code]];
+	
+	NSURL *url = [NSURL URLWithString:urlString];
+	
+	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	
+	[request setCompletionBlock:^{
+		NSData *responseData = [request responseData];
+		SMXMLDocument *doc = [SMXMLDocument documentWithData:responseData error:nil];
+		
+	}];
+	
+	[request setFailedBlock:^{
+		NSError *error = [request error];
+		
+		
 	}];
 	
 	[request startAsynchronous];

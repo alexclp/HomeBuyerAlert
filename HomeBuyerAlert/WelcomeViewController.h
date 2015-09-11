@@ -10,7 +10,6 @@
 
 @interface WelcomeViewController : UIViewController
 
-- (IBAction)continueButtonPressed:(UIButton *)button;
 
 @end
 

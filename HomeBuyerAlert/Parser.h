@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PropertyDetail.h"
 
 @class SMXMLDocument;
 
@@ -17,5 +18,6 @@
 - (NSArray *)parseProvinces:(SMXMLDocument *)document;
 - (NSArray *)parseCities:(SMXMLDocument *)document;
 - (NSArray *)parseProperties:(SMXMLDocument *)document;
+- (PropertyDetail *)parseDetails:(SMXMLDocument *)document;
 
 @end

@@ -79,4 +79,12 @@ static Parser *parser;
 	return toReturn.copy;
 }
 
+- (PropertyDetail *)parseDetails:(SMXMLDocument *)document {
+	PropertyDetail *details = [[PropertyDetail alloc] init];
+	
+	
+	
+	return details;
+}
+
 @end

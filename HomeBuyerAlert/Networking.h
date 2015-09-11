@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PropertyDetail.h"
 
 @interface Networking : NSObject
 
@@ -15,7 +16,8 @@
 - (void)activeProvincesWithCompletion:(void(^)(NSArray *array, NSError *error))completion
 ;
 - (void)citiesInProvince:(NSString *)province withCompletion:(void(^)(NSArray *array, NSError *error))completion;
-- (void)properties:(NSDictionary *)params withCompletion:(void(^)(NSArray *array, NSError *))completion;
+- (void)properties:(NSDictionary *)params withCompletion:(void(^)(NSArray *array, NSError * error))completion;
+- (void)detailsOfProperty:(NSString *)code withCompletion:(void(^)(PropertyDetail *details, NSError *error))completion;
 
 
 @end
