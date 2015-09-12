@@ -125,12 +125,14 @@ static Networking *networking;
 	[request setCompletionBlock:^{
 		NSData *responseData = [request responseData];
 		SMXMLDocument *doc = [SMXMLDocument documentWithData:responseData error:nil];
+		PropertyDetail *details = [[Parser parser] parseDetails:doc];
+		completion(details, nil);
 		
 	}];
 	
 	[request setFailedBlock:^{
 		NSError *error = [request error];
-		
+		completion(nil, error);
 		
 	}];
 	

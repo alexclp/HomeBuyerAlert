@@ -80,11 +80,41 @@ static Parser *parser;
 }
 
 - (PropertyDetail *)parseDetails:(SMXMLDocument *)document {
-	PropertyDetail *details = [[PropertyDetail alloc] init];
+	NSLog(@"Parsing details");
+	PropertyDetail *propertyDetails = [[PropertyDetail alloc] init];
+		
+	NSString *street = [[document childNamed:@"streetaddress"] value];
+	NSString *city = [[document childNamed:@"city"] value];
+	NSString *province = [[document childNamed:@"province"] value];
 	
+	propertyDetails.title = [NSString stringWithFormat:@"%@, %@, %@", street, city, province];
+	propertyDetails.details = [[document childNamed:@"details"] value];
 	
+	propertyDetails.price = [[document childNamed:@"price"] value];
+	propertyDetails.type = [[document childNamed:@"type"] value];
+	propertyDetails.size = [[document childNamed:@"size"] value];
+	propertyDetails.bathrooms = [[document childNamed:@"criteria1"] value];
+	propertyDetails.garage = [[document childNamed:@"garage"] value];
+	propertyDetails.bedrooms = [[document childNamed:@"bedrooms"] value];
 	
-	return details;
+	SMXMLElement *element = [document childNamed:@"images"];
+
+	NSArray *images = [element childrenNamed:@"image"];
+	NSMutableArray *toAdd = [NSMutableArray array];
+	for (SMXMLElement *image in images) {
+		[toAdd addObject:[image value]];
+	}
+	
+	propertyDetails.pics = toAdd.copy;
+	
+	element = [document childNamed:@"user"];
+	NSArray *userInfo = [element children];
+	
+	propertyDetails.userName = [[userInfo objectAtIndex:0] value];
+	propertyDetails.email = [[userInfo objectAtIndex:1] value];
+	propertyDetails.phone = [[userInfo objectAtIndex:7] value];
+	
+	return propertyDetails;
 }
 
 @end

@@ -24,5 +24,6 @@
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *website;
 
 @end
