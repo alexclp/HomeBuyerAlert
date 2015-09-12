@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HomeBuyerAlert-APParallaxHeader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HomeBuyerAlert-ActionSheetPicker-3.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>78AA8595D5A0CF4827F16046</key>
+		<key>08FB26586637E313C9232F7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADF2D2ECA5E7DBD7B4E2200E</key>
+		<key>1D42BFE84DD988BA0F928DF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD92F376D56BCF1712DCE52F</key>
+		<key>72E0433EA3CA973B4B56B68F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C44207354B4FF54E1751885E</key>
+		<key>748A1E8847D5F36F6C0CD130</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EFAD87EFDAFB354F7C0ACFC7</key>
+		<key>B66F30F3276B57C01A20EC56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F050F740CE12AB4BA0D80330</key>
+		<key>BEFF926BABD2C2BD2A2023C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F599C65BAF462CB4DDCFC14A</key>
+		<key>D1E966DE9DA5BDEC480CCFA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E927985D6E867C1453543419</key>
 		<dict>
 			<key>primary</key>
 			<true/>

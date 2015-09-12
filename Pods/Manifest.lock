@@ -21,6 +21,7 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - APParallaxHeader (0.1.6)
   - DXCustomCallout-ObjC (0.2.0)
   - MBProgressHUD (0.9.1)
   - SDWebImage (3.7.3):
@@ -31,6 +32,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AFNetworking
+  - APParallaxHeader
   - DXCustomCallout-ObjC
   - MBProgressHUD (~> 0.9.1)
   - SDWebImage
@@ -39,6 +41,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: c5bdca19fd8b3d798f0c79892cbab6f11a8523ae
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
   DXCustomCallout-ObjC: fb223603ee148365de51c2d69bb10443943ff89b
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84

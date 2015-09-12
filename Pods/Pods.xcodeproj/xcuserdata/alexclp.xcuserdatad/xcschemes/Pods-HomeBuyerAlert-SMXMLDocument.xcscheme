@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F050F740CE12AB4BA0D80330"
+               BlueprintIdentifier = "B66F30F3276B57C01A20EC56"
                BuildableName = "SMXMLDocument.framework"
                BlueprintName = "Pods-HomeBuyerAlert-SMXMLDocument"
                ReferencedContainer = "container:Pods.xcodeproj">
