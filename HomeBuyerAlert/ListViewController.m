@@ -12,6 +12,7 @@
 #import "ListViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DetailsViewController.h"
+#import "MBProgressHUD.h"
 
 @interface ListViewController ()
 
@@ -25,10 +26,13 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	
 	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {
 		self.properties = [NSArray arrayWithArray:array];
 		
 		[self.tableView reloadData];
+		[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 		
 	}];
 }

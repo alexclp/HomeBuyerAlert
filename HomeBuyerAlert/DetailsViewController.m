@@ -9,8 +9,15 @@
 #import "DetailsViewController.h"
 #import "Networking.h"
 #import "PropertyDetail.h"
-#import "MWPhotoBrowser.h"
-#import "MWMenu.h"
+#import "MBProgressHUD.h"
+
+@interface DetailsViewController ()
+
+@property (nonatomic, strong) NSArray *photos;
+@property (nonatomic, strong) NSArray *thumbs;
+@property (nonatomic, strong) PropertyDetail *details;
+
+@end
 
 @implementation DetailsViewController
 
@@ -19,21 +26,37 @@
 
 	NSLog(@"Selected property: %@", self.selectedProperty);
 	
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	
 	[[Networking networking] detailsOfProperty:self.selectedProperty withCompletion:^(PropertyDetail *details, NSError *error) {
 		if (error) {
 			
 		} else {
 			
-			[self configurePhotoBrowser:details.pics];
+			UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[details.pics objectAtIndex:0]]];
+			self.imageView.image = image;
+			
+			self.details = details;
+			self.button.enabled = YES;
+			
+			[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 		}
 	}];
+	
 }
 
 - (void)configurePhotoBrowser:(NSArray *)photoLinks {
 	NSMutableArray *photos = [NSMutableArray array];
 	NSMutableArray *thumbs = [NSMutableArray array];
 	
-//	[photos addObject:[]]
+	for (NSString *url in photos) {
+		UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+		[photos addObject:[MWPhoto photoWithImage:image]];
+		[thumbs addObject:[MWPhoto photoWithImage:[self createThumbnailFromImage:image]]];
+	}
+	
+	self.photos = photos;
+	self.thumbs = thumbs;
 }
 
 - (UIImage *)createThumbnailFromImage:(UIImage *)originalImage {
@@ -43,6 +66,43 @@
 	UIImage *thumb = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	return thumb;
+}
+
+#pragma mark User Interaction
+
+- (IBAction)tapOnImage:(id)sender {
+
+	 [self configurePhotoBrowser:self.details.pics];
+	 
+	 MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+	 browser.displayActionButton = NO;
+	 browser.displayNavArrows = YES;
+	 browser.displaySelectionButtons = YES;
+	 browser.alwaysShowControls = YES;
+	 browser.zoomPhotosToFill = YES;
+	 browser.enableGrid = YES;
+	 browser.startOnGrid = YES;
+	 browser.enableSwipeToDismiss = NO;
+	 browser.autoPlayOnAppear = NO;
+	 [browser setCurrentPhotoIndex:0];
+	 
+	 UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+	 nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	 [self presentViewController:nc animated:YES completion:nil];
+
+}
+
+#pragma mark MKPhotoBrowser Delegate
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+	return self.photos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+	if (index < self.photos.count) {
+		return [self.photos objectAtIndex:index];
+	}
+	return nil;
 }
 
 @end

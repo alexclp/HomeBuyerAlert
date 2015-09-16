@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class MWPhotoBrowser;
+#import "MWPhotoBrowser.h"
 
 @interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate>
 
 @property (nonatomic, strong) NSString *selectedProperty;
+
+@property (nonatomic, weak) IBOutlet UIButton *button;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+- (IBAction)tapOnImage:(id)sender;
 
 @end

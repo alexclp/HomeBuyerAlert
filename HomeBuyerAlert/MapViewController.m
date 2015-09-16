@@ -13,6 +13,7 @@
 #import "AnnotationView.h"
 #import "DXAnnotationView.h"
 #import "DXAnnotationSettings.h"
+#import "MBProgressHUD.h"
 
 @interface MapViewController ()
 
@@ -30,32 +31,42 @@
 	
 	NSDictionary *params = [[NSUserDefaults standardUserDefaults] objectForKey:@"prefs"];
 
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	
 	[[Networking networking] properties:params withCompletion:^(NSArray *array, NSError *error) {
 		
 		if (error) {
 			
 		} else {
 			
-			NSMutableArray *temp = [NSMutableArray array];
-			
-			self.properties = array;
-			
-			for (Property *property in self.properties) {
-				NSString *latitude = property.latitude;
-				NSString *longitude = property.longitude;
-				NSString *title = property.title;
+			if (array.count) {
+				NSMutableArray *temp = [NSMutableArray array];
 				
-				[temp addObject:@{@"latitude": latitude, @"longitude": longitude, @"title": title}];
+				self.properties = array;
+				
+				for (Property *property in self.properties) {
+					NSString *latitude = property.latitude;
+					NSString *longitude = property.longitude;
+					NSString *title = property.title;
+					
+					[temp addObject:@{@"latitude": latitude, @"longitude": longitude, @"title": title}];
+				}
+				
+				self.coordinates = temp.copy;
+				
+				self.index = 0;
+				[self.mapView addAnnotations:[self configureAnnotations]];
+				[self zoomToLocation];
+				[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+			} else {
+				
 			}
 			
-			self.coordinates = temp.copy;
-			
-			self.index = 0;
-			[self.mapView addAnnotations:[self configureAnnotations]];
-			[self zoomToLocation];
 			
 		}
 	}];
+	
+	
 }
 
 - (NSArray *)configureAnnotations {
