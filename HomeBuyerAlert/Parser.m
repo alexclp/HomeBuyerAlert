@@ -61,8 +61,25 @@ static Parser *parser;
 		
 		NSString *photoURLRaw = [[item childNamed:@"description"] value];
 		photoURLRaw = [[photoURLRaw componentsSeparatedByString:@"src='"] lastObject];
-		photoURLRaw = [[photoURLRaw componentsSeparatedByString:@".JPG"] firstObject];
-		NSString *photoURL = [photoURLRaw stringByAppendingString:@".JPG"];
+		
+		NSString *photoURL = [NSString string];
+		
+		if ([photoURLRaw containsString:@".jpg"]) {
+			photoURLRaw = [[photoURLRaw componentsSeparatedByString:@".jpg"] firstObject];
+			photoURL = [photoURLRaw stringByAppendingString:@".jpg"];
+
+		} else if ([photoURLRaw containsString:@".JPG"]) {
+			photoURLRaw = [[photoURLRaw componentsSeparatedByString:@".JPG"] firstObject];
+			photoURL = [photoURLRaw stringByAppendingString:@".JPG"];
+		} else if ([photoURLRaw containsString:@".png"]) {
+			photoURLRaw = [[photoURLRaw componentsSeparatedByString:@".png"] firstObject];
+			photoURL = [photoURLRaw stringByAppendingString:@".png"];
+
+		} else if ([photoURLRaw containsString:@".PNG"]) {
+			photoURLRaw = [[photoURLRaw componentsSeparatedByString:@".PNG"] firstObject];
+			photoURL = [photoURLRaw stringByAppendingString:@".PNG"];
+
+		}
 		
 		current.title = [[item childNamed:@"title"] value];
 		current.details = [[item childNamed:@"details"] value];

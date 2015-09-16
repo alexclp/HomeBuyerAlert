@@ -62,6 +62,7 @@
 	cell.price.text = modelNumberString;
 	cell.price.text = [cell.price.text stringByAppendingString:@"$"];
 	
+	NSLog(@"Current image URL = %@", current.imageURL);
 	[cell.image sd_setImageWithURL:[NSURL URLWithString:current.imageURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
