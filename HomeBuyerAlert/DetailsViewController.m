@@ -53,11 +53,8 @@
 	NSMutableArray *photos = [NSMutableArray array];
 	NSMutableArray *thumbs = [NSMutableArray array];
 	
-	NSLog(@"Photo links: %@", photoLinks);
-	
 	for (NSString *url in photoLinks) {
 		UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-		NSLog(@"Image: %@", image);
 		[photos addObject:[MWPhoto photoWithImage:image]];
 		[thumbs addObject:[MWPhoto photoWithImage:[self createThumbnailFromImage:image]]];
 	}
@@ -80,6 +77,9 @@
 - (void)tapDetected {
 	NSLog(@"Tap");
 
+	MBProgressHUD *hud1 = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	hud1.labelText = @"Getting pictures";
+	
 	[self configurePhotoBrowser:self.details.pics];
 
 	MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
@@ -97,6 +97,7 @@
 	UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
 	nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	[self presentViewController:nc animated:YES completion:nil];
+	[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 
 }
 
