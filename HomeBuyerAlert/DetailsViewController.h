@@ -14,9 +14,6 @@
 
 @property (nonatomic, strong) NSString *selectedProperty;
 
-@property (nonatomic, weak) IBOutlet UIButton *button;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
-
-- (IBAction)tapOnImage:(id)sender;
 
 @end

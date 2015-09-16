@@ -23,6 +23,11 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+	singleTap.numberOfTapsRequired = 1;
+	self.imageView.userInteractionEnabled = YES;
+	[self.imageView addGestureRecognizer:singleTap];
 
 	NSLog(@"Selected property: %@", self.selectedProperty);
 	
@@ -33,11 +38,10 @@
 			
 		} else {
 			
-			UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[details.pics objectAtIndex:0]]];
+			UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[details.pics objectAtIndex:0]]]];
 			self.imageView.image = image;
 			
 			self.details = details;
-			self.button.enabled = YES;
 			
 			[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 		}
@@ -49,8 +53,11 @@
 	NSMutableArray *photos = [NSMutableArray array];
 	NSMutableArray *thumbs = [NSMutableArray array];
 	
-	for (NSString *url in photos) {
+	NSLog(@"Photo links: %@", photoLinks);
+	
+	for (NSString *url in photoLinks) {
 		UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+		NSLog(@"Image: %@", image);
 		[photos addObject:[MWPhoto photoWithImage:image]];
 		[thumbs addObject:[MWPhoto photoWithImage:[self createThumbnailFromImage:image]]];
 	}
@@ -70,25 +77,26 @@
 
 #pragma mark User Interaction
 
-- (IBAction)tapOnImage:(id)sender {
+- (void)tapDetected {
+	NSLog(@"Tap");
 
-	 [self configurePhotoBrowser:self.details.pics];
-	 
-	 MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-	 browser.displayActionButton = NO;
-	 browser.displayNavArrows = YES;
-	 browser.displaySelectionButtons = YES;
-	 browser.alwaysShowControls = YES;
-	 browser.zoomPhotosToFill = YES;
-	 browser.enableGrid = YES;
-	 browser.startOnGrid = YES;
-	 browser.enableSwipeToDismiss = NO;
-	 browser.autoPlayOnAppear = NO;
-	 [browser setCurrentPhotoIndex:0];
-	 
-	 UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
-	 nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-	 [self presentViewController:nc animated:YES completion:nil];
+	[self configurePhotoBrowser:self.details.pics];
+
+	MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+	browser.displayActionButton = NO;
+	browser.displayNavArrows = YES;
+	browser.displaySelectionButtons = NO;
+	browser.alwaysShowControls = YES;
+	browser.zoomPhotosToFill = YES;
+	browser.enableGrid = YES;
+	browser.startOnGrid = YES;
+	browser.enableSwipeToDismiss = NO;
+	browser.autoPlayOnAppear = NO;
+	[browser setCurrentPhotoIndex:0];
+
+	UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+	nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	[self presentViewController:nc animated:YES completion:nil];
 
 }
 

@@ -123,6 +123,7 @@ static Parser *parser;
 	}
 	
 	propertyDetails.pics = toAdd.copy;
+	NSLog(@"Pics: %@", propertyDetails.pics);
 	
 	element = [document childNamed:@"user"];
 	NSArray *userInfo = [element children];
