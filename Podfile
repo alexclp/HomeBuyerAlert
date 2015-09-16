@@ -14,6 +14,7 @@ pod 'MBProgressHUD', '~> 0.9.1'
 pod 'SDWebImage'
 pod 'DXCustomCallout-ObjC'
 pod 'APParallaxHeader'
+pod 'MWPhotoBrowser'
 
 end
 

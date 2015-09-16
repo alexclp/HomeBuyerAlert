@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailsViewController : UIViewController
+@class MWPhotoBrowser;
+
+@interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate>
 
 @property (nonatomic, strong) NSString *selectedProperty;
 

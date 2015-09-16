@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E927985D6E867C1453543419"
+               BlueprintIdentifier = "F95064ED6F815E3229E3A560"
                BuildableName = "DXCustomCallout_ObjC.framework"
                BlueprintName = "Pods-HomeBuyerAlert-DXCustomCallout-ObjC"
                ReferencedContainer = "container:Pods.xcodeproj">

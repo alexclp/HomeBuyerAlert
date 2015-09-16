@@ -9,6 +9,8 @@
 #import "DetailsViewController.h"
 #import "Networking.h"
 #import "PropertyDetail.h"
+#import "MWPhotoBrowser.h"
+#import "MWMenu.h"
 
 @implementation DetailsViewController
 
@@ -22,8 +24,16 @@
 			
 		} else {
 			
+			[self configurePhotoBrowser:details.pics];
 		}
 	}];
+}
+
+- (void)configurePhotoBrowser:(NSArray *)photoLinks {
+	NSMutableArray *photos = [NSMutableArray array];
+	NSMutableArray *thumbs = [NSMutableArray array];
+	
+//	[photos addObject:[]]
 }
 
 - (UIImage *)createThumbnailFromImage:(UIImage *)originalImage {
@@ -34,7 +44,5 @@
 	UIGraphicsEndImageContext();
 	return thumb;
 }
-
-
 
 @end

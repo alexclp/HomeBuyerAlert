@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_ActionSheetPicker_3_0 7
 #define COCOAPODS_VERSION_PATCH_ActionSheetPicker_3_0 2
 
+// DACircularProgress
+#define COCOAPODS_POD_AVAILABLE_DACircularProgress
+#define COCOAPODS_VERSION_MAJOR_DACircularProgress 2
+#define COCOAPODS_VERSION_MINOR_DACircularProgress 3
+#define COCOAPODS_VERSION_PATCH_DACircularProgress 1
+
 // DXCustomCallout-ObjC
 #define COCOAPODS_POD_AVAILABLE_DXCustomCallout_ObjC
 #define COCOAPODS_VERSION_MAJOR_DXCustomCallout_ObjC 0
@@ -71,6 +77,12 @@
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 1
+
+// MWPhotoBrowser
+#define COCOAPODS_POD_AVAILABLE_MWPhotoBrowser
+#define COCOAPODS_VERSION_MAJOR_MWPhotoBrowser 2
+#define COCOAPODS_VERSION_MINOR_MWPhotoBrowser 1
+#define COCOAPODS_VERSION_PATCH_MWPhotoBrowser 1
 
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
