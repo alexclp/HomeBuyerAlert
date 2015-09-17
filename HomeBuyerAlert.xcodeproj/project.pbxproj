@@ -17,6 +17,8 @@
 		0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */; };
 		0F2E28C21B95F7CA0018573B /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C11B95F7CA0018573B /* Networking.m */; };
 		0F2E28C51B95FD3A0018573B /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C41B95FD3A0018573B /* Property.m */; };
+		0F5952541BAADCB40057D0EC /* DetailsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5952531BAADCB40057D0EC /* DetailsCustomCell.m */; };
+		0F5952571BAADD400057D0EC /* DetailsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5952561BAADD400057D0EC /* DetailsLabel.m */; };
 		0F88A5AA1B974EEF0014AF20 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A5971B974EEF0014AF20 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0F88A5AB1B974EEF0014AF20 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A59A1B974EEF0014AF20 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0F88A5AC1B974EEF0014AF20 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A59C1B974EEF0014AF20 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -81,6 +83,10 @@
 		0F2E28C11B95F7CA0018573B /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		0F2E28C31B95FD3A0018573B /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
 		0F2E28C41B95FD3A0018573B /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		0F5952521BAADCB40057D0EC /* DetailsCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsCustomCell.h; sourceTree = "<group>"; };
+		0F5952531BAADCB40057D0EC /* DetailsCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsCustomCell.m; sourceTree = "<group>"; };
+		0F5952551BAADD400057D0EC /* DetailsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsLabel.h; sourceTree = "<group>"; };
+		0F5952561BAADD400057D0EC /* DetailsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsLabel.m; sourceTree = "<group>"; };
 		0F88A5961B974EEF0014AF20 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		0F88A5971B974EEF0014AF20 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		0F88A5981B974EEF0014AF20 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -320,6 +326,10 @@
 				0F2E289F1B9506E30018573B /* Main.storyboard */,
 				0FBB09E71B9B388E00505844 /* ListViewCell.h */,
 				0FBB09E81B9B388E00505844 /* ListViewCell.m */,
+				0F5952521BAADCB40057D0EC /* DetailsCustomCell.h */,
+				0F5952531BAADCB40057D0EC /* DetailsCustomCell.m */,
+				0F5952551BAADD400057D0EC /* DetailsLabel.h */,
+				0F5952561BAADD400057D0EC /* DetailsLabel.m */,
 				0FBB09F91BA061E400505844 /* AnnotationView.h */,
 				0FBB09FA1BA061E400505844 /* AnnotationView.m */,
 				0FBB09F51B9F3A3D00505844 /* AnnotationView.xib */,
@@ -528,9 +538,11 @@
 				0F88A5AE1B974EEF0014AF20 /* ASIFormDataRequest.m in Sources */,
 				0F88A5B41B974F050014AF20 /* Reachability.m in Sources */,
 				0F88A5AD1B974EEF0014AF20 /* ASIDownloadCache.m in Sources */,
+				0F5952571BAADD400057D0EC /* DetailsLabel.m in Sources */,
 				0FBB09F41B9F309000505844 /* PropertyAnnotation.m in Sources */,
 				0FBB09E91B9B388E00505844 /* ListViewCell.m in Sources */,
 				0F2E28C21B95F7CA0018573B /* Networking.m in Sources */,
+				0F5952541BAADCB40057D0EC /* DetailsCustomCell.m in Sources */,
 				0FAD7A3A1B95FE3F00C4463C /* PropertyDetail.m in Sources */,
 				0FBB09E31B98F74400505844 /* AddHomeViewController.m in Sources */,
 				0F88A5AC1B974EEF0014AF20 /* ASIDataDecompressor.m in Sources */,
