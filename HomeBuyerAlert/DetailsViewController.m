@@ -216,4 +216,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	return size.height + 1.0f; // Add 1.0f for the cell separator height
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 @end
