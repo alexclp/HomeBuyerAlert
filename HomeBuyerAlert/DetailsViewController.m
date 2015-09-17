@@ -10,6 +10,9 @@
 #import "Networking.h"
 #import "PropertyDetail.h"
 #import "MBProgressHUD.h"
+#import "DetailsCustomCell.h"
+
+static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 @interface DetailsViewController ()
 
@@ -23,14 +26,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
-	singleTap.numberOfTapsRequired = 1;
-	self.imageView.userInteractionEnabled = YES;
-	[self.imageView addGestureRecognizer:singleTap];
 
-	NSLog(@"Selected property: %@", self.selectedProperty);
-	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] detailsOfProperty:self.selectedProperty withCompletion:^(PropertyDetail *details, NSError *error) {
@@ -38,15 +34,15 @@
 			
 		} else {
 			
-			UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[details.pics objectAtIndex:0]]]];
-			self.imageView.image = image;
-			
 			self.details = details;
+			[self.tableView reloadData];
+			
 			
 			[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 		}
 	}];
-	
+
+	NSLog(@"Selected property: %@", self.selectedProperty);
 }
 
 - (void)configurePhotoBrowser:(NSArray *)photoLinks {
@@ -70,6 +66,13 @@
 	UIImage *thumb = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	return thumb;
+}
+
+- (NSString *)formatPrice:(NSString *)price {
+	NSNumber *value = [NSNumber numberWithFloat:price.floatValue];
+	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
+	
+	return [@"$" stringByAppendingString:modelNumberString];
 }
 
 #pragma mark User Interaction
@@ -112,6 +115,105 @@
 		return [self.photos objectAtIndex:index];
 	}
 	return nil;
+}
+
+#pragma mark UITableView Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	NSInteger rows;
+	if (self.details) {
+		rows = 4;
+	} else {
+		rows = 0;
+	}
+	return rows;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return [self basicCellAtIndexPath:indexPath];
+}
+
+- (DetailsCustomCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
+	DetailsCustomCell *cell = [self.tableView dequeueReusableCellWithIdentifier:DetailsCellIdentifier forIndexPath:indexPath];
+	[self configureBasicCell:cell atIndexPath:indexPath];
+	return cell;
+}
+
+- (void)configureBasicCell:(DetailsCustomCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+//	DetailsCustomCell *item = self.feedItems[indexPath.row];
+//	[self setTitleForCell:cell item:item];
+//	[self setSubtitleForCell:cell item:item];
+	
+	NSLog(@"Index: %ld", indexPath.row);
+	
+	if (indexPath.row == 0) {
+		NSString *price = [self formatPrice:self.details.price];
+		cell.title.text = price;
+		
+		NSString *type = self.details.type;
+		cell.subtitle.text = type;
+		
+	} else if (indexPath.row == 1) {
+		cell.title.text = @"Description";
+		cell.subtitle.text = self.details.details;
+		
+	} else if (indexPath.row == 2) {
+		cell.title.text = @"Address";
+		cell.subtitle.text = self.details.title;
+		
+	} else {
+		
+		cell.title.text = @"Details";
+		
+		NSString *size = [@"Size: " stringByAppendingString:self.details.size];
+		size = [size stringByAppendingString:@"sq ft"];
+		
+		NSString *bathrooms = [@"Bathrooms: " stringByAppendingString:self.details.bathrooms];
+		NSString *garage = [@"Garage: " stringByAppendingString:self.details.garage];
+		NSString *bedrooms = [@"Bedrooms" stringByAppendingString:self.details.bedrooms];
+		
+		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
+	}
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+	imageView.frame = CGRectMake(100,100, 375,248);
+	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+	singleTap.numberOfTapsRequired = 1;
+	imageView.userInteractionEnabled = YES;
+	[imageView addGestureRecognizer:singleTap];
+	
+	return imageView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 248;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return [self heightForBasicCellAtIndexPath:indexPath];
+}
+
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+	static DetailsCustomCell *sizingCell = nil;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		sizingCell = [self.tableView dequeueReusableCellWithIdentifier:DetailsCellIdentifier];
+	});
+ 
+	[self configureBasicCell:sizingCell atIndexPath:indexPath];
+	return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+	sizingCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.bounds));
+	[sizingCell setNeedsLayout];
+	[sizingCell layoutIfNeeded];
+ 
+	CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	return size.height + 1.0f; // Add 1.0f for the cell separator height
 }
 
 @end

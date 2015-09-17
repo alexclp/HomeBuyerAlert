@@ -111,8 +111,8 @@ static Parser *parser;
 	propertyDetails.type = [[document childNamed:@"type"] value];
 	propertyDetails.size = [[document childNamed:@"size"] value];
 	propertyDetails.bathrooms = [[document childNamed:@"criteria1"] value];
-	propertyDetails.garage = [[document childNamed:@"garage"] value];
-	propertyDetails.bedrooms = [[document childNamed:@"bedrooms"] value];
+	propertyDetails.garage = [[document childNamed:@"criteria3"] value];
+	propertyDetails.bedrooms = [[document childNamed:@"criteria4"] value];
 	
 	SMXMLElement *element = [document childNamed:@"images"];
 

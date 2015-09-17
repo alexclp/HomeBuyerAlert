@@ -10,10 +10,12 @@
 
 #import "MWPhotoBrowser.h"
 
-@interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate>
+@interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSString *selectedProperty;
 
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) UIImageView *imageView;
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
