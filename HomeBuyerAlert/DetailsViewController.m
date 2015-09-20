@@ -140,12 +140,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (void)configureBasicCell:(DetailsCustomCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-//	DetailsCustomCell *item = self.feedItems[indexPath.row];
-//	[self setTitleForCell:cell item:item];
-//	[self setSubtitleForCell:cell item:item];
-	
-	NSLog(@"Index: %ld", indexPath.row);
-	
+
 	if (indexPath.row == 0) {
 		NSString *price = [self formatPrice:self.details.price];
 		cell.title.text = price;
@@ -172,7 +167,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		NSString *garage = [@"Garage: " stringByAppendingString:self.details.garage];
 		NSString *bedrooms = [@"Bedrooms" stringByAppendingString:self.details.bedrooms];
 		
-		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
+		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@ ", size, bathrooms, garage, bedrooms];
 	}
 }
 
