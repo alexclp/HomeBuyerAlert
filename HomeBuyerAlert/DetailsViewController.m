@@ -165,9 +165,9 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		
 		NSString *bathrooms = [@"Bathrooms: " stringByAppendingString:self.details.bathrooms];
 		NSString *garage = [@"Garage: " stringByAppendingString:self.details.garage];
-		NSString *bedrooms = [@"Bedrooms" stringByAppendingString:self.details.bedrooms];
+		NSString *bedrooms = [@"Bedrooms: " stringByAppendingString:self.details.bedrooms];
 		
-		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@ ", size, bathrooms, garage, bedrooms];
+		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
 	}
 }
 
