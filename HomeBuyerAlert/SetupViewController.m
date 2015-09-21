@@ -12,6 +12,9 @@
 #import "MBProgressHUD.h"
 #import "ListViewController.h"
 
+#define IDIOM UI_USER_INTERFACE_IDIOM()
+#define IPAD UIUserInterfaceIdiomPad
+
 @interface SetupViewController ()
 
 @property (nonatomic, strong) NSArray *provinces;
@@ -78,6 +81,7 @@
 #pragma mark UI Interaction
 
 - (IBAction)provinceTouchDown:(UITextField *)textField {
+		
 	[ActionSheetStringPicker showPickerWithTitle:@"Select a province"
 											rows:self.provinces
 								initialSelection:0
@@ -89,7 +93,8 @@
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
 										 NSLog(@"Block Picker Canceled");
 									 }
-										  origin:self.view];
+										  origin:textField];
+
 }
 
 - (IBAction)city1TouchDown:(UITextField *)textField {
@@ -103,7 +108,7 @@
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
 										 NSLog(@"Block Picker Canceled");
 									 }
-										  origin:self.view];
+										  origin:textField];
 
 }
 
@@ -118,7 +123,7 @@
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
 										 NSLog(@"Block Picker Canceled");
 									 }
-										  origin:self.view];
+										  origin:textField];
 }
 
 - (IBAction)city3TouchDown:(UITextField *)textField {
@@ -132,7 +137,7 @@
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
 										 NSLog(@"Block Picker Canceled");
 									 }
-										  origin:self.view];
+										  origin:textField];
 }
 
 - (IBAction)priceRangeTouchDown:(UITextField *)textField {
@@ -147,7 +152,7 @@
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
 										 NSLog(@"Block Picker Canceled");
 									 }
-										  origin:self.view];
+										  origin:textField];
 }
 
 - (IBAction)sliderValueChanged:(UISlider *)slider {
