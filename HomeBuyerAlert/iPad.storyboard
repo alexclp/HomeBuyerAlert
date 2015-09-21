@@ -140,7 +140,7 @@ Enjoy …</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="awL-ZI-jvI"/>
                     <connections>
-                        <segue destination="UnR-4D-gHI" kind="show" id="u2F-XX-PvZ"/>
+                        <segue destination="UnR-4D-gHI" kind="show" identifier="showDetails" id="u2F-XX-PvZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="665-4c-roQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,7 +332,7 @@ Enjoy …</string>
                         <outlet property="priceRangeTextField" destination="CQA-Gd-add" id="jvk-rc-Kz4"/>
                         <outlet property="provinceTextField" destination="Scq-9U-JeB" id="MDx-H3-k5Y"/>
                         <outlet property="slider" destination="WB5-Bz-H4q" id="DMV-y2-VMd"/>
-                        <segue destination="0Ih-ip-kSt" kind="show" id="nIn-We-Djk"/>
+                        <segue destination="0Ih-ip-kSt" kind="show" identifier="listSegue" id="nIn-We-Djk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMy-Ry-EgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
