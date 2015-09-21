@@ -98,9 +98,20 @@ Enjoy …</string>
                     <view key="view" contentMode="scaleToFill" id="GOS-kw-HLY">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MXn-Tf-BQu">
+                                <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fHW-Br-7kM" id="MbZ-9C-wFh"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map View" image="map-25.png" id="qRa-Q9-Mxp"/>
+                    <connections>
+                        <outlet property="mapView" destination="MXn-Tf-BQu" id="udN-ad-7Kz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg6-Pj-hlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,10 +147,21 @@ Enjoy …</string>
                     <view key="view" contentMode="scaleToFill" id="Ymh-nR-qTQ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="btZ-NY-ZfS">
+                                <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CIC-hN-gOU" id="RK3-sb-5m2"/>
+                                    <outlet property="delegate" destination="CIC-hN-gOU" id="nD9-Ln-7Mq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="awL-ZI-jvI"/>
                     <connections>
+                        <outlet property="tableView" destination="btZ-NY-ZfS" id="K11-ym-oEX"/>
                         <segue destination="UnR-4D-gHI" kind="show" identifier="showDetails" id="u2F-XX-PvZ"/>
                     </connections>
                 </viewController>
