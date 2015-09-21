@@ -17,6 +17,7 @@
 		0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */; };
 		0F2E28C21B95F7CA0018573B /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C11B95F7CA0018573B /* Networking.m */; };
 		0F2E28C51B95FD3A0018573B /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C41B95FD3A0018573B /* Property.m */; };
+		0F36E0591BB018F90067F0A3 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F36E0581BB018F90067F0A3 /* iPad.storyboard */; settings = {ASSET_TAGS = (); }; };
 		0F5952541BAADCB40057D0EC /* DetailsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5952531BAADCB40057D0EC /* DetailsCustomCell.m */; };
 		0F5952571BAADD400057D0EC /* DetailsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5952561BAADD400057D0EC /* DetailsLabel.m */; };
 		0F88A5AA1B974EEF0014AF20 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A5971B974EEF0014AF20 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -83,6 +84,7 @@
 		0F2E28C11B95F7CA0018573B /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		0F2E28C31B95FD3A0018573B /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
 		0F2E28C41B95FD3A0018573B /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		0F36E0581BB018F90067F0A3 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		0F5952521BAADCB40057D0EC /* DetailsCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsCustomCell.h; sourceTree = "<group>"; };
 		0F5952531BAADCB40057D0EC /* DetailsCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsCustomCell.m; sourceTree = "<group>"; };
 		0F5952551BAADD400057D0EC /* DetailsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsLabel.h; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				0F2E289F1B9506E30018573B /* Main.storyboard */,
+				0F36E0581BB018F90067F0A3 /* iPad.storyboard */,
 				0FBB09E71B9B388E00505844 /* ListViewCell.h */,
 				0FBB09E81B9B388E00505844 /* ListViewCell.m */,
 				0F5952521BAADCB40057D0EC /* DetailsCustomCell.h */,
@@ -453,6 +456,7 @@
 				0FBB09F11B9B800E00505844 /* home_automation-25.png in Resources */,
 				0FBB09EB1B9B677200505844 /* placeholder.png in Resources */,
 				0F2E28A61B9506E30018573B /* LaunchScreen.xib in Resources */,
+				0F36E0591BB018F90067F0A3 /* iPad.storyboard in Resources */,
 				0FBB09F81BA05F9200505844 /* pin.png in Resources */,
 				0FBB09F61B9F3A3D00505844 /* AnnotationView.xib in Resources */,
 				0F2E28A31B9506E30018573B /* Images.xcassets in Resources */,
@@ -676,6 +680,7 @@
 				INFOPLIST_FILE = HomeBuyerAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -687,6 +692,7 @@
 				INFOPLIST_FILE = HomeBuyerAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
