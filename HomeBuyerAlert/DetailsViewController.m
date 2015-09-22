@@ -174,7 +174,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-	imageView.frame = CGRectMake(100,100, 375,248);
+	imageView.frame = CGRectMake(100, 100, 375, 248);
 	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
 	singleTap.numberOfTapsRequired = 1;
 	imageView.userInteractionEnabled = YES;

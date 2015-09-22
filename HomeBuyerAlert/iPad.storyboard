@@ -182,7 +182,7 @@ Enjoy …</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5wO-eJ-Mcz">
-                                <rect key="frame" x="0.0" y="72" width="763" height="903"/>
+                                <rect key="frame" x="0.0" y="0.0" width="763" height="975"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailsCustomCell" rowHeight="82" id="NIH-m9-auc" customClass="DetailsCustomCell">
@@ -222,6 +222,10 @@ Enjoy …</string>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UnR-4D-gHI" id="MTX-VS-XLm"/>
+                                    <outlet property="delegate" destination="UnR-4D-gHI" id="WGi-bH-hnx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
