@@ -180,8 +180,56 @@ Enjoy …</string>
                     <view key="view" contentMode="scaleToFill" id="aFs-Go-XgI">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5wO-eJ-Mcz">
+                                <rect key="frame" x="0.0" y="72" width="763" height="903"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailsCustomCell" rowHeight="82" id="NIH-m9-auc" customClass="DetailsCustomCell">
+                                        <rect key="frame" x="0.0" y="92" width="763" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NIH-m9-auc" id="gwz-gK-s2v">
+                                            <rect key="frame" x="0.0" y="0.0" width="763" height="81"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="TaM-YQ-D9e" customClass="DetailsLabel">
+                                                    <rect key="frame" x="20" y="20" width="723" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myH-zC-qyj" customClass="DetailsLabel">
+                                                    <rect key="frame" x="20" y="43" width="723" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="myH-zC-qyj" secondAttribute="trailing" constant="20" id="EPH-V6-aHA"/>
+                                                <constraint firstItem="myH-zC-qyj" firstAttribute="top" secondItem="TaM-YQ-D9e" secondAttribute="bottom" constant="2" id="Qhb-7C-G8w"/>
+                                                <constraint firstItem="TaM-YQ-D9e" firstAttribute="top" secondItem="gwz-gK-s2v" secondAttribute="top" constant="20" id="YZs-oH-0LV"/>
+                                                <constraint firstAttribute="bottom" secondItem="myH-zC-qyj" secondAttribute="bottom" constant="20" id="abg-wt-VWB"/>
+                                                <constraint firstItem="TaM-YQ-D9e" firstAttribute="leading" secondItem="gwz-gK-s2v" secondAttribute="leading" constant="20" id="rIY-c6-LGm"/>
+                                                <constraint firstItem="myH-zC-qyj" firstAttribute="leading" secondItem="gwz-gK-s2v" secondAttribute="leading" constant="20" id="vCo-JM-iVK"/>
+                                                <constraint firstAttribute="trailing" secondItem="TaM-YQ-D9e" secondAttribute="trailing" constant="20" id="z0j-CM-PhD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subtitle" destination="myH-zC-qyj" id="Lta-d1-ltH"/>
+                                            <outlet property="title" destination="TaM-YQ-D9e" id="bl9-3X-YoT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="5wO-eJ-Mcz" id="buv-2N-hD5"/>
+                        <outlet property="view" destination="aFs-Go-XgI" id="3rR-1k-kSY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSg-QN-ngt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
