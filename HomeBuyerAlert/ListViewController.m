@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	self.title = @"List View";
+	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {

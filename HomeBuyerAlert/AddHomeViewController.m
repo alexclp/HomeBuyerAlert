@@ -10,4 +10,10 @@
 
 @implementation AddHomeViewController
 
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	self.title = @"Add Your Home";
+}
+
 @end

@@ -26,7 +26,9 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
+	
+	self.title = @"Details";
+	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] detailsOfProperty:self.selectedProperty withCompletion:^(PropertyDetail *details, NSError *error) {

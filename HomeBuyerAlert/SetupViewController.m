@@ -11,6 +11,7 @@
 #import "ActionSheetStringPicker.h"
 #import "MBProgressHUD.h"
 #import "ListViewController.h"
+#import "RKDropdownAlert.h"
 
 #define IDIOM UI_USER_INTERFACE_IDIOM()
 #define IPAD UIUserInterfaceIdiomPad
@@ -30,6 +31,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	self.title = @"Settings";
 	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
@@ -206,10 +208,11 @@
 	NSDictionary *params = [NSDictionary dictionary];
 	
 	if (![self completedData]) {
-		
+
 		UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please complete all mandatory fields!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[error show];
-		
+
+	
 		return nil;
 	} else {
 		NSString *province = self.provinceTextField.text;

@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	self.title = @"Map View";
+	
 	
 	NSDictionary *params = [[NSUserDefaults standardUserDefaults] objectForKey:@"prefs"];
 
