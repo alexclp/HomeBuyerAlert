@@ -228,13 +228,24 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	if (indexPath.row == 5) {
 		[self showEmail];
 	} else if (indexPath.row == 6) {
-		
+		[self makeCall];
 	} else if (indexPath.row == 7) {
 	
 	}
 }
 
-#pragma mark Email
+#pragma mark Contact
+
+- (void)makeCall {
+	NSURL *callUrl=[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.details.phone]];
+
+	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
+		[[UIApplication sharedApplication] openURL:callUrl];
+	} else {
+		UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Alert" message:@"This function is only available on the iPhone"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+	}
+}
 
 - (void)showEmail {
 	// Email Subject
