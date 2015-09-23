@@ -22,9 +22,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjV-j2-aKr">
-                        <rect key="frame" x="110" y="80" width="94" height="21"/>
+                        <rect key="frame" x="110" y="80" width="202" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="94" id="4my-hF-996"/>
+                            <constraint firstAttribute="width" constant="202" id="4my-hF-996"/>
                             <constraint firstAttribute="height" constant="21" id="uSX-ti-fo2"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -51,6 +51,7 @@
                     <constraint firstItem="Kqz-Lv-DRH" firstAttribute="top" secondItem="27s-Bt-Tw3" secondAttribute="topMargin" constant="31" id="Bs9-WO-7qd"/>
                     <constraint firstItem="DIP-sG-o8v" firstAttribute="top" secondItem="27s-Bt-Tw3" secondAttribute="topMargin" constant="11" id="HTp-Tx-3A7"/>
                     <constraint firstItem="4F4-hi-Z4i" firstAttribute="top" secondItem="27s-Bt-Tw3" secondAttribute="top" id="NH7-0A-syb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OjV-j2-aKr" secondAttribute="trailing" id="OaK-by-e97"/>
                     <constraint firstItem="4F4-hi-Z4i" firstAttribute="leading" secondItem="DIP-sG-o8v" secondAttribute="trailing" constant="8" symbolic="YES" id="YPz-9I-3eF"/>
                     <constraint firstItem="OjV-j2-aKr" firstAttribute="top" secondItem="Kqz-Lv-DRH" secondAttribute="bottom" constant="3" id="fWB-ef-u0q"/>
                     <constraint firstItem="OjV-j2-aKr" firstAttribute="top" secondItem="4F4-hi-Z4i" secondAttribute="bottom" constant="32" id="gtk-iJ-imh"/>

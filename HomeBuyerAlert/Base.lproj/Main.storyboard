@@ -303,10 +303,10 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qUG-5C-elE" firstAttribute="leading" secondItem="ypV-Rg-JTM" secondAttribute="leading" id="FzD-D0-eZO"/>
-                            <constraint firstItem="qUG-5C-elE" firstAttribute="bottom" secondItem="8vs-90-Jd0" secondAttribute="top" id="Q3E-ZD-SOd"/>
-                            <constraint firstAttribute="trailing" secondItem="qUG-5C-elE" secondAttribute="trailing" id="ZhA-Jz-AwW"/>
-                            <constraint firstItem="qUG-5C-elE" firstAttribute="top" secondItem="tZB-Gc-pTi" secondAttribute="bottom" id="yyr-lA-uP3"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="leading" secondItem="ypV-Rg-JTM" secondAttribute="leading" id="4J3-gp-AfK"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="top" secondItem="tZB-Gc-pTi" secondAttribute="bottom" id="Nd5-zq-RXy"/>
+                            <constraint firstAttribute="trailing" secondItem="qUG-5C-elE" secondAttribute="trailing" id="djp-aA-Rhj"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="bottom" secondItem="8vs-90-Jd0" secondAttribute="top" id="ev6-cX-H79"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add House" image="home_automation-25.png" id="ear-XA-UEk"/>
