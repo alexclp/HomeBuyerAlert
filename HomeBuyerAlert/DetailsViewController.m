@@ -124,7 +124,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSInteger rows;
 	if (self.details) {
-		rows = 4;
+		rows = 8;
 	} else {
 		rows = 0;
 	}
@@ -150,6 +150,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		NSString *type = self.details.type;
 		cell.subtitle.text = type;
 		
+		
 	} else if (indexPath.row == 1) {
 		cell.title.text = @"Description";
 		cell.subtitle.text = self.details.details;
@@ -158,7 +159,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		cell.title.text = @"Address";
 		cell.subtitle.text = self.details.title;
 		
-	} else {
+	} else if (indexPath.row == 3) {
 		
 		cell.title.text = @"Details";
 		
@@ -170,6 +171,14 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		NSString *bedrooms = [@"Bedrooms: " stringByAppendingString:self.details.bedrooms];
 		
 		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
+	} else if (indexPath.row == 4) {
+		cell.title.text = self.details.userName;
+	} else if (indexPath.row == 5) {
+		cell.title.text = self.details.email;
+	} else if (indexPath.row == 6) {
+		cell.title.text = self.details.website;
+	} else if (indexPath.row == 7) {
+		cell.title.text = self.details.phone;
 	}
 }
 
@@ -215,6 +224,57 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	if (indexPath.row == 5) {
+		[self showEmail];
+	} else if (indexPath.row == 6) {
+		
+	} else if (indexPath.row == 7) {
+	
+	}
+}
+
+#pragma mark Email
+
+- (void)showEmail {
+	// Email Subject
+	NSString *emailTitle = @"";
+	// Email Content
+	NSString *messageBody = @"=";
+	// To address
+	NSArray *toRecipents = [NSArray arrayWithObject:self.details.email];
+	
+	MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+	mc.mailComposeDelegate = self;
+	[mc setSubject:emailTitle];
+	[mc setMessageBody:messageBody isHTML:NO];
+	[mc setToRecipients:toRecipents];
+	
+	// Present mail view controller on screen
+	[self presentViewController:mc animated:YES completion:NULL];
+	
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+	switch (result) {
+		case MFMailComposeResultCancelled:
+			NSLog(@"Mail cancelled");
+			break;
+		case MFMailComposeResultSaved:
+			NSLog(@"Mail saved");
+			break;
+		case MFMailComposeResultSent:
+			NSLog(@"Mail sent");
+			break;
+		case MFMailComposeResultFailed:
+			NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+			break;
+		default:
+			break;
+	}
+	
+	// Close the Mail Interface
+	[self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

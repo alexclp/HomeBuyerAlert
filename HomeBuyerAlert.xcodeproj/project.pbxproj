@@ -18,6 +18,7 @@
 		0F2E28C21B95F7CA0018573B /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C11B95F7CA0018573B /* Networking.m */; };
 		0F2E28C51B95FD3A0018573B /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28C41B95FD3A0018573B /* Property.m */; };
 		0F36E0591BB018F90067F0A3 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F36E0581BB018F90067F0A3 /* iPad.storyboard */; settings = {ASSET_TAGS = (); }; };
+		0F37ED041BB31AC400FC360F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F37ED031BB31AC400FC360F /* MessageUI.framework */; };
 		0F5952541BAADCB40057D0EC /* DetailsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5952531BAADCB40057D0EC /* DetailsCustomCell.m */; };
 		0F5952571BAADD400057D0EC /* DetailsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5952561BAADD400057D0EC /* DetailsLabel.m */; };
 		0F88A5AA1B974EEF0014AF20 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88A5971B974EEF0014AF20 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -85,6 +86,7 @@
 		0F2E28C31B95FD3A0018573B /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
 		0F2E28C41B95FD3A0018573B /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
 		0F36E0581BB018F90067F0A3 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		0F37ED031BB31AC400FC360F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0F5952521BAADCB40057D0EC /* DetailsCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsCustomCell.h; sourceTree = "<group>"; };
 		0F5952531BAADCB40057D0EC /* DetailsCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsCustomCell.m; sourceTree = "<group>"; };
 		0F5952551BAADD400057D0EC /* DetailsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsLabel.h; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F37ED041BB31AC400FC360F /* MessageUI.framework in Frameworks */,
 				0F88A5BE1B97503F0014AF20 /* libz.dylib in Frameworks */,
 				0F88A5BC1B97502F0014AF20 /* CoreGraphics.framework in Frameworks */,
 				0F88A5BA1B9750290014AF20 /* MobileCoreServices.framework in Frameworks */,
@@ -345,6 +348,7 @@
 		D8804546CEB06443656779B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F37ED031BB31AC400FC360F /* MessageUI.framework */,
 				0F88A5BD1B97503F0014AF20 /* libz.dylib */,
 				0F88A5BB1B97502F0014AF20 /* CoreGraphics.framework */,
 				0F88A5B91B9750290014AF20 /* MobileCoreServices.framework */,

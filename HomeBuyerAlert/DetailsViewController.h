@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 #import "MWPhotoBrowser.h"
 
-@interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) NSString *selectedProperty;
 
