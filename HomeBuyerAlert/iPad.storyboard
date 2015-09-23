@@ -251,7 +251,7 @@ Enjoy …</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="very-basic-settings-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9cJ-P6-N4y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="very-basic-settings-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9cJ-P6-N4y">
                                 <rect key="frame" x="0.0" y="72" width="172" height="177"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="172" id="eqI-Iy-tFO"/>
@@ -349,7 +349,7 @@ Enjoy …</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiR-4q-wM8">
-                                <rect key="frame" x="237" y="877" width="294" height="30"/>
+                                <rect key="frame" x="237" y="845" width="294" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="lRR-BG-rOv"/>
                                 </constraints>
@@ -390,13 +390,14 @@ Enjoy …</string>
                             <constraint firstItem="kQ5-no-Ttj" firstAttribute="top" secondItem="Scq-9U-JeB" secondAttribute="bottom" constant="13" id="mJ9-wu-vqF"/>
                             <constraint firstItem="D1g-Jk-UOy" firstAttribute="trailing" secondItem="kQ5-no-Ttj" secondAttribute="trailing" id="puO-8M-Y7A"/>
                             <constraint firstItem="kQ5-no-Ttj" firstAttribute="trailing" secondItem="Scq-9U-JeB" secondAttribute="trailing" id="qeX-4j-GSC"/>
-                            <constraint firstItem="eiR-4q-wM8" firstAttribute="top" secondItem="CQA-Gd-add" secondAttribute="bottom" constant="76" id="rzS-dw-cMz"/>
+                            <constraint firstItem="eiR-4q-wM8" firstAttribute="top" secondItem="CQA-Gd-add" secondAttribute="bottom" constant="44" id="rzS-dw-cMz"/>
                             <constraint firstItem="188-xB-Kcp" firstAttribute="leading" secondItem="jNy-39-IWR" secondAttribute="leadingMargin" constant="42" id="s2v-vh-zVM"/>
                             <constraint firstItem="dYA-2r-lIR" firstAttribute="leading" secondItem="HRt-Zn-Gok" secondAttribute="leading" id="t0s-dv-ZeR"/>
                             <constraint firstItem="5rF-iV-GBp" firstAttribute="top" secondItem="D1g-Jk-UOy" secondAttribute="bottom" constant="8" symbolic="YES" id="u1h-ZP-77h"/>
                             <constraint firstItem="5rF-iV-GBp" firstAttribute="trailing" secondItem="dYA-2r-lIR" secondAttribute="trailing" id="xcY-F3-Qmx"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="city1TextField" destination="kQ5-no-Ttj" id="VZ4-GK-Mg3"/>
