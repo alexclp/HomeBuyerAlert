@@ -84,6 +84,12 @@
 #define COCOAPODS_VERSION_MINOR_MWPhotoBrowser 1
 #define COCOAPODS_VERSION_PATCH_MWPhotoBrowser 1
 
+// RKDropdownAlert
+#define COCOAPODS_POD_AVAILABLE_RKDropdownAlert
+#define COCOAPODS_VERSION_MAJOR_RKDropdownAlert 0
+#define COCOAPODS_VERSION_MINOR_RKDropdownAlert 3
+#define COCOAPODS_VERSION_PATCH_RKDropdownAlert 0
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3

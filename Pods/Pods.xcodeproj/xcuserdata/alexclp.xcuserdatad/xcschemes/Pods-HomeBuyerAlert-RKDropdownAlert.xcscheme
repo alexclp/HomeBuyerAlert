@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "59EA3D83BB10F40B36974F26"
-               BuildableName = "SDWebImage.framework"
-               BlueprintName = "Pods-HomeBuyerAlert-SDWebImage"
+               BlueprintIdentifier = "C773FA469D4F8F8AD1A64DD8"
+               BuildableName = "RKDropdownAlert.framework"
+               BlueprintName = "Pods-HomeBuyerAlert-RKDropdownAlert"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -55,6 +55,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'DXCustomCallout_ObjC.framework'
   install_framework 'MBProgressHUD.framework'
   install_framework 'MWPhotoBrowser.framework'
+  install_framework 'RKDropdownAlert.framework'
   install_framework 'SDWebImage.framework'
   install_framework 'SMXMLDocument.framework'
 fi
@@ -66,6 +67,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'DXCustomCallout_ObjC.framework'
   install_framework 'MBProgressHUD.framework'
   install_framework 'MWPhotoBrowser.framework'
+  install_framework 'RKDropdownAlert.framework'
   install_framework 'SDWebImage.framework'
   install_framework 'SMXMLDocument.framework'
 fi

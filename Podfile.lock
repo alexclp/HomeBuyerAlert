@@ -29,6 +29,7 @@ PODS:
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
     - SDWebImage (!= 3.7.2, ~> 3.7)
+  - RKDropdownAlert (0.3.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - DXCustomCallout-ObjC
   - MBProgressHUD (~> 0.9.1)
   - MWPhotoBrowser
+  - RKDropdownAlert
   - SDWebImage
   - SMXMLDocument
 
@@ -52,6 +54,7 @@ SPEC CHECKSUMS:
   DXCustomCallout-ObjC: fb223603ee148365de51c2d69bb10443943ff89b
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MWPhotoBrowser: ba0d0c09ffda3a7ea10093518738c502c1c7141c
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SMXMLDocument: e0d9fbf726a2a0921871b492966458acb3ad9689
 

@@ -15,6 +15,7 @@ pod 'SDWebImage'
 pod 'DXCustomCallout-ObjC'
 pod 'APParallaxHeader'
 pod 'MWPhotoBrowser'
+pod 'RKDropdownAlert'
 
 end
 

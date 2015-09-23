@@ -1,0 +1,6 @@
+framework module RKDropdownAlert {
+  umbrella header "Pods-HomeBuyerAlert-RKDropdownAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}
