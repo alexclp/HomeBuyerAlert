@@ -20,6 +20,8 @@
 @property (nonatomic, weak) IBOutlet UISlider *slider;
 @property (nonatomic, weak) IBOutlet UILabel *priceLabel;
 
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+
 - (IBAction)provinceTouchDown:(UITextField *)textField;
 - (IBAction)city1TouchDown:(UITextField *)textField;
 - (IBAction)city2TouchDown:(UITextField *)textField;

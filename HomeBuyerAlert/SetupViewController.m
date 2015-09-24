@@ -83,6 +83,9 @@
 #pragma mark UI Interaction
 
 - (IBAction)provinceTouchDown:(UITextField *)textField {
+	
+	NSLog(@"TOUCH DOWN");
+	
 	[ActionSheetStringPicker showPickerWithTitle:@"Select a province"
 											rows:self.provinces
 								initialSelection:0
@@ -99,6 +102,9 @@
 }
 
 - (IBAction)city1TouchDown:(UITextField *)textField {
+	
+	NSLog(@"TOUCH DOWN");
+	
 	[ActionSheetStringPicker showPickerWithTitle:@"Select a city"
 											rows:self.cities
 								initialSelection:0
@@ -114,6 +120,9 @@
 }
 
 - (IBAction)city2TouchDown:(UITextField *)textField; {
+	
+	NSLog(@"TOUCH DOWN");
+	
 	[ActionSheetStringPicker showPickerWithTitle:@"Select a city"
 											rows:self.cities
 								initialSelection:0
@@ -128,6 +137,9 @@
 }
 
 - (IBAction)city3TouchDown:(UITextField *)textField {
+	
+	NSLog(@"TOUCH DOWN");
+	
 	[ActionSheetStringPicker showPickerWithTitle:@"Select a city"
 											rows:self.cities
 								initialSelection:0
@@ -142,6 +154,9 @@
 }
 
 - (IBAction)priceRangeTouchDown:(UITextField *)textField {
+	
+	NSLog(@"TOUCH DOWN");
+	
 	[ActionSheetStringPicker showPickerWithTitle:@"Select the price range"
 											rows:self.priceOver
 								initialSelection:0

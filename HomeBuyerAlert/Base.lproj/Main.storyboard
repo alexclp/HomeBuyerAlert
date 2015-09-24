@@ -232,6 +232,7 @@ Enjoy …</string>
                         <outlet property="priceLabel" destination="JCe-mM-1QJ" id="ydW-cP-6VH"/>
                         <outlet property="priceRangeTextField" destination="Nm2-dg-jqn" id="WQj-Kr-WLh"/>
                         <outlet property="provinceTextField" destination="KLM-ei-k98" id="yTM-DC-86w"/>
+                        <outlet property="scrollView" destination="cWV-MU-to6" id="56P-Hb-L9e"/>
                         <outlet property="slider" destination="yCk-zu-QMM" id="8F9-5h-U2k"/>
                         <segue destination="TlF-Vm-stK" kind="show" identifier="listSegue" id="05G-Q9-H8p"/>
                     </connections>
