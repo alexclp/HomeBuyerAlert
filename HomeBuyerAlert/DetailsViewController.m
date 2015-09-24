@@ -144,6 +144,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 - (void)configureBasicCell:(DetailsCustomCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
+	cell.userInteractionEnabled = NO;
+	
 	if (indexPath.row == 0) {
 		NSString *price = [self formatPrice:self.details.price];
 		cell.title.text = price;
@@ -176,12 +178,15 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		cell.title.text = self.details.userName;
 		cell.subtitle.text = @"";
 	} else if (indexPath.row == 5) {
+		cell.userInteractionEnabled = YES;
 		cell.title.text = self.details.email;
 		cell.subtitle.text = @"";
 	} else if (indexPath.row == 6) {
+		cell.userInteractionEnabled = YES;
 		cell.title.text = self.details.website;
 		cell.subtitle.text = @"";
 	} else if (indexPath.row == 7) {
+		cell.userInteractionEnabled = YES;
 		cell.title.text = self.details.phone;
 		cell.subtitle.text = @"";
 	}
@@ -191,10 +196,10 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 	imageView.frame = CGRectMake (100, 100, 375, 248);
-//	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
-//	singleTap.numberOfTapsRequired = 1;
+	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+	singleTap.numberOfTapsRequired = 1;
 	imageView.userInteractionEnabled = YES;
-//	[imageView addGestureRecognizer:singleTap];
+	[imageView addGestureRecognizer:singleTap];
 	
 	return imageView;
 }
@@ -235,9 +240,9 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	if (indexPath.row == 5) {
 		[self showEmail];
 	} else if (indexPath.row == 6) {
-		[self makeCall];
-	} else if (indexPath.row == 7) {
 		[self openWebsite];
+	} else if (indexPath.row == 7) {
+		[self makeCall];
 	}
 }
 
@@ -253,7 +258,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 - (void)makeCall {
 	NSURL *callUrl = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", self.details.phone]];
-
+	NSLog(@"URL: %@", callUrl);
+	
 	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
 		[[UIApplication sharedApplication] openURL:callUrl];
 	} else {
