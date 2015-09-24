@@ -64,6 +64,8 @@
 		
 		self.priceRangeTextField.text = [self.priceOver objectAtIndex:[[settings objectForKey:@"priceabove"] intValue]];
 		
+		[self loadCities];
+		
 	}
 	
 	// Load provinces
