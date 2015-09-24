@@ -83,7 +83,6 @@
 #pragma mark UI Interaction
 
 - (IBAction)provinceTouchDown:(UITextField *)textField {
-		
 	[ActionSheetStringPicker showPickerWithTitle:@"Select a province"
 											rows:self.provinces
 								initialSelection:0

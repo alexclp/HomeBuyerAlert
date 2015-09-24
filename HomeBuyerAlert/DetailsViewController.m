@@ -229,6 +229,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
+	
+	
 	NSLog(@"index: %ld", indexPath.row);
 	
 	DetailsCustomCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -255,7 +257,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (void)makeCall {
-	NSURL *callUrl=[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.details.phone]];
+	NSURL *callUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.details.phone]];
 
 	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
 		[[UIApplication sharedApplication] openURL:callUrl];
