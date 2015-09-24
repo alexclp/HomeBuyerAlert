@@ -133,8 +133,6 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSLog(@"CURRENT INDEX: %ld", indexPath.row);
-	
 	return [self basicCellAtIndexPath:indexPath];
 }
 
@@ -229,14 +227,13 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	return size.height + 1.0f; // Add 1.0f for the cell separator height
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	DetailsCustomCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+	
 	
 	if (indexPath.row == 5) {
 		[self showEmail];
-		NSLog(@"Show email");
 	} else if (indexPath.row == 6) {
 		[self makeCall];
 	} else if (indexPath.row == 7) {
