@@ -54,7 +54,6 @@ Enjoy …</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="obd-gc-8Z7" secondAttribute="leading" id="4Hq-aD-AUv"/>
                             <constraint firstItem="L0M-zV-rgF" firstAttribute="centerX" secondItem="obd-gc-8Z7" secondAttribute="centerX" id="4cP-3Q-tYS"/>

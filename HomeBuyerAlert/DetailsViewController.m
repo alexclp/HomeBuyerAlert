@@ -252,7 +252,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (void)makeCall {
-	NSURL *callUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.details.phone]];
+	NSURL *callUrl = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", self.details.phone]];
 
 	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
 		[[UIApplication sharedApplication] openURL:callUrl];
@@ -266,7 +266,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	// Email Subject
 	NSString *emailTitle = @"";
 	// Email Content
-	NSString *messageBody = @"=";
+	NSString *messageBody = @"";
 	// To address
 	NSArray *toRecipents = [NSArray arrayWithObject:self.details.email];
 	
