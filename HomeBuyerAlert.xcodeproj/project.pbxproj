@@ -680,7 +680,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcons;
 				INFOPLIST_FILE = HomeBuyerAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -692,7 +692,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcons;
 				INFOPLIST_FILE = HomeBuyerAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
