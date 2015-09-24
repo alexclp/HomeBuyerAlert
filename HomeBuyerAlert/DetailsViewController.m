@@ -235,8 +235,6 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	
-	
 	if (indexPath.row == 5) {
 		[self showEmail];
 	} else if (indexPath.row == 6) {
@@ -258,7 +256,6 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 - (void)makeCall {
 	NSURL *callUrl = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", self.details.phone]];
-	NSLog(@"URL: %@", callUrl);
 	
 	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
 		[[UIApplication sharedApplication] openURL:callUrl];
