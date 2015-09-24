@@ -132,6 +132,9 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	NSLog(@"CURRENT INDEX: %ld", indexPath.row);
+	
 	return [self basicCellAtIndexPath:indexPath];
 }
 
@@ -190,10 +193,10 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 	imageView.frame = CGRectMake (100, 100, 375, 248);
-	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
-	singleTap.numberOfTapsRequired = 1;
+//	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+//	singleTap.numberOfTapsRequired = 1;
 	imageView.userInteractionEnabled = YES;
-	[imageView addGestureRecognizer:singleTap];
+//	[imageView addGestureRecognizer:singleTap];
 	
 	return imageView;
 }
@@ -229,12 +232,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	
-	
-	NSLog(@"index: %ld", indexPath.row);
-	
 	DetailsCustomCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-	NSLog(@"Title: %@", cell.title.text);
 	
 	if (indexPath.row == 5) {
 		[self showEmail];
@@ -262,7 +260,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
 		[[UIApplication sharedApplication] openURL:callUrl];
 	} else {
-		UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Alert" message:@"This function is only available on the iPhone"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"This function is only available on the iPhone"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 	}
 }
