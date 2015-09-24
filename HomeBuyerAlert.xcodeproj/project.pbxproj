@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F11A70A1BB4B58C001D7F85 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F11A7091BB4B58C001D7F85 /* Images-2.xcassets */; settings = {ASSET_TAGS = (); }; };
+		0F11A70F1BB4B5F9001D7F85 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F11A70B1BB4B5F9001D7F85 /* Default.png */; settings = {ASSET_TAGS = (); }; };
+		0F11A7101BB4B5F9001D7F85 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F11A70C1BB4B5F9001D7F85 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		0F11A7111BB4B5F9001D7F85 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F11A70D1BB4B5F9001D7F85 /* Default-667h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		0F11A7121BB4B5F9001D7F85 /* Default-736@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F11A70E1BB4B5F9001D7F85 /* Default-736@3x.png */; settings = {ASSET_TAGS = (); }; };
 		0F2E28981B9506E30018573B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E28971B9506E30018573B /* main.m */; };
 		0F2E289B1B9506E30018573B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E289A1B9506E30018573B /* AppDelegate.m */; };
 		0F2E289E1B9506E30018573B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E289D1B9506E30018573B /* WelcomeViewController.m */; };
@@ -67,6 +72,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F11A7091BB4B58C001D7F85 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		0F11A70B1BB4B5F9001D7F85 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0F11A70C1BB4B5F9001D7F85 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0F11A70D1BB4B5F9001D7F85 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		0F11A70E1BB4B5F9001D7F85 /* Default-736@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736@3x.png"; sourceTree = "<group>"; };
 		0F2E28921B9506E30018573B /* HomeBuyerAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeBuyerAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2E28961B9506E30018573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F2E28971B9506E30018573B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -176,6 +186,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F11A7131BB4B5FF001D7F85 /* Launch images */ = {
+			isa = PBXGroup;
+			children = (
+				0F11A70B1BB4B5F9001D7F85 /* Default.png */,
+				0F11A70C1BB4B5F9001D7F85 /* Default-568h@2x.png */,
+				0F11A70D1BB4B5F9001D7F85 /* Default-667h@2x.png */,
+				0F11A70E1BB4B5F9001D7F85 /* Default-736@3x.png */,
+			);
+			name = "Launch images";
+			sourceTree = "<group>";
+		};
 		0F2E28891B9506E30018573B = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +228,7 @@
 				0F2E28BE1B95F7AD0018573B /* Controller */,
 				0FBB09E41B98F76A00505844 /* View */,
 				0F2E28A21B9506E30018573B /* Images.xcassets */,
+				0F11A7091BB4B58C001D7F85 /* Images-2.xcassets */,
 				0F2E28951B9506E30018573B /* Supporting Files */,
 			);
 			path = HomeBuyerAlert;
@@ -241,6 +263,7 @@
 		0F2E28BB1B9509200018573B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F11A7131BB4B5FF001D7F85 /* Launch images */,
 				0FBB09EA1B9B677200505844 /* placeholder.png */,
 				0F88A5C01B97A1B20014AF20 /* very-basic-settings-icon.png */,
 				0F2E28BC1B9509470018573B /* home-buyer-alert-logo.png */,
@@ -420,6 +443,7 @@
 				TargetAttributes = {
 					0F2E28911B9506E30018573B = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Q3V7L8YK8G;
 					};
 					0F2E28AA1B9506E30018573B = {
 						CreatedOnToolsVersion = 6.4;
@@ -453,16 +477,21 @@
 			files = (
 				0F2E28BD1B9509470018573B /* home-buyer-alert-logo.png in Resources */,
 				0F2E28A11B9506E30018573B /* Main.storyboard in Resources */,
+				0F11A70A1BB4B58C001D7F85 /* Images-2.xcassets in Resources */,
 				0FBB09E61B9B35E900505844 /* ListViewCell.xib in Resources */,
 				0FBB09EF1B9B7FED00505844 /* map-25.png in Resources */,
 				0F88A5C11B97A1B20014AF20 /* very-basic-settings-icon.png in Resources */,
+				0F11A7111BB4B5F9001D7F85 /* Default-667h@2x.png in Resources */,
 				0FBB09ED1B9B7FB500505844 /* list_filled-25.png in Resources */,
 				0FBB09F11B9B800E00505844 /* home_automation-25.png in Resources */,
 				0FBB09EB1B9B677200505844 /* placeholder.png in Resources */,
 				0F2E28A61B9506E30018573B /* LaunchScreen.xib in Resources */,
+				0F11A70F1BB4B5F9001D7F85 /* Default.png in Resources */,
 				0F36E0591BB018F90067F0A3 /* iPad.storyboard in Resources */,
 				0FBB09F81BA05F9200505844 /* pin.png in Resources */,
+				0F11A7101BB4B5F9001D7F85 /* Default-568h@2x.png in Resources */,
 				0FBB09F61B9F3A3D00505844 /* AnnotationView.xib in Resources */,
+				0F11A7121BB4B5F9001D7F85 /* Default-736@3x.png in Resources */,
 				0F2E28A31B9506E30018573B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,7 +710,10 @@
 			baseConfigurationReference = 76465F150A5D806524FB7035 /* Pods-HomeBuyerAlert.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcons;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HomeBuyerAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -693,7 +725,10 @@
 			baseConfigurationReference = 44AC9E4156FA60947A8F95DE /* Pods-HomeBuyerAlert.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcons;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HomeBuyerAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
