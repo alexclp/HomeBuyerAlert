@@ -11,7 +11,7 @@
 
 #import "MWPhotoBrowser.h"
 
-@interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
+@interface DetailsViewController : UIViewController <MWPhotoBrowserDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) NSString *selectedProperty;
 

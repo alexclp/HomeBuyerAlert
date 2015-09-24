@@ -142,7 +142,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (void)configureBasicCell:(DetailsCustomCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-
+	
 	if (indexPath.row == 0) {
 		NSString *price = [self formatPrice:self.details.price];
 		cell.title.text = price;
@@ -173,19 +173,23 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
 	} else if (indexPath.row == 4) {
 		cell.title.text = self.details.userName;
+		cell.subtitle.text = @"";
 	} else if (indexPath.row == 5) {
 		cell.title.text = self.details.email;
+		cell.subtitle.text = @"";
 	} else if (indexPath.row == 6) {
 		cell.title.text = self.details.website;
+		cell.subtitle.text = @"";
 	} else if (indexPath.row == 7) {
 		cell.title.text = self.details.phone;
+		cell.subtitle.text = @"";
 	}
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-	imageView.frame = CGRectMake(100, 100, 375, 248);
+	imageView.frame = CGRectMake (100, 100, 375, 248);
 	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
 	singleTap.numberOfTapsRequired = 1;
 	imageView.userInteractionEnabled = YES;
@@ -225,16 +229,30 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
+	NSLog(@"index: %ld", indexPath.row);
+	
+	DetailsCustomCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+	NSLog(@"Title: %@", cell.title.text);
+	
 	if (indexPath.row == 5) {
 		[self showEmail];
+		NSLog(@"Show email");
 	} else if (indexPath.row == 6) {
 		[self makeCall];
 	} else if (indexPath.row == 7) {
-	
+		[self openWebsite];
 	}
 }
 
 #pragma mark Contact
+
+- (void)openWebsite {
+	
+	if (![self.details.website isEqual:@""]) {
+		NSURL *url = [NSURL URLWithString:self.details.website];
+		[[UIApplication sharedApplication] openURL:url];
+	}
+}
 
 - (void)makeCall {
 	NSURL *callUrl=[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.details.phone]];
