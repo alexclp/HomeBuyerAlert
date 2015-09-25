@@ -95,7 +95,8 @@ static Networking *networking;
 	
 //	NSLog(@"URL String: %@", urlString);
 	
-	NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/property-custom-new.php?prov=Alberta&city1=Calgary&city2=&city3=&minPrice=240000&maxPrice=320000"];
+//	NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/property-custom-new.php?prov=Alberta&city1=Calgary&city2=&city3=&minPrice=240000&maxPrice=320000"];
+	NSURL *url = [NSURL URLWithString:urlString];
 	
 	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	
