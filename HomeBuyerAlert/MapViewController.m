@@ -150,7 +150,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"showDetailsFromMap"]) {
 		Property *current = [self.properties objectAtIndex:self.selectedPropertyID.intValue];
-		NSLog(@"INDEX: %d", self.selectedPropertyID.intValue);
 		
 		DetailsViewController *vc = [segue destinationViewController];
 		vc.selectedProperty = current.code;
