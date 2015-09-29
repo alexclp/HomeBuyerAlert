@@ -44,8 +44,8 @@
 	
 	NSDictionary *settings = [[NSUserDefaults standardUserDefaults] objectForKey:@"prefs"];
 	
-	self.slider.value = 45000;
-	self.priceLabel.text = @"$45,000";
+	self.slider.value = 450000;
+	self.priceLabel.text = @"$450,000";
 	
 	self.priceRangeTextField.text = [self.priceOver objectAtIndex:0];
 	
