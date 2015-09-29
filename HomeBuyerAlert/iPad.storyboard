@@ -123,6 +123,7 @@ Enjoy …</string>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="MXn-Tf-BQu" id="udN-ad-7Kz"/>
+                        <segue destination="UnR-4D-gHI" kind="show" identifier="showDetailsFromMap" id="jNg-2u-nzL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg6-Pj-hlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -485,4 +486,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
         <image name="map-25.png" width="25" height="25"/>
         <image name="very-basic-settings-icon.png" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jNg-2u-nzL"/>
+    </inferredMetricsTieBreakers>
 </document>
