@@ -171,10 +171,10 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
             </objects>
             <point key="canvasLocation" x="2853" y="1661"/>
         </scene>
-        <!--List View-->
+        <!--List view-->
         <scene sceneID="X6H-HM-URT">
             <objects>
-                <viewController title="List View" id="CIC-hN-gOU" customClass="ListViewController" sceneMemberID="viewController">
+                <viewController title="List view" id="CIC-hN-gOU" customClass="ListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xcZ-e4-ydb"/>
                         <viewControllerLayoutGuide type="bottom" id="9Un-mc-lEb"/>
@@ -184,7 +184,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="btZ-NY-ZfS">
-                                <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="CIC-hN-gOU" id="RK3-sb-5m2"/>
@@ -194,10 +194,10 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="leading" secondItem="Ymh-nR-qTQ" secondAttribute="leading" id="6eF-9L-Vrf"/>
-                            <constraint firstAttribute="trailing" secondItem="btZ-NY-ZfS" secondAttribute="trailing" id="9rm-sd-xnQ"/>
-                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="bottom" secondItem="9Un-mc-lEb" secondAttribute="top" id="c1Q-0J-8D7"/>
-                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="top" secondItem="xcZ-e4-ydb" secondAttribute="bottom" id="cc0-hC-oft"/>
+                            <constraint firstAttribute="trailing" secondItem="btZ-NY-ZfS" secondAttribute="trailing" id="Fwr-XH-FgY"/>
+                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="bottom" secondItem="9Un-mc-lEb" secondAttribute="top" id="NZd-dx-665"/>
+                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="top" secondItem="Ymh-nR-qTQ" secondAttribute="top" constant="20" symbolic="YES" id="bfs-mA-Doi"/>
+                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="leading" secondItem="Ymh-nR-qTQ" secondAttribute="leading" id="hCL-rd-Ksh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="awL-ZI-jvI"/>
@@ -490,6 +490,6 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
         <image name="very-basic-settings-icon.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jNg-2u-nzL"/>
+        <segue reference="u2F-XX-PvZ"/>
     </inferredMetricsTieBreakers>
 </document>

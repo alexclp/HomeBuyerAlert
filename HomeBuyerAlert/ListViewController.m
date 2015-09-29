@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.title = @"List View";
+	self.title = @"List view";
 	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
@@ -62,7 +62,7 @@
 	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
 	
 	cell.price.text = modelNumberString;
-	cell.price.text = [cell.price.text stringByAppendingString:@"$"];
+	cell.price.text = [@"$" stringByAppendingString:cell.price.text];
 	
 	NSLog(@"Current image URL = %@", current.imageURL);
 	[cell.image sd_setImageWithURL:[NSURL URLWithString:current.imageURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
