@@ -386,11 +386,12 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                                     <outlet property="delegate" destination="jQB-SK-nC2" id="ejy-aF-6OL"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiR-4q-wM8">
-                                <rect key="frame" x="237" y="845" width="294" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiR-4q-wM8">
+                                <rect key="frame" x="203" y="851" width="362" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="lRR-BG-rOv"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save and continue"/>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="jQB-SK-nC2" eventType="touchUpInside" id="Gdi-mR-TGL"/>
