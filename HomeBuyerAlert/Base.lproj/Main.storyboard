@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Canadian Properties Here." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-aR-QwL">
                                 <rect key="frame" x="12" y="258" width="351" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="VR4-Z2-whZ"/>
+                                    <constraint firstAttribute="height" constant="21" id="tLW-83-ncZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,13 +30,13 @@
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L3G-KZ-Qsf">
                                 <rect key="frame" x="12" y="114" width="351" height="79"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="4yl-ej-sQq"/>
+                                    <constraint firstAttribute="height" constant="79" id="uIS-aI-Fto"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obd-gc-8Z7">
                                 <rect key="frame" x="12" y="324" width="351" height="107"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="VGM-h0-vGx"/>
+                                    <constraint firstAttribute="height" constant="107" id="g3d-id-L57"/>
                                 </constraints>
                                 <string key="text">Welcome to HomeBuyerAlert - Property by owners and agents. To get started, just select where you're looking for real estate. Alerts will come to your phone when new properties are added.                                                                  
 Enjoy …</string>
@@ -44,7 +44,11 @@ Enjoy …</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0M-zV-rgF">
-                                <rect key="frame" x="157" y="617" width="62" height="30"/>
+                                <rect key="frame" x="106" y="570" width="163" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="vyn-7c-Hn9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,17 +59,18 @@ Enjoy …</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="obd-gc-8Z7" secondAttribute="leading" id="4Hq-aD-AUv"/>
-                            <constraint firstItem="L0M-zV-rgF" firstAttribute="centerX" secondItem="obd-gc-8Z7" secondAttribute="centerX" id="4cP-3Q-tYS"/>
-                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-4" id="Mmm-S0-84T"/>
-                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="top" secondItem="L3G-KZ-Qsf" secondAttribute="bottom" constant="65" id="dAT-qy-pTs"/>
-                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="trailing" secondItem="obd-gc-8Z7" secondAttribute="trailing" id="gg5-83-2Td"/>
-                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="trailing" secondItem="L3G-KZ-Qsf" secondAttribute="trailing" id="gzX-Qp-rb8"/>
-                            <constraint firstItem="L3G-KZ-Qsf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="kFT-hL-U2N"/>
-                            <constraint firstItem="obd-gc-8Z7" firstAttribute="top" secondItem="Mj3-aR-QwL" secondAttribute="bottom" constant="45" id="nhd-Jn-2Y6"/>
-                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="L3G-KZ-Qsf" secondAttribute="leading" id="ofN-6V-N7u"/>
-                            <constraint firstItem="L3G-KZ-Qsf" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="4" id="p6R-AO-9QE"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="L0M-zV-rgF" secondAttribute="bottom" constant="20" id="qZq-dX-giW"/>
+                            <constraint firstItem="obd-gc-8Z7" firstAttribute="centerX" secondItem="L0M-zV-rgF" secondAttribute="centerX" id="4ae-ft-Llx"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="leading" secondItem="obd-gc-8Z7" secondAttribute="leading" id="5aM-he-t9h"/>
+                            <constraint firstItem="L0M-zV-rgF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="90" id="84t-V9-sFx"/>
+                            <constraint firstItem="L0M-zV-rgF" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="87M-XB-PIM"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="L0M-zV-rgF" secondAttribute="bottom" constant="40" id="8oy-n4-5Pi"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="top" secondItem="L3G-KZ-Qsf" secondAttribute="bottom" constant="65" id="Dy6-3f-A4K"/>
+                            <constraint firstItem="obd-gc-8Z7" firstAttribute="top" secondItem="Mj3-aR-QwL" secondAttribute="bottom" constant="45" id="FP0-fb-MRT"/>
+                            <constraint firstItem="L3G-KZ-Qsf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-4" id="GbF-8b-Kgg"/>
+                            <constraint firstItem="L3G-KZ-Qsf" firstAttribute="leading" secondItem="Mj3-aR-QwL" secondAttribute="leading" id="J2X-JW-xYO"/>
+                            <constraint firstItem="L3G-KZ-Qsf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="bcT-tY-dde"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="trailing" secondItem="L3G-KZ-Qsf" secondAttribute="trailing" id="r9F-0g-EwZ"/>
+                            <constraint firstItem="Mj3-aR-QwL" firstAttribute="trailing" secondItem="obd-gc-8Z7" secondAttribute="trailing" id="yFl-Yk-pvD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="S8m-3p-mVr"/>
