@@ -35,33 +35,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="b2T-aG-ehI">
-                                <rect key="frame" x="20" y="72" width="728" height="138"/>
+                                <rect key="frame" x="20" y="130" width="728" height="138"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="138" id="mVR-Le-nDK"/>
+                                    <constraint firstAttribute="height" constant="138" id="6Aa-Dt-ns0"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Canadian properties here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnf-KY-Td7">
-                                <rect key="frame" x="20" y="238" width="723" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="319" width="723" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SsF-1a-32K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTp-jU-YEo">
-                                <rect key="frame" x="20" y="274" width="723" height="107"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="PJ3-ED-yga"/>
-                                </constraints>
-                                <string key="text">Welcome to HomeBuyerAlert - Property by owners and agents. To get started, just select where you're looking for real estate. Alerts will come to your phone when new properties are added.                                                                  
-Enjoy …</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-eI-HMK">
-                                <rect key="frame" x="284" y="903" width="201" height="83"/>
+                                <rect key="frame" x="284" y="785" width="201" height="83"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="9xf-uO-lvv"/>
-                                    <constraint firstAttribute="height" constant="83" id="rgI-q5-xh0"/>
+                                    <constraint firstAttribute="height" constant="83" id="AUb-zh-1Hj"/>
+                                    <constraint firstAttribute="width" constant="201" id="Uwy-At-YaF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continue"/>
@@ -69,20 +61,31 @@ Enjoy …</string>
                                     <segue destination="jQB-SK-nC2" kind="show" id="133-1n-yb3"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTp-jU-YEo">
+                                <rect key="frame" x="20" y="378" width="723" height="107"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="xZi-l9-OUl"/>
+                                </constraints>
+                                <string key="text">Welcome to HomeBuyerAlert - Property by owners and agents. To get started, just select where you're looking for real estate. Alerts will come to your phone when new properties are added.                                                                  
+Enjoy …</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uTp-jU-YEo" firstAttribute="top" secondItem="Qnf-KY-Td7" secondAttribute="bottom" constant="15" id="1Jv-lx-IyC"/>
-                            <constraint firstItem="b2T-aG-ehI" firstAttribute="top" secondItem="hKb-xM-XYn" secondAttribute="bottom" constant="8" symbolic="YES" id="5GK-Ig-sE1"/>
-                            <constraint firstItem="Qnf-KY-Td7" firstAttribute="leading" secondItem="b2T-aG-ehI" secondAttribute="leading" id="D0r-tg-b7b"/>
-                            <constraint firstItem="Qnf-KY-Td7" firstAttribute="leading" secondItem="wxO-vo-ykN" secondAttribute="leadingMargin" id="LMM-9u-cgf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qnf-KY-Td7" secondAttribute="trailing" constant="5" id="OeX-1Y-SIR"/>
-                            <constraint firstItem="b2T-aG-ehI" firstAttribute="trailing" secondItem="wxO-vo-ykN" secondAttribute="trailingMargin" id="Z21-Wa-L0K"/>
-                            <constraint firstItem="uTp-jU-YEo" firstAttribute="trailing" secondItem="Qnf-KY-Td7" secondAttribute="trailing" id="dXT-bn-jxw"/>
-                            <constraint firstItem="VDz-lg-vH3" firstAttribute="top" secondItem="iJZ-eI-HMK" secondAttribute="bottom" constant="38" id="jId-lZ-vs9"/>
-                            <constraint firstItem="Qnf-KY-Td7" firstAttribute="top" secondItem="b2T-aG-ehI" secondAttribute="bottom" constant="28" id="oDy-c6-v4S"/>
-                            <constraint firstItem="uTp-jU-YEo" firstAttribute="leading" secondItem="Qnf-KY-Td7" secondAttribute="leading" id="oeT-SU-KUa"/>
-                            <constraint firstItem="b2T-aG-ehI" firstAttribute="centerX" secondItem="iJZ-eI-HMK" secondAttribute="centerX" id="qBb-Uq-Soe"/>
+                            <constraint firstItem="uTp-jU-YEo" firstAttribute="leading" secondItem="Qnf-KY-Td7" secondAttribute="leading" id="00d-yj-eRd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qnf-KY-Td7" secondAttribute="trailing" constant="5" id="00f-up-eGM"/>
+                            <constraint firstItem="b2T-aG-ehI" firstAttribute="top" secondItem="hKb-xM-XYn" secondAttribute="bottom" constant="66" id="3q2-be-VmH"/>
+                            <constraint firstItem="b2T-aG-ehI" firstAttribute="trailing" secondItem="wxO-vo-ykN" secondAttribute="trailingMargin" id="55m-DV-tji"/>
+                            <constraint firstItem="uTp-jU-YEo" firstAttribute="trailing" secondItem="Qnf-KY-Td7" secondAttribute="trailing" id="JR0-BT-j1B"/>
+                            <constraint firstItem="b2T-aG-ehI" firstAttribute="leading" secondItem="wxO-vo-ykN" secondAttribute="leadingMargin" id="Jva-eA-bwT"/>
+                            <constraint firstItem="Qnf-KY-Td7" firstAttribute="leading" secondItem="b2T-aG-ehI" secondAttribute="leading" id="Jvi-ys-7ph"/>
+                            <constraint firstItem="Qnf-KY-Td7" firstAttribute="top" secondItem="b2T-aG-ehI" secondAttribute="bottom" constant="51" id="On4-Uc-ndz"/>
+                            <constraint firstItem="iJZ-eI-HMK" firstAttribute="centerX" secondItem="b2T-aG-ehI" secondAttribute="centerX" id="ZM2-iu-gv6"/>
+                            <constraint firstItem="VDz-lg-vH3" firstAttribute="top" secondItem="iJZ-eI-HMK" secondAttribute="bottom" constant="156" id="fSQ-56-qqq"/>
+                            <constraint firstItem="uTp-jU-YEo" firstAttribute="top" secondItem="Qnf-KY-Td7" secondAttribute="bottom" constant="38" id="zMh-D6-bbd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f3h-gu-mQj"/>
