@@ -33,7 +33,7 @@
 	
 	self.title = @"Settings";
 	
-	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	
 	
 	self.priceOver = @[@"Plus or minus 25,000",
 					   @"Plus or minus 50,000",
@@ -74,6 +74,8 @@
 	}
 	
 	// Load provinces
+	
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] activeProvincesWithCompletion:^(NSArray *array, NSError *error) {
 		if (error) {
