@@ -71,20 +71,13 @@
 		
 		[self loadCities];
 		
+	} else {
+		// Load provinces
+		
+		[self loadProvinces];
 	}
 	
-	// Load provinces
 	
-	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-	
-	[[Networking networking] activeProvincesWithCompletion:^(NSArray *array, NSError *error) {
-		if (error) {
-			
-		} else {
-			self.provinces = [NSArray arrayWithArray:array];
-			[MBProgressHUD hideHUDForView:self.view animated:YES];
-		}
-	}];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadCities) name:@"Province selected" object:nil];
 }
@@ -320,11 +313,31 @@
 	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
+	NSDictionary *settings = [[NSUserDefaults standardUserDefaults] objectForKey:@"prefs"];
+	
 	[[Networking networking] citiesInProvince:province withCompletion:^(NSArray *array, NSError *error) {
 		if (error) {
 			
 		} else {
 			self.cities = [NSArray arrayWithArray:array];
+			[MBProgressHUD hideHUDForView:self.view animated:YES];
+			
+			if ([settings objectForKey:@"city1"]) {
+				[self loadProvinces];
+			}
+		}
+	}];
+}
+
+- (void)loadProvinces {
+	
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	
+	[[Networking networking] activeProvincesWithCompletion:^(NSArray *array, NSError *error) {
+		if (error) {
+			
+		} else {
+			self.provinces = [NSArray arrayWithArray:array];
 			[MBProgressHUD hideHUDForView:self.view animated:YES];
 		}
 	}];

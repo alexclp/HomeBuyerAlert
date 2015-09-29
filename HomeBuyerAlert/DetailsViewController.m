@@ -29,6 +29,12 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	
 	self.title = @"Details";
 	
+	CGRect screenRect = [[UIScreen mainScreen] bounds];
+	CGFloat screenWidth = screenRect.size.width;
+	CGFloat screenHeight = screenRect.size.height;
+	
+	self.tableView.contentOffset = CGPointMake(0, screenHeight);
+	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] detailsOfProperty:self.selectedProperty withCompletion:^(PropertyDetail *details, NSError *error) {
@@ -203,13 +209,14 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	imageView.userInteractionEnabled = YES;
 	imageView.contentMode = UIViewContentModeScaleAspectFit;
 	imageView.clipsToBounds = YES;
-	/*
-	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 250, 40)];
+	imageView.alpha = 0.8;
+
+	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 60, 350, 40)];
 	myLabel.text = @"Click Image For More";
 	myLabel.textColor = [UIColor blackColor];
 	myLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
 	[imageView addSubview:myLabel];
-	*/
+
 	[imageView addGestureRecognizer:singleTap];
 	
 	
@@ -253,6 +260,15 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		[self openWebsite];
 	} else if (indexPath.row == 7) {
 		[self makeCall];
+	}
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	CGFloat sectionHeaderHeight = 248;//Change as per your table header hight
+	if (scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 0) {
+		scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+	} else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
+		scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
 	}
 }
 
