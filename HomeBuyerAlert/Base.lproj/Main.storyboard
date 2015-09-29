@@ -342,6 +342,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                     <tabBarItem key="tabBarItem" title="Map View" image="map-25.png" id="Xij-JE-iDx"/>
                     <connections>
                         <outlet property="mapView" destination="g08-Vo-oh2" id="4IU-Zt-Rio"/>
+                        <segue destination="Bmz-k0-TOJ" kind="show" identifier="showDetailsFromMap" id="GQ1-a6-kuD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdS-db-Wwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -506,4 +507,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
         <image name="map-25.png" width="25" height="25"/>
         <image name="very-basic-settings-icon.png" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GQ1-a6-kuD"/>
+    </inferredMetricsTieBreakers>
 </document>

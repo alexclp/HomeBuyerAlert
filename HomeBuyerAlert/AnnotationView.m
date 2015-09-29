@@ -18,4 +18,12 @@
 }
 */
 
+- (IBAction)showDetails:(id)sender {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject:self.propertyID forKey:@"PropertyID"];
+	[defaults synchronize];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"Annotation Tapped" object:nil];
+}
+
 @end

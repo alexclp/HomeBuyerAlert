@@ -14,12 +14,15 @@
 #import "DXAnnotationView.h"
 #import "DXAnnotationSettings.h"
 #import "MBProgressHUD.h"
+#import "DetailsViewController.h"
 
 @interface MapViewController ()
 
 @property (nonatomic, strong) NSArray *coordinates;
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) NSArray *properties;
+
+@property (nonatomic, strong) NSString *selectedPropertyID;
 
 @end
 
@@ -68,6 +71,8 @@
 		}
 	}];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(annotationTapped) name:@"Annotation Tapped" object:nil];
+	
 	
 }
 
@@ -95,6 +100,7 @@
 	pinView.frame = CGRectMake(-5, 0, 34, 34);
 	AnnotationView *calloutView = [[[NSBundle mainBundle] loadNibNamed:@"AnnotationView" owner:self options:nil] firstObject];
 	
+	// Setting the title
 	
 	calloutView.title.text = current.title;
 	calloutView.image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:current.imageURL]]];
@@ -104,6 +110,7 @@
 	NSNumber *value = [NSNumber numberWithFloat:current.price.doubleValue];
 	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
 	calloutView.price.text = [@"$" stringByAppendingString:modelNumberString];
+	calloutView.propertyID = [NSString stringWithFormat:@"%ld", self.index];
 	
 	DXAnnotationView *annotationView = (DXAnnotationView *)[mV dequeueReusableAnnotationViewWithIdentifier:NSStringFromClass([DXAnnotationView class])];
 	if (!annotationView) {
@@ -129,6 +136,25 @@
 	region.span.longitudeDelta = 30.0;
 	
 	[self.mapView setRegion:region animated:YES];
+}
+
+#pragma mark User Interaction
+
+- (void)annotationTapped {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	self.selectedPropertyID = [defaults objectForKey:@"PropertyID"];
+	
+	[self performSegueWithIdentifier:@"showDetailsFromMap" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"showDetailsFromMap"]) {
+		Property *current = [self.properties objectAtIndex:self.selectedPropertyID.intValue];
+		NSLog(@"INDEX: %d", self.selectedPropertyID.intValue);
+		
+		DetailsViewController *vc = [segue destinationViewController];
+		vc.selectedProperty = current.code;
+	}
 }
 
 @end

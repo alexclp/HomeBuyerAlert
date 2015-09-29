@@ -14,4 +14,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *title;
 @property (nonatomic, weak) IBOutlet UILabel *price;
 
+@property (nonatomic, strong) NSString *propertyID;
+
+- (IBAction)showDetails:(id)sender;
+
 @end
