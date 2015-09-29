@@ -56,7 +56,9 @@
 	
 	cell.title.text = current.title;
 	cell.details.text = current.details;
-	
+	cell.details.text = [cell.details.text stringByReplacingOccurrencesOfString:@"&#038;amp;" withString:@"&"];
+	cell.details.text = [cell.details.text stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+
 	float priceFloat = current.price.floatValue;
 	NSNumber *value = [NSNumber numberWithFloat:priceFloat];
 	NSString *modelNumberString = [NSString localizedStringWithFormat:@"%@", value];
@@ -64,7 +66,6 @@
 	cell.price.text = modelNumberString;
 	cell.price.text = [@"$" stringByAppendingString:cell.price.text];
 	
-	NSLog(@"Current image URL = %@", current.imageURL);
 	[cell.image sd_setImageWithURL:[NSURL URLWithString:current.imageURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

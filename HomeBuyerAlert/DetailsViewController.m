@@ -163,6 +163,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	} else if (indexPath.row == 1) {
 		cell.title.text = @"Description";
 		cell.subtitle.text = self.details.details;
+		cell.subtitle.text = [cell.subtitle.text stringByReplacingOccurrencesOfString:@"&#038;amp;" withString:@"&"];
+		cell.subtitle.text = [cell.subtitle.text stringByReplacingOccurrencesOfString:@"\\" withString:@""];
 		
 	} else if (indexPath.row == 2) {
 		cell.title.text = @"Address";
