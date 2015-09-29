@@ -193,19 +193,31 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	
+	NSLog(@"Table header URL: %@", self.details.pics);
 	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-	imageView.frame = CGRectMake (100, 100, 375, 248);
+	imageView.frame = CGRectMake (0, 0, 375, 337);
 	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
 	singleTap.numberOfTapsRequired = 1;
 	imageView.userInteractionEnabled = YES;
+	imageView.contentMode = UIViewContentModeScaleAspectFit;
+	imageView.clipsToBounds = YES;
+	/*
+	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 250, 40)];
+	myLabel.text = @"Click Image For More";
+	myLabel.textColor = [UIColor blackColor];
+	myLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
+	[imageView addSubview:myLabel];
+	*/
 	[imageView addGestureRecognizer:singleTap];
+	
 	
 	return imageView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return 248;
+	return 337;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
