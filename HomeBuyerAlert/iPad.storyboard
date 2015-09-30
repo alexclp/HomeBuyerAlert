@@ -223,7 +223,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5wO-eJ-Mcz">
-                                <rect key="frame" x="0.0" y="0.0" width="763" height="975"/>
+                                <rect key="frame" x="0.0" y="137" width="763" height="838"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailsCustomCell" rowHeight="82" id="NIH-m9-auc" customClass="DetailsCustomCell">
@@ -268,16 +268,28 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                                     <outlet property="delegate" destination="UnR-4D-gHI" id="WGi-bH-hnx"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Image for Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iO-l4-BfU">
+                                <rect key="frame" x="259" y="92" width="250" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="ToJ-qd-9e2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5wO-eJ-Mcz" firstAttribute="bottom" secondItem="K3l-Av-cQd" secondAttribute="top" id="7BV-Ho-VV0"/>
-                            <constraint firstItem="5wO-eJ-Mcz" firstAttribute="leading" secondItem="aFs-Go-XgI" secondAttribute="leading" id="7wm-sf-Z7F"/>
-                            <constraint firstItem="5wO-eJ-Mcz" firstAttribute="top" secondItem="aFs-Go-XgI" secondAttribute="top" id="P04-6u-cnN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5wO-eJ-Mcz" secondAttribute="trailing" constant="-15" id="oJj-vv-JlW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5wO-eJ-Mcz" secondAttribute="trailing" constant="-15" id="8Ev-Sa-tVA"/>
+                            <constraint firstItem="5wO-eJ-Mcz" firstAttribute="bottom" secondItem="K3l-Av-cQd" secondAttribute="top" id="c7h-Dg-eHk"/>
+                            <constraint firstItem="4iO-l4-BfU" firstAttribute="top" secondItem="yrG-ZC-4B7" secondAttribute="bottom" constant="28" id="dlH-c3-kE2"/>
+                            <constraint firstItem="5wO-eJ-Mcz" firstAttribute="top" secondItem="4iO-l4-BfU" secondAttribute="bottom" constant="8" symbolic="YES" id="qy9-A6-nvj"/>
+                            <constraint firstItem="4iO-l4-BfU" firstAttribute="centerX" secondItem="aFs-Go-XgI" secondAttribute="centerX" id="scC-5A-t4p"/>
+                            <constraint firstItem="5wO-eJ-Mcz" firstAttribute="leading" secondItem="aFs-Go-XgI" secondAttribute="leading" id="tnA-er-7tZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="galleryLabel" destination="4iO-l4-BfU" id="Qds-kn-Cwk"/>
                         <outlet property="tableView" destination="5wO-eJ-Mcz" id="buv-2N-hD5"/>
                         <outlet property="view" destination="aFs-Go-XgI" id="3rR-1k-kSY"/>
                     </connections>

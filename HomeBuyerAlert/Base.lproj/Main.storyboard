@@ -362,7 +362,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tSe-tF-xRc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailsCustomCell" rowHeight="82" id="tbN-JJ-ihr" customClass="DetailsCustomCell">
@@ -407,16 +407,29 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                                     <outlet property="delegate" destination="Bmz-k0-TOJ" id="xl1-on-M1h"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Image for Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmO-qK-SSO">
+                                <rect key="frame" x="65" y="83" width="244" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="U9K-C7-rKE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tSe-tF-xRc" secondAttribute="trailing" id="2Rh-24-VN9"/>
-                            <constraint firstAttribute="bottom" secondItem="tSe-tF-xRc" secondAttribute="bottom" id="9dn-ow-8S3"/>
-                            <constraint firstItem="tSe-tF-xRc" firstAttribute="leading" secondItem="vLN-in-Oks" secondAttribute="leading" id="QSi-00-jBE"/>
-                            <constraint firstItem="tSe-tF-xRc" firstAttribute="top" secondItem="vXS-9g-3qv" secondAttribute="bottom" constant="-64" id="vSY-Ha-OmD"/>
+                            <constraint firstItem="zmO-qK-SSO" firstAttribute="top" secondItem="vXS-9g-3qv" secondAttribute="bottom" constant="19" id="E6m-EU-e1l"/>
+                            <constraint firstAttribute="bottom" secondItem="tSe-tF-xRc" secondAttribute="bottom" id="TY8-7b-2th"/>
+                            <constraint firstItem="tSe-tF-xRc" firstAttribute="top" secondItem="zmO-qK-SSO" secondAttribute="bottom" constant="8" symbolic="YES" id="cHj-U1-1G7"/>
+                            <constraint firstAttribute="trailing" secondItem="tSe-tF-xRc" secondAttribute="trailing" id="d01-k6-ebq"/>
+                            <constraint firstItem="tSe-tF-xRc" firstAttribute="leading" secondItem="vLN-in-Oks" secondAttribute="leading" id="ece-4W-ZBa"/>
+                            <constraint firstItem="zmO-qK-SSO" firstAttribute="leading" secondItem="vLN-in-Oks" secondAttribute="leadingMargin" constant="49" id="lcx-Zs-R2S"/>
+                            <constraint firstItem="zmO-qK-SSO" firstAttribute="centerX" secondItem="tSe-tF-xRc" secondAttribute="centerX" id="o7p-cd-atb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="galleryLabel" destination="zmO-qK-SSO" id="3vy-aw-ybd"/>
                         <outlet property="tableView" destination="tSe-tF-xRc" id="L0F-4N-2vK"/>
                     </connections>
                 </viewController>

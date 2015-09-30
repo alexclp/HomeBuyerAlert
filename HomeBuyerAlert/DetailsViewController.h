@@ -18,5 +18,6 @@
 @property (nonatomic, weak) UIImageView *imageView;
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UILabel *galleryLabel;
 
 @end

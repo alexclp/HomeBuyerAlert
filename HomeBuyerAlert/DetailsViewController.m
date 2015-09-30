@@ -20,21 +20,16 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 @property (nonatomic, strong) NSArray *thumbs;
 @property (nonatomic, strong) PropertyDetail *details;
 
+@property (nonatomic, strong) UIImage *headerImage;
+@property (nonatomic, strong) UIImageView *headerView;
+
 @end
 
 @implementation DetailsViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	self.title = @"Details";
-	
-	CGRect screenRect = [[UIScreen mainScreen] bounds];
-	CGFloat screenWidth = screenRect.size.width;
-	CGFloat screenHeight = screenRect.size.height;
-	
-	self.tableView.contentOffset = CGPointMake(0, screenHeight);
-	
+
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
 	[[Networking networking] detailsOfProperty:self.selectedProperty withCompletion:^(PropertyDetail *details, NSError *error) {
@@ -43,6 +38,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		} else {
 			
 			self.details = details;
+			
+			self.headerImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
 			[self.tableView reloadData];
 			
 			
@@ -200,29 +197,35 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	}
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {	
+	if (self.details.pics) {
+		UIImage *image = self.headerImage;
+		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+		imageView.frame = CGRectMake (0, 100, 375, 337);
+		UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+		singleTap.numberOfTapsRequired = 1;
+		imageView.userInteractionEnabled = YES;
+		imageView.contentMode = UIViewContentModeScaleAspectFit;
+		imageView.clipsToBounds = YES;
+//		imageView.alpha = 0.8;
+		self.galleryLabel.hidden = NO;
+		
+//		CGRect screenRect = [[UIScreen mainScreen] bounds];
+		/*
+		UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenRect.size.width/2 - (350/2), screenRect.size.height + 50, 350, 40)];
+		myLabel.text = @"Click Image For More";
+		myLabel.textColor = [UIColor blackColor];
+		myLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
+		[imageView addSubview:myLabel];
+		*/
+		[imageView addGestureRecognizer:singleTap];
+		
+		self.headerView = imageView;
+		
+		return imageView;
+	}
 	
-	NSLog(@"Table header URL: %@", self.details.pics);
-	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.details.pics objectAtIndex:0]]]];
-	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-	imageView.frame = CGRectMake (0, 0, 375, 337);
-	UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
-	singleTap.numberOfTapsRequired = 1;
-	imageView.userInteractionEnabled = YES;
-	imageView.contentMode = UIViewContentModeScaleAspectFit;
-	imageView.clipsToBounds = YES;
-	imageView.alpha = 0.8;
-
-	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 60, 350, 40)];
-	myLabel.text = @"Click Image For More";
-	myLabel.textColor = [UIColor blackColor];
-	myLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
-	[imageView addSubview:myLabel];
-
-	[imageView addGestureRecognizer:singleTap];
-	
-	
-	return imageView;
+	return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -266,12 +269,28 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-	CGFloat sectionHeaderHeight = 248;//Change as per your table header hight
+	CGFloat sectionHeaderHeight = 337;//Change as per your table header height
 	if (scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 0) {
 		scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
 	} else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
 		scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
 	}
+	
+	static CGFloat lastY = 0;
+	
+	CGFloat currentY = scrollView.contentOffset.y;
+	CGFloat headerHeight = self.headerView.frame.size.height;
+	
+	if ((lastY <= headerHeight) && (currentY > headerHeight)) {
+		NSLog(@" ******* Header view just disappeared");
+		self.galleryLabel.hidden = YES;
+	}
+	
+	if ((lastY > headerHeight) && (currentY <= headerHeight)) {
+		NSLog(@" ******* Header view just appeared");
+	}
+	
+	lastY = currentY;
 }
 
 #pragma mark Contact

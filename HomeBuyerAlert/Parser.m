@@ -23,6 +23,7 @@ static Parser *parser;
 }
 
 - (NSArray *)parseProvinces:(SMXMLDocument *)document {
+	NSLog(@"Parse provinces");
 	NSMutableArray *toReturn = [NSMutableArray array];
 	
 	NSArray *provinces = [document childrenNamed:@"province"];
@@ -37,6 +38,7 @@ static Parser *parser;
 }
 
 - (NSArray *)parseCities:(SMXMLDocument *)document {
+	NSLog(@"Parse cities");
 	NSMutableArray *toReturn = [NSMutableArray array];
 	
 	NSArray *cities = [document childrenNamed:@"city"];
@@ -51,6 +53,7 @@ static Parser *parser;
 }
 
 - (NSArray *)parseProperties:(SMXMLDocument *)document {
+	NSLog(@"Parse properties");
 	NSMutableArray *toReturn = [NSMutableArray array];
 	
 	SMXMLElement *root = [document childNamed:@"channel"];
