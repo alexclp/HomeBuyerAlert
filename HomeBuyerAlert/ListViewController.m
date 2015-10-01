@@ -56,8 +56,8 @@
 	Property *current = [self.properties objectAtIndex:indexPath.row];
 	
 	cell.title.text = current.title;
-	cell.details.text = current.details;
-//	cell.details.text = 
+	cell.details.text = [current.details gtm_stringByUnescapingFromHTML];
+	cell.details.text = [cell.details.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 
 	float priceFloat = current.price.floatValue;
 	NSNumber *value = [NSNumber numberWithFloat:priceFloat];

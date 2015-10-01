@@ -11,6 +11,7 @@
 #import "PropertyDetail.h"
 #import "MBProgressHUD.h"
 #import "DetailsCustomCell.h"
+#import "GTMNSString+HTML.h"
 
 static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
@@ -159,9 +160,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		
 	} else if (indexPath.row == 1) {
 		cell.title.text = @"Description";
-		cell.subtitle.text = self.details.details;
-		cell.subtitle.text = [cell.subtitle.text stringByReplacingOccurrencesOfString:@"&#038;amp;" withString:@"&"];
-		cell.subtitle.text = [cell.subtitle.text stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+		cell.subtitle.text = [self.details.details gtm_stringByUnescapingFromHTML];
+		cell.subtitle.text = [cell.subtitle.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 		
 	} else if (indexPath.row == 2) {
 		cell.title.text = @"Address";
