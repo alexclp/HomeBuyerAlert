@@ -25,6 +25,9 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) NSString *website;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *userType;
+@property (nonatomic, strong) NSString *company;
 @property (nonatomic, strong) NSString *privacy;
 
 @end

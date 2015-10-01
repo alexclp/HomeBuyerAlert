@@ -133,7 +133,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	NSInteger rows;
 	if (self.details) {
 		if (self.details.privacy.intValue) {
-			rows = 8;
+			rows = 11;
 		} else {
 			rows = 5;
 		}
@@ -197,16 +197,27 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 			cell.title.text = [cell.title.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 			cell.subtitle.text = @"";
 		} else if (indexPath.row == 5) {
-			cell.userInteractionEnabled = YES;
-			cell.title.text = self.details.email;
+			cell.title.text = self.details.userType;
 			cell.subtitle.text = @"";
 		} else if (indexPath.row == 6) {
 			cell.userInteractionEnabled = YES;
-			cell.title.text = self.details.website;
+			cell.title.text = self.details.phone;
 			cell.subtitle.text = @"";
 		} else if (indexPath.row == 7) {
 			cell.userInteractionEnabled = YES;
-			cell.title.text = self.details.phone;
+			cell.title.text = self.details.email;
+			cell.subtitle.text = @"";
+		} else if (indexPath.row == 8) {
+			cell.title.text = [self.details.address gtm_stringByUnescapingFromHTML];
+			cell.title.text = [cell.title.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+			cell.subtitle.text = @"";
+		} else if (indexPath.row == 9) {
+			cell.userInteractionEnabled = YES;
+			cell.title.text = self.details.website;
+			cell.subtitle.text = @"";
+		} else if (indexPath.row == 10) {
+			cell.title.text = [self.details.company gtm_stringByUnescapingFromHTML];
+			cell.title.text = [cell.title.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 			cell.subtitle.text = @"";
 		}
 	} else {
@@ -273,11 +284,11 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
 	if (self.details.privacy.intValue) {
-		if (indexPath.row == 5) {
+		if (indexPath.row == 7) {
 			[self showEmail];
-		} else if (indexPath.row == 6) {
+		} else if (indexPath.row == 9) {
 			[self openWebsite:self.details.website];
-		} else if (indexPath.row == 7) {
+		} else if (indexPath.row == 6) {
 			[self makeCall];
 		}
 	} else {

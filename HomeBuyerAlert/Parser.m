@@ -138,6 +138,10 @@ static Parser *parser;
 	propertyDetails.phone = [[userInfo objectAtIndex:7] value];
 	
 	propertyDetails.privacy = [[userInfo objectAtIndex:userInfo.count - 1] value];
+	propertyDetails.userType = [[userInfo objectAtIndex:5] value];
+	propertyDetails.address = [[[userInfo objectAtIndex:2] value] stringByAppendingString:[NSString stringWithFormat:@" %@", [[userInfo objectAtIndex:3] value]]];
+	propertyDetails.address = [propertyDetails.address stringByAppendingString:[NSString stringWithFormat:@" %@", [[userInfo objectAtIndex:4] value]]];
+	propertyDetails.company = [[userInfo objectAtIndex:6] value];
 	
 	return propertyDetails;
 }
