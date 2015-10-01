@@ -466,23 +466,26 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                                     <outlet property="delegate" destination="sOF-VR-thm" id="Juu-xk-wTd"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="sFG-rk-vQV">
-                                <rect key="frame" x="20" y="72" width="335" height="286"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="sFG-rk-vQV">
+                                <rect key="frame" x="20" y="72" width="335" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="L1e-lz-ozs"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="leading" secondItem="Jwh-XV-prr" secondAttribute="leading" id="0DR-XM-3a9"/>
-                            <constraint firstItem="sFG-rk-vQV" firstAttribute="top" secondItem="2ks-jX-kwX" secondAttribute="bottom" constant="8" symbolic="YES" id="720-0z-NNK"/>
-                            <constraint firstAttribute="bottom" secondItem="Y3x-Gy-mVs" secondAttribute="bottom" id="7tD-FS-bdI"/>
-                            <constraint firstAttribute="trailing" secondItem="Y3x-Gy-mVs" secondAttribute="trailing" id="DlG-5J-HLB"/>
-                            <constraint firstItem="sFG-rk-vQV" firstAttribute="leading" secondItem="Jwh-XV-prr" secondAttribute="leadingMargin" constant="4" id="JAi-Yj-P5L"/>
-                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="top" secondItem="2ks-jX-kwX" secondAttribute="bottom" constant="67" id="Rct-gj-Gd6"/>
-                            <constraint firstItem="sFG-rk-vQV" firstAttribute="centerX" secondItem="Y3x-Gy-mVs" secondAttribute="centerX" id="f8F-yO-NgS"/>
-                            <constraint firstItem="Ssh-HI-kFZ" firstAttribute="top" secondItem="sFG-rk-vQV" secondAttribute="bottom" constant="480" id="lQ9-M0-Pnz"/>
+                            <constraint firstAttribute="bottom" secondItem="Y3x-Gy-mVs" secondAttribute="bottom" id="1Ig-ag-SNL"/>
+                            <constraint firstItem="sFG-rk-vQV" firstAttribute="top" secondItem="2ks-jX-kwX" secondAttribute="bottom" constant="8" symbolic="YES" id="NQy-mD-Zij"/>
+                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="centerX" secondItem="sFG-rk-vQV" secondAttribute="centerX" id="OJr-12-W5G"/>
+                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="leading" secondItem="Jwh-XV-prr" secondAttribute="leading" id="OPC-ri-6TZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Y3x-Gy-mVs" secondAttribute="trailing" id="ebw-tY-fJI"/>
+                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="top" secondItem="sFG-rk-vQV" secondAttribute="bottom" constant="8" symbolic="YES" id="esu-tQ-8S4"/>
+                            <constraint firstItem="sFG-rk-vQV" firstAttribute="leading" secondItem="Jwh-XV-prr" secondAttribute="leadingMargin" constant="4" id="g3y-xd-fqD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="ccm-fx-l9w"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="Y3x-Gy-mVs" id="D9w-p9-txc"/>
                         <segue destination="Bmz-k0-TOJ" kind="show" identifier="showDetails" id="gl8-AI-Sxr"/>
