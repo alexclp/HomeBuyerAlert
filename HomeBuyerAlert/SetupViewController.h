@@ -22,6 +22,8 @@
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
+@property (nonatomic, assign) BOOL isInitial;
+
 - (IBAction)provinceTouchDown:(UITextField *)textField;
 - (IBAction)city1TouchDown:(UITextField *)textField;
 - (IBAction)city2TouchDown:(UITextField *)textField;

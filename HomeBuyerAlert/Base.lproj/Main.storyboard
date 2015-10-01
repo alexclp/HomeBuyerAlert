@@ -53,7 +53,7 @@ Enjoy …</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="HRg-XJ-aKq" kind="show" id="Fxd-mV-GaS"/>
+                                    <segue destination="HRg-XJ-aKq" kind="show" identifier="settingsSegue" id="Fxd-mV-GaS"/>
                                 </connections>
                             </button>
                         </subviews>

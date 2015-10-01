@@ -72,6 +72,10 @@
 		
 		[self loadCities];
 		
+		if (self.isInitial && [self completedData]) {
+			[self performSegueWithIdentifier:@"listSegue" sender:nil];
+		}
+		
 	} else {
 		// Load provinces
 		
@@ -203,6 +207,8 @@
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		
 		listVC.requestParams = [NSDictionary dictionaryWithDictionary:params];
+		
+		self.isInitial = NO;
 	}
 }
 
