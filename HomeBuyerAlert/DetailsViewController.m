@@ -89,24 +89,26 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	MBProgressHUD *hud1 = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	hud1.labelText = @"Getting pictures";
 	
-	[self configurePhotoBrowser:self.details.pics];
-
-	MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-	browser.displayActionButton = NO;
-	browser.displayNavArrows = YES;
-	browser.displaySelectionButtons = NO;
-	browser.alwaysShowControls = YES;
-	browser.zoomPhotosToFill = YES;
-	browser.enableGrid = YES;
-	browser.startOnGrid = YES;
-	browser.enableSwipeToDismiss = NO;
-	browser.autoPlayOnAppear = NO;
-	[browser setCurrentPhotoIndex:0];
-
-	UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
-	nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-	[self presentViewController:nc animated:YES completion:nil];
-	[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		[self configurePhotoBrowser:self.details.pics];
+		
+		MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+		browser.displayActionButton = NO;
+		browser.displayNavArrows = YES;
+		browser.displaySelectionButtons = NO;
+		browser.alwaysShowControls = YES;
+		browser.zoomPhotosToFill = YES;
+		browser.enableGrid = YES;
+		browser.startOnGrid = YES;
+		browser.enableSwipeToDismiss = NO;
+		browser.autoPlayOnAppear = NO;
+		[browser setCurrentPhotoIndex:0];
+		
+		UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+		nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+		[self presentViewController:nc animated:YES completion:nil];
+		[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+	});
 
 }
 
