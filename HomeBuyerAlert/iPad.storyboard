@@ -41,9 +41,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Canadian properties here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnf-KY-Td7">
-                                <rect key="frame" x="20" y="319" width="723" height="21"/>
+                                <rect key="frame" x="20" y="319" width="723" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="SsF-1a-32K"/>
+                                    <constraint firstAttribute="height" constant="35" id="SsF-1a-32K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,7 +85,7 @@ Enjoy …</string>
                             <constraint firstItem="Qnf-KY-Td7" firstAttribute="top" secondItem="b2T-aG-ehI" secondAttribute="bottom" constant="51" id="On4-Uc-ndz"/>
                             <constraint firstItem="iJZ-eI-HMK" firstAttribute="centerX" secondItem="b2T-aG-ehI" secondAttribute="centerX" id="ZM2-iu-gv6"/>
                             <constraint firstItem="VDz-lg-vH3" firstAttribute="top" secondItem="iJZ-eI-HMK" secondAttribute="bottom" constant="156" id="fSQ-56-qqq"/>
-                            <constraint firstItem="uTp-jU-YEo" firstAttribute="top" secondItem="Qnf-KY-Td7" secondAttribute="bottom" constant="38" id="zMh-D6-bbd"/>
+                            <constraint firstItem="uTp-jU-YEo" firstAttribute="top" secondItem="Qnf-KY-Td7" secondAttribute="bottom" constant="24" id="zMh-D6-bbd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f3h-gu-mQj"/>

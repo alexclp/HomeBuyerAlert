@@ -346,7 +346,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	}
 	
 	// Close the Mail Interface
-	[self dismissViewControllerAnimated:YES completion:NULL];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

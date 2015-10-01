@@ -95,6 +95,10 @@
 										   self.provinceTextField.text = [self.provinces objectAtIndex:selectedIndex];
 										   [self loadCities];
 										   
+										   
+										   self.city1TextField.text = @"";
+										   self.city2TextField.text = @"";
+										   self.city3TextField.text = @"";
 									   }
 									 cancelBlock:^(ActionSheetStringPicker *picker) {
 										 NSLog(@"Block Picker Canceled");
