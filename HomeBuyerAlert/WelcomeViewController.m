@@ -8,6 +8,7 @@
 
 #import "WelcomeViewController.h"
 #import "SetupViewController.h"
+#import "GTMNSString+HTML.h"
 
 @interface WelcomeViewController ()
 
@@ -21,6 +22,10 @@
 	self.title = @"Welcome";
 	
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	NSString *string = @"Scott Piercy &#038; James LeBlanc";
+	NSString *newstring = [string stringByRemovingPercentEncoding];
+	NSLog(@"new string: %@", [string gtm_stringByUnescapingFromHTML]);
 }
 
 - (void)didReceiveMemoryWarning {

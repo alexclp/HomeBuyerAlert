@@ -193,7 +193,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	
 	if (self.details.privacy.intValue) {
 		if (indexPath.row == 4) {
-			cell.title.text = self.details.userName;
+			cell.title.text = [self.details.userName gtm_stringByUnescapingFromHTML];
+			cell.title.text = [cell.title.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 			cell.subtitle.text = @"";
 		} else if (indexPath.row == 5) {
 			cell.userInteractionEnabled = YES;
