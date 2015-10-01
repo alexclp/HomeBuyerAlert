@@ -13,6 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DetailsViewController.h"
 #import "MBProgressHUD.h"
+#import "GTMNSString+HTML.h"
 
 @interface ListViewController ()
 
@@ -56,8 +57,7 @@
 	
 	cell.title.text = current.title;
 	cell.details.text = current.details;
-	cell.details.text = [cell.details.text stringByReplacingOccurrencesOfString:@"&#038;amp;" withString:@"&"];
-	cell.details.text = [cell.details.text stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+//	cell.details.text = 
 
 	float priceFloat = current.price.floatValue;
 	NSNumber *value = [NSNumber numberWithFloat:priceFloat];
