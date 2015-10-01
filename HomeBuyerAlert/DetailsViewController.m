@@ -209,17 +209,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		imageView.userInteractionEnabled = YES;
 		imageView.contentMode = UIViewContentModeScaleAspectFit;
 		imageView.clipsToBounds = YES;
-//		imageView.alpha = 0.8;
 		self.galleryLabel.hidden = NO;
-		
-//		CGRect screenRect = [[UIScreen mainScreen] bounds];
-		/*
-		UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenRect.size.width/2 - (350/2), screenRect.size.height + 50, 350, 40)];
-		myLabel.text = @"Click Image For More";
-		myLabel.textColor = [UIColor blackColor];
-		myLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
-		[imageView addSubview:myLabel];
-		*/
+
 		[imageView addGestureRecognizer:singleTap];
 		
 		self.headerView = imageView;
