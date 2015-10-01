@@ -309,22 +309,27 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 }
 
 - (void)showEmail {
-	// Email Subject
-	NSString *emailTitle = @"";
-	// Email Content
-	NSString *messageBody = @"";
-	// To address
-	NSArray *toRecipents = [NSArray arrayWithObject:self.details.email];
-	
-	MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-	mc.mailComposeDelegate = self;
-	[mc setSubject:emailTitle];
-	[mc setMessageBody:messageBody isHTML:NO];
-	[mc setToRecipients:toRecipents];
-	
-	// Present mail view controller on screen
-	[self presentViewController:mc animated:YES completion:NULL];
-	
+	if ([MFMailComposeViewController canSendMail]) {
+		// device is configured to send mail
+		// Email Subject
+		NSString *emailTitle = @"";
+		// Email Content
+		NSString *messageBody = @"";
+		// To address
+		NSArray *toRecipents = [NSArray arrayWithObject:self.details.email];
+		
+		MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+		mc.mailComposeDelegate = self;
+		[mc setSubject:emailTitle];
+		[mc setMessageBody:messageBody isHTML:NO];
+		[mc setToRecipients:toRecipents];
+		
+		// Present mail view controller on screen
+		[self presentViewController:mc animated:YES completion:NULL];
+	} else {
+		UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Your device is not able to send email! Set your email address in settings!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[error show];
+	}
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
