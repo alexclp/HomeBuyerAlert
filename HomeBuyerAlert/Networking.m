@@ -93,9 +93,9 @@ static Networking *networking;
 	NSString *urlString = [ResultsURL stringByAppendingString:[NSString stringWithFormat:@"?prov=%@&city1=%@&city2=%@&city3=%@&minPrice=%@&maxPrice=%@", province, city1, city2, city3, minPrice, maxPrice]];
 	urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
-//	NSLog(@"URL String: %@", urlString);
+	NSLog(@"URL String: %@", urlString);
 	
-	NSURL *url = [NSURL URLWithString:@"http://homebuyeralert.ca/property-custom-new.php?prov=Ontario&city1=Vaughan&city2=&city3=&minPrice=1000000&maxPrice=1500000"];
+	NSURL *url = [NSURL URLWithString:@"h ttp://homebuyeralert.ca/property-custom-new.php?prov=Ontario&city1=Vaughan&city2=&city3=&minPrice=1000000&maxPrice=1500000"];
 //	NSURL *url = [NSURL URLWithString:urlString];
 	
 	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];

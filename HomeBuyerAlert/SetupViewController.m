@@ -68,6 +68,7 @@
 		self.priceLabel.text = [@"$" stringByAppendingString:modelNumberString];
 		
 		self.priceRangeTextField.text = [self.priceOver objectAtIndex:[[settings objectForKey:@"priceabove"] intValue]];
+		self.priceAboveIndex = [NSNumber numberWithInt:[[settings objectForKey:@"priceabove"] intValue]];
 		
 		[self loadCities];
 		
@@ -255,14 +256,14 @@
 		int minPrice;
 		int base = basePrice.intValue;
 		
-		int priceAboveIndex = 0;
+//		int priceAboveIndex = 0;
 		
 		switch (self.priceAboveIndex.intValue) {
 			case 0: {
 				maxPrice = base + 25000;
 				minPrice = base - 25000;
 				
-				priceAboveIndex = 0;
+//				priceAboveIndex = 0;
 				
 				break;
 			}
@@ -271,7 +272,7 @@
 				maxPrice = base + 50000;
 				minPrice = base - 50000;
 				
-				priceAboveIndex = 1;
+//				priceAboveIndex = 1;
 
 				break;
 			}
@@ -280,7 +281,7 @@
 				maxPrice = base + 100000;
 				minPrice = base - 100000;
 				
-				priceAboveIndex = 2;
+//				priceAboveIndex = 2;
 				
 				break;
 			}
@@ -289,7 +290,7 @@
 				maxPrice = base + 250000;
 				minPrice = base - 250000;
 				
-				priceAboveIndex = 3;
+//				priceAboveIndex = 3;
 				
 				break;
 			}
@@ -306,7 +307,7 @@
 				   @"maxprice": [NSString stringWithFormat:@"%d", maxPrice],
 				   @"minprice": [NSString stringWithFormat:@"%d", minPrice],
 				   @"base": [NSString stringWithFormat:@"%@", basePrice],
-				   @"priceabove": [NSString stringWithFormat:@"%d", priceAboveIndex]};
+				   @"priceabove": [NSString stringWithFormat:@"%d", self.priceAboveIndex.intValue]};
 	}
 	
 	return params;
