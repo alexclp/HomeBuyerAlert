@@ -459,20 +459,27 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-Gy-mVs">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="sOF-VR-thm" id="AfC-RQ-L9B"/>
                                     <outlet property="delegate" destination="sOF-VR-thm" id="Juu-xk-wTd"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="sFG-rk-vQV">
+                                <rect key="frame" x="20" y="72" width="335" height="66"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="leading" secondItem="Jwh-XV-prr" secondAttribute="leading" id="3cV-lS-Vko"/>
-                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="top" secondItem="Jwh-XV-prr" secondAttribute="top" constant="20" symbolic="YES" id="8Fz-96-VlB"/>
-                            <constraint firstAttribute="bottom" secondItem="Y3x-Gy-mVs" secondAttribute="bottom" id="9lP-Dw-kqY"/>
-                            <constraint firstAttribute="trailing" secondItem="Y3x-Gy-mVs" secondAttribute="trailing" id="cvV-wA-Rrr"/>
+                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="leading" secondItem="Jwh-XV-prr" secondAttribute="leading" id="0DR-XM-3a9"/>
+                            <constraint firstItem="sFG-rk-vQV" firstAttribute="top" secondItem="2ks-jX-kwX" secondAttribute="bottom" constant="8" symbolic="YES" id="720-0z-NNK"/>
+                            <constraint firstAttribute="bottom" secondItem="Y3x-Gy-mVs" secondAttribute="bottom" id="7tD-FS-bdI"/>
+                            <constraint firstAttribute="trailing" secondItem="Y3x-Gy-mVs" secondAttribute="trailing" id="DlG-5J-HLB"/>
+                            <constraint firstItem="sFG-rk-vQV" firstAttribute="leading" secondItem="Jwh-XV-prr" secondAttribute="leadingMargin" constant="4" id="JAi-Yj-P5L"/>
+                            <constraint firstItem="Y3x-Gy-mVs" firstAttribute="top" secondItem="2ks-jX-kwX" secondAttribute="bottom" constant="67" id="Rct-gj-Gd6"/>
+                            <constraint firstItem="sFG-rk-vQV" firstAttribute="centerX" secondItem="Y3x-Gy-mVs" secondAttribute="centerX" id="f8F-yO-NgS"/>
+                            <constraint firstItem="Ssh-HI-kFZ" firstAttribute="top" secondItem="sFG-rk-vQV" secondAttribute="bottom" constant="480" id="lQ9-M0-Pnz"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="ccm-fx-l9w"/>
@@ -483,7 +490,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bX-g1-qAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-693"/>
+            <point key="canvasLocation" x="1403.5" y="-693.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rME-v3-FcK">
@@ -530,6 +537,6 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
         <image name="very-basic-settings-icon.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GQ1-a6-kuD"/>
+        <segue reference="gl8-AI-Sxr"/>
     </inferredMetricsTieBreakers>
 </document>

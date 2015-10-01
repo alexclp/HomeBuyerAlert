@@ -193,23 +193,33 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="btZ-NY-ZfS">
-                                <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                                <rect key="frame" x="0.0" y="176" width="768" height="799"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="CIC-hN-gOU" id="RK3-sb-5m2"/>
                                     <outlet property="delegate" destination="CIC-hN-gOU" id="nD9-Ln-7Mq"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="una-Pz-ucF">
+                                <rect key="frame" x="20" y="72" width="728" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="Fsw-aq-nzB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="btZ-NY-ZfS" secondAttribute="trailing" id="Fwr-XH-FgY"/>
-                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="bottom" secondItem="9Un-mc-lEb" secondAttribute="top" id="NZd-dx-665"/>
-                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="top" secondItem="Ymh-nR-qTQ" secondAttribute="top" constant="20" symbolic="YES" id="bfs-mA-Doi"/>
-                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="leading" secondItem="Ymh-nR-qTQ" secondAttribute="leading" id="hCL-rd-Ksh"/>
+                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="bottom" secondItem="9Un-mc-lEb" secondAttribute="top" id="OXy-mN-5Lf"/>
+                            <constraint firstItem="una-Pz-ucF" firstAttribute="top" secondItem="xcZ-e4-ydb" secondAttribute="bottom" constant="8" symbolic="YES" id="P7R-oo-3yh"/>
+                            <constraint firstItem="una-Pz-ucF" firstAttribute="leading" secondItem="Ymh-nR-qTQ" secondAttribute="leadingMargin" id="Wa4-Zn-nLg"/>
+                            <constraint firstItem="una-Pz-ucF" firstAttribute="centerX" secondItem="btZ-NY-ZfS" secondAttribute="centerX" id="ZjO-an-1fV"/>
+                            <constraint firstAttribute="trailing" secondItem="btZ-NY-ZfS" secondAttribute="trailing" id="dT9-OJ-c1r"/>
+                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="leading" secondItem="Ymh-nR-qTQ" secondAttribute="leading" id="gfM-sb-MUv"/>
+                            <constraint firstItem="btZ-NY-ZfS" firstAttribute="top" secondItem="una-Pz-ucF" secondAttribute="bottom" constant="8" symbolic="YES" id="y5o-UP-EEc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" image="list_filled-25.png" id="awL-ZI-jvI"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="btZ-NY-ZfS" id="K11-ym-oEX"/>
                         <segue destination="UnR-4D-gHI" kind="show" identifier="showDetails" id="u2F-XX-PvZ"/>
