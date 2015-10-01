@@ -13,7 +13,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.title = @"Add Your Home";
+	self.title = @"Add Your Property";
 }
 
 @end

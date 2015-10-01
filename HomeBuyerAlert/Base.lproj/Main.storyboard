@@ -107,7 +107,7 @@ Enjoy …</string>
                                             <constraint firstAttribute="height" constant="28" id="PAf-Rw-1bO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select the province" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KLM-ei-k98">
@@ -161,7 +161,7 @@ Enjoy …</string>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCe-mM-1QJ">
                                         <rect key="frame" x="8" y="390" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3000000" translatesAutoresizingMaskIntoConstraints="NO" id="yCk-zu-QMM">
@@ -185,7 +185,7 @@ Enjoy …</string>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select the province and city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-Ja-r2f">
                                         <rect key="frame" x="8" y="127" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLc-Wc-aWZ">
@@ -284,8 +284,8 @@ Enjoy …</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUG-5C-elE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUG-5C-elE">
+                                <rect key="frame" x="0.0" y="234" width="375" height="384"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Advertising here is free!
 Our listing ad system is based online and you need  browser to use it until our app is ready.
@@ -293,18 +293,27 @@ HOMEOWNERS CLICK HERE -&gt; http://free2list.ca
 AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-buyer-alert-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="rbv-rx-FRf">
+                                <rect key="frame" x="20" y="85" width="335" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="lAW-xn-9TA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qUG-5C-elE" firstAttribute="leading" secondItem="ypV-Rg-JTM" secondAttribute="leading" id="4J3-gp-AfK"/>
-                            <constraint firstItem="qUG-5C-elE" firstAttribute="top" secondItem="tZB-Gc-pTi" secondAttribute="bottom" id="Nd5-zq-RXy"/>
-                            <constraint firstAttribute="trailing" secondItem="qUG-5C-elE" secondAttribute="trailing" id="djp-aA-Rhj"/>
-                            <constraint firstItem="qUG-5C-elE" firstAttribute="bottom" secondItem="8vs-90-Jd0" secondAttribute="top" id="ev6-cX-H79"/>
+                            <constraint firstItem="rbv-rx-FRf" firstAttribute="leading" secondItem="ypV-Rg-JTM" secondAttribute="leadingMargin" constant="4" id="11d-cw-TLp"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="top" secondItem="rbv-rx-FRf" secondAttribute="bottom" constant="21" id="5UC-AR-7Of"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="centerX" secondItem="rbv-rx-FRf" secondAttribute="centerX" id="EcL-Kl-6lw"/>
+                            <constraint firstAttribute="trailing" secondItem="qUG-5C-elE" secondAttribute="trailing" id="FcE-5I-RYy"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="bottom" secondItem="8vs-90-Jd0" secondAttribute="top" id="Iaq-xO-iWi"/>
+                            <constraint firstItem="qUG-5C-elE" firstAttribute="leading" secondItem="ypV-Rg-JTM" secondAttribute="leading" id="J3J-dv-1yV"/>
+                            <constraint firstItem="rbv-rx-FRf" firstAttribute="top" secondItem="tZB-Gc-pTi" secondAttribute="bottom" constant="21" id="cIz-kx-Pr2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add House" image="home_automation-25.png" id="ear-XA-UEk"/>
+                    <tabBarItem key="tabBarItem" title="Add Your Property" image="home_automation-25.png" id="ear-XA-UEk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jv-lv-yVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -413,7 +422,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                                     <constraint firstAttribute="height" constant="34" id="U9K-C7-rKE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
