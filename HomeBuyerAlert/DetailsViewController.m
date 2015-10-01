@@ -157,7 +157,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		cell.title.text = price;
 		
 		NSString *type = self.details.type;
-		cell.subtitle.text = type;
+		cell.subtitle.text = [type gtm_stringByUnescapingFromHTML];
+		cell.subtitle.text = [cell.subtitle.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 		
 		
 	} else if (indexPath.row == 1) {
@@ -167,7 +168,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		
 	} else if (indexPath.row == 2) {
 		cell.title.text = @"Address";
-		cell.subtitle.text = self.details.title;
+		cell.subtitle.text = [self.details.type gtm_stringByUnescapingFromHTML];
+		cell.subtitle.text = [cell.subtitle.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 		
 	} else if (indexPath.row == 3) {
 		
@@ -182,7 +184,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		
 		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
 	} else if (indexPath.row == 4) {
-		cell.title.text = self.details.userName;
+		cell.title.text = [self.details.userName gtm_stringByUnescapingFromHTML];
+		cell.title.text = [cell.title.text stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
 		cell.subtitle.text = @"";
 	} else if (indexPath.row == 5) {
 		cell.userInteractionEnabled = YES;
