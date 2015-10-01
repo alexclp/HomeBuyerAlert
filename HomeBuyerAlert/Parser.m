@@ -137,6 +137,8 @@ static Parser *parser;
 	propertyDetails.email = [[userInfo objectAtIndex:1] value];
 	propertyDetails.phone = [[userInfo objectAtIndex:7] value];
 	
+	propertyDetails.privacy = [[document childNamed:@"privacy"] value];
+	
 	return propertyDetails;
 }
 

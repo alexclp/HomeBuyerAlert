@@ -13,6 +13,8 @@
 #import "DetailsCustomCell.h"
 #import "GTMNSString+HTML.h"
 
+#define ListingBase @"http://findlistings.ca/properties/?f2lProperty="
+
 static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 @interface DetailsViewController ()
@@ -130,7 +132,11 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSInteger rows;
 	if (self.details) {
-		rows = 8;
+		if (self.details.privacy.intValue) {
+			rows = 8;
+		} else {
+			rows = 5;
+		}
 	} else {
 		rows = 0;
 	}
@@ -181,6 +187,12 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		NSString *bedrooms = [@"Bedrooms: " stringByAppendingString:self.details.bedrooms];
 		
 		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
+		
+		
+//		USER SECTION
+		
+		/*
+		
 	} else if (indexPath.row == 4) {
 		cell.title.text = self.details.userName;
 		cell.subtitle.text = @"";
@@ -196,6 +208,36 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		cell.userInteractionEnabled = YES;
 		cell.title.text = self.details.phone;
 		cell.subtitle.text = @"";
+	}
+		 */
+			
+		}
+	
+	NSLog(@"PRIVACY: %@", self.details.privacy);
+	
+	if (self.details.privacy.intValue) {
+		if (indexPath.row == 4) {
+			cell.title.text = self.details.userName;
+			cell.subtitle.text = @"";
+		} else if (indexPath.row == 5) {
+			cell.userInteractionEnabled = YES;
+			cell.title.text = self.details.email;
+			cell.subtitle.text = @"";
+		} else if (indexPath.row == 6) {
+			cell.userInteractionEnabled = YES;
+			cell.title.text = self.details.website;
+			cell.subtitle.text = @"";
+		} else if (indexPath.row == 7) {
+			cell.userInteractionEnabled = YES;
+			cell.title.text = self.details.phone;
+			cell.subtitle.text = @"";
+		}
+	} else {
+		if (indexPath.row == 4) {
+			cell.userInteractionEnabled = YES;
+			cell.title.text = @"Please contact the seller by clicking this";
+			cell.subtitle.text = @"";
+		}
 	}
 }
 
@@ -253,13 +295,21 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	if (indexPath.row == 5) {
-		[self showEmail];
-	} else if (indexPath.row == 6) {
-		[self openWebsite];
-	} else if (indexPath.row == 7) {
-		[self makeCall];
+	if (self.details.privacy.intValue) {
+		if (indexPath.row == 5) {
+			[self showEmail];
+		} else if (indexPath.row == 6) {
+			[self openWebsite:self.details.website];
+		} else if (indexPath.row == 7) {
+			[self makeCall];
+		}
+	} else {
+		if (indexPath.row == 4) {
+			[self openWebsite:[ListingBase stringByAppendingString:self.selectedProperty]];
+		}
 	}
+	
+	
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -289,10 +339,10 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 #pragma mark Contact
 
-- (void)openWebsite {
+- (void)openWebsite:(NSString *)website {
 	
 	if (![self.details.website isEqual:@""]) {
-		NSURL *url = [NSURL URLWithString:self.details.website];
+		NSURL *url = [NSURL URLWithString:website];
 		[[UIApplication sharedApplication] openURL:url];
 	}
 }
