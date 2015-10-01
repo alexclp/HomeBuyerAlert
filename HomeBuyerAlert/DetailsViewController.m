@@ -237,6 +237,7 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 	});
  
 	[self configureBasicCell:sizingCell atIndexPath:indexPath];
+	
 	return [self calculateHeightForConfiguredSizingCell:sizingCell];
 }
 
