@@ -188,32 +188,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 		
 		cell.subtitle.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", size, bathrooms, garage, bedrooms];
 		
-		
-//		USER SECTION
-		
-		/*
-		
-	} else if (indexPath.row == 4) {
-		cell.title.text = self.details.userName;
-		cell.subtitle.text = @"";
-	} else if (indexPath.row == 5) {
-		cell.userInteractionEnabled = YES;
-		cell.title.text = self.details.email;
-		cell.subtitle.text = @"";
-	} else if (indexPath.row == 6) {
-		cell.userInteractionEnabled = YES;
-		cell.title.text = self.details.website;
-		cell.subtitle.text = @"";
-	} else if (indexPath.row == 7) {
-		cell.userInteractionEnabled = YES;
-		cell.title.text = self.details.phone;
-		cell.subtitle.text = @"";
-	}
-		 */
-			
 		}
 	
-	NSLog(@"PRIVACY: %@", self.details.privacy);
 	
 	if (self.details.privacy.intValue) {
 		if (indexPath.row == 4) {
