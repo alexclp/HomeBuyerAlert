@@ -503,7 +503,7 @@ AGENTS CLICK HERE -&gt; http://iListit.ca</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMy-Ry-EgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989" y="439"/>
+            <point key="canvasLocation" x="1044" y="424"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bwi-zV-XlQ">
