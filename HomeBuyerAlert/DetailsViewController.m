@@ -32,6 +32,8 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	self.title = @"Details";
 
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
@@ -49,8 +51,6 @@ static NSString * const DetailsCellIdentifier = @"DetailsCustomCell";
 			[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 		}
 	}];
-
-	NSLog(@"Selected property: %@", self.selectedProperty);
 }
 
 - (void)configurePhotoBrowser:(NSArray *)photoLinks {

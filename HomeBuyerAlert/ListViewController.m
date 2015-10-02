@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.title = @"List view";
+	self.title = @"List View";
 	
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	
