@@ -64,7 +64,7 @@
 				[self zoomToLocation];
 				[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 			} else {
-				
+				[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 			}
 			
 			

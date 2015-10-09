@@ -34,10 +34,16 @@
 	[[Networking networking] properties:self.requestParams withCompletion:^(NSArray *array, NSError *error) {
 		self.properties = [NSArray arrayWithArray:array];
 		
+		if (!self.properties.count) {
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"No data" object:nil];
+		}
+		
 		[self.tableView reloadData];
 		[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 		
 	}];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noDataError) name:@"No data" object:nil];
 }
 
 #pragma mark UITableView Data Source
@@ -98,6 +104,11 @@
 		DetailsViewController *vc = [segue destinationViewController];
 		vc.selectedProperty = current.code;
 	}
+}
+
+- (void)noDataError {
+	UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Your search didn't return any results" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[error show];
 }
 
 @end
