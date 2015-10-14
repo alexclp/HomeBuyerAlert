@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EAEFBE004F34945B16977B8C"
+               BlueprintIdentifier = "C1452A2FCAFFDF83388B0A9C"
                BuildableName = "APParallaxHeader.framework"
                BlueprintName = "Pods-HomeBuyerAlert-APParallaxHeader"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -16,6 +16,7 @@ pod 'DXCustomCallout-ObjC'
 pod 'APParallaxHeader'
 pod 'MWPhotoBrowser'
 pod 'RKDropdownAlert'
+pod 'NewRelicAgent'
 
 end
 

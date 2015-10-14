@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <NewRelicAgent/NewRelic.h>
 
 #define IDIOM UI_USER_INTERFACE_IDIOM()
 #define IPAD UIUserInterfaceIdiomPad
@@ -20,6 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	[NewRelicAgent startWithApplicationToken:@"AAfdc428419197f836be7bdab19d52678272f67384"];
+	
 	return YES;
 }
 
